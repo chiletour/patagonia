@@ -3,288 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chile - Wycieczka marzeń na koniec świata!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Podstawowe resetowanie CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        /* Nagłówek */
-        header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.1rem;
-        }
-
-        /* Sekcja główna - wycieczki */
-        .main-content {
-            padding: 40px 0;
-            flex-grow: 1;
-        }
-
-        .main-content h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        .trips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .trip-card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .trip-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .trip-card img {
-            width: 100%;
-            height: 220px; /* Nieco większa wysokość dla obrazków */
-            object-fit: cover;
-            display: block;
-        }
-
-        .trip-card-content {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .trip-card-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-            color: #34495e;
-        }
-
-        .trip-card-content p {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-
-        .trip-card-price {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #e67e22;
-            margin-bottom: 15px;
-            text-align: right;
-        }
-
-        .btn-details {
-            display: inline-block;
-            background: #3498db;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-            transition: background 0.3s ease;
-            margin-top: auto;
-        }
-
-        .btn-details:hover {
-            background: #2980b9;
-        }
-
-        /* Stopka */
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 40px;
-        }
-
-        /* Responsywność */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .main-content h2 {
-                font-size: 1.8rem;
-            }
-
-            .trips-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Chile - Wyprawa marzeń na koniec świata!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <h1>Chile - Wycieczka marzeń na koniec świata!</h1>
-            <p>Odkryj niezwykłe krajobrazy i tajemnice Patagonii, Rapa Nui oraz Pustyni Atacama.</p>
-        </div>
+        <h1>Chile - Wyprawa marzeń na koniec świata!</h1>
+        <p>Odkryj niesamowite krajobrazy Chile z naszymi wyjątkowymi ofertami podróży.</p>
     </header>
 
-    <main class="main-content">
-        <div class="container">
-            <h2>Nasze Wycieczki do Chile</h2>
-            <div class="trips-grid">
-                <div class="trip-card">
-                    <img src="moai.jpg" alt="Tajemnicze Moai na Rapa Nui">
-                    <div class="trip-card-content">
-                        <h3>Rapa Nui (Wyspa Wielkanocna): Śladami Moai</h3>
-                        <p>Niezapomniana podróż na najbardziej odizolowaną wyspę świata. Odkryj tajemnice posągów Moai, relaksuj się na plaży Anakena oraz podziwiaj Zwrotnik Koziorożca na Pustyni Atakama.</p>
-                        <div class="trip-card-price">Cena: 8600 PLN</div>
-                        <a href="#" class="btn-details">Więcej o Rapa Nui</a>
-                    </div>
-                </div>
+    <main>
+        <section class="offer">
+            <h2>Oferta 1: Rapa Nui & Pustynia Atakama</h2>
+            <p class="price">Cena: 8600 PLN + 5000 PLN przelot z Polski</p>
 
-                <div class="trip-card">
-                    <img src="https://github.com/user-attachments/assets/4faef066-14e5-4429-9c9b-09ab7a5703d1" alt="Majestatyczne góry Patagonii Chilijskiej">
-                    <div class="trip-card-content">
-                        <h3>Patagonia Chilijska: Lodowce i Fiordy</h3>
-                        <p>Przygoda w sercu Patagonii! Trekking w Parku Narodowym Torres del Paine, rejsy po fiordach i podziwianie monumentalnych lodowców.</p>
-                        <div class="trip-card-price">Cena: 7000 PLN</div>
-                        <a href="#" class="btn-details">Więcej o Patagonii</a>
-                    </div>
-                </div>
-                </div>
-        </div>
+            <div class="itinerary">
+                <h3>Pustynia Atakama - 3 Dni Niesamowitych Przygód</h3>
+                <ul>
+                    <li><strong>Dzień 1: San Pedro de Atacama i Valle de la Luna (Dolina Księżycowa)</strong>
+                        <p>Przylot do Calama (CJC). Transfer do San Pedro de Atacama. Zakwaterowanie. Po południu wycieczka do Valle de la Luna, słynącej z dramatycznych krajobrazów przypominających powierzchnię Księżyca. Podziwianie zachodu słońca nad wydmami i formacjami skalnymi.</p>
+                    </li>
+                    <li><strong>Dzień 2: Gejzery El Tatio i Machuca</strong>
+                        <p>Wczesnym rankiem wyjazd do geotermalnego pola El Tatio (ok. 4300 m n.p.m.), gdzie można podziwiać imponujące gejzery i fumarole o świcie. Następnie wizyta w uroczej wiosce Machuca z tradycyjnymi domami z adobe i kościołem. W drodze powrotnej podziwianie krajobrazów i flory andyjskiej.</p>
+                    </li>
+                    <li><strong>Dzień 3: Laguna Cejar i Ojos del Salar</strong>
+                        <p>Wycieczka do Laguny Cejar, słonej laguny, w której można unosić się na powierzchni wody dzięki wysokiemu stężeniu soli. Odwiedziny Ojos del Salar (Oczy Salaru) - dwóch głębokich słodkowodnych jeziorek pośrodku solniska. Czas na relaks i podziwianie rozległych białych przestrzeni.</p>
+                    </li>
+                </ul>
+
+                <h3>Rapa Nui (Wyspa Wielkanocna) - 3 Dni Pełne Tajemnic</h3>
+                <ul>
+                    <li><strong>Dzień 1: Ahu Tahai i Hanga Roa</strong>
+                        <p>Przylot na Wyspę Wielkanocną (IPC). Transfer do Hanga Roa i zakwaterowanie. Po południu wizyta w Ahu Tahai, jednym z najważniejszych kompleksów ceremonialnych z pięcioma moai. Spacer po Hanga Roa, jedynym mieście na wyspie.</p>
+                    </li>
+                    <li><strong>Dzień 2: Wulkan Rano Kau i Orongo</strong>
+                        <p>Wycieczka do wulkanu Rano Kau z imponującym jeziorem kraterowym. Odwiedziny ceremonialnej wioski Orongo, położonej na krawędzi krateru, związanej z kultem Człowieka Ptaka. Podziwianie widoków na ocean i linię brzegową.</p>
+                    </li>
+                    <li><strong>Dzień 3: Ahu Tongariki i Anakena</strong>
+                        <p>Wizyta w Ahu Tongariki, największym kompleksie moai na wyspie z piętnastoma monumentalnymi posągami. Przejazd na plażę Anakena z białym piaskiem i palmami kokosowymi, gdzie można odpocząć i popływać. Po południu transfer na lotnisko.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="offer">
+            <h2>Oferta 2: Chilijska Patagonia - 10 Dni Przygody</h2>
+            <p class="price">Cena: 7500 PLN + 5000 PLN przelot z Polski</p>
+
+            <div class="itinerary">
+                <h3>Patagonia Chilijska - 10 Dni Odkrywania</h3>
+                <ul>
+                    <li><strong>Dzień 1: Przylot do Punta Arenas i transfer do Puerto Natales</strong>
+                        <p>Przylot do Punta Arenas (PUQ). Transfer autobusem do Puerto Natales (ok. 3 godziny). Zakwaterowanie w hotelu.</p>
+                    </li>
+                    <li><strong>Dzień 2: Park Narodowy Torres del Paine - Dzień 1 (Mirador Cuernos)</strong>
+                        <p>Całodniowa wycieczka do Parku Narodowego Torres del Paine. Trekking do punktu widokowego Mirador Cuernos, skąd rozpościera się wspaniały widok na charakterystyczne rogi Paine. Podziwianie jezior Nordenskjöld i Sarmiento.</p>
+                    </li>
+                    <li><strong>Dzień 3: Park Narodowy Torres del Paine - Dzień 2 (Trekking do Lago Grey)</strong>
+                        <p>Wycieczka nad jezioro Grey. Opcjonalnie rejs łodzią po jeziorze w pobliżu lodowca Grey (dodatkowo płatne). Trekking wzdłuż brzegu jeziora z widokami na lodowiec.</p>
+                    </li>
+                    <li><strong>Dzień 4: Park Narodowy Torres del Paine - Dzień 3 (Valle del Francés - opcjonalnie)</strong>
+                        <p>Dla chętnych wymagający trekking do Valle del Francés (Francuskiej Doliny) z panoramicznymi widokami na masyw Paine. Alternatywnie krótsze spacery po parku.</p>
+                    </li>
+                    <li><strong>Dzień 5: Przeprawa promem przez fiordy Patagonii</strong>
+                        <p>Długa, ale malownicza przeprawa promem przez fiordy Patagonii (np. Seno Última Esperanza) z Puerto Natales do rejonu lodowców Balmaceda i Serrano.</p>
+                    </li>
+                    <li><strong>Dzień 6: Wycieczka na Lodowiec Balmaceda i Serrano</strong>
+                        <p>Wycieczka łodzią po fiordach z bliska podziwiając lodowce Balmaceda i Serrano. Możliwość krótkiego trekkingu w okolicach lodowca Serrano.</p>
+                    </li>
+                    <li><strong>Dzień 7: Powrót do Puerto Natales i dzień wolny</strong>
+                        <p>Powrót promem lub transfer lądowy do Puerto Natales. Czas wolny na odpoczynek lub zwiedzanie miasta.</p>
+                    </li>
+                    <li><strong>Dzień 8: Wycieczka fakultatywna do Milodon Cave</strong>
+                        <p>Możliwość zorganizowania wycieczki do jaskini Milodon, gdzie odkryto szczątki prehistorycznego leniwca olbrzymiego (dodatkowo płatne).</p>
+                    </li>
+                    <li><strong>Dzień 9: Podróż do El Calafate (Argentyna) - opcjonalnie</strong>
+                        <p>Dla chętnych możliwość zorganizowania wycieczki do argentyńskiej części Patagonii i słynnego lodowca Perito Moreno (dodatkowo płatne, wymaga przekroczenia granicy).</p>
+                    </li>
+                    <li><strong>Dzień 10: Transfer na lotnisko w Punta Arenas</strong>
+                        <p>Transfer autobusem z Puerto Natales na lotnisko w Punta Arenas (PUQ) i wylot.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
 
-    /* Ogólne style dla lepszej prezentacji */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 15px;
-    background-color: #333;
-    color: #fff;
-    border-top: 1px solid #444;
-}
-
-/* Style dla kontenera rubryk */
-.container {
-    display: flex; /* Używamy flexboxa do ułożenia rubryk */
-    flex-wrap: wrap; /* Pozwala rubrykom przenosić się do nowej linii na mniejszych ekranach */
-    gap: 20px; /* Odstęp między rubrykami */
-    justify-content: space-around; /* Rozkłada rubryki równomiernie */
-    margin-top: 30px;
-}
-
-/* Style dla pojedynczej rubryki */
-.rubric {
-    flex: 1; /* Pozwala rubryce rozciągać się */
-    min-width: 300px; /* Minimalna szerokość rubryki, aby nie były za małe */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    display: flex; /* Włączamy flexbox dla treści w rubryce */
-    flex-direction: column; /* Układamy elementy w kolumnie */
-    align-items: center; /* Centrujemy elementy w rubryce */
-}
-
-.rubric img {
-    max-width: 100%; /* Obrazek nie będzie wychodził poza rubrykę */
-    height: auto; /* Zachowuje proporcje obrazka */
-    border-radius: 4px;
-    margin-bottom: 15px; /* Odstęp pod obrazkiem */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.rubric h2 {
-    color: #0056b3;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.rubric p {
-    font-size: 0.95em;
-    line-height: 1.6;
-    text-align: left; /* Wyrównanie tekstu do lewej */
-}
-
-/* Responsywność dla mniejszych ekranów */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Rubryki układają się jedna pod drugą na małych ekranach */
-        align-items: center;
-    }
-    .rubric {
-        width: 90%; /* Zwiększamy szerokość rubryki na małych ekranach */
-    }
-}
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Wycieczki Marzeń. Odkryj Chile z nami!</p>
-        </div>
+        <h2>Kontakt</h2>
+        <p>Zapraszamy do kontaktu w celu rezerwacji lub uzyskania dodatkowych informacji:</p>
+        <p><strong>WhatsApp:</strong> +48 519 442 579</p>
+        <p><strong>E-mail:</strong> <a href="mailto:p.roszak@outlook.com">p.roszak@outlook.com</a></p>
+        <p>&copy; 2023 Chiletournee - Wszelkie prawa zastrzeżone.</p>
     </footer>
+
 </body>
 </html>
