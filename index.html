@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chile - Wycieczka marzeń na koniec świata!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Podstawowe resetowanie CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Nagłówek */
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+        /* Sekcja główna - wycieczki */
+        .main-content {
+            padding: 40px 0;
+            flex-grow: 1;
+        }
+
+        .main-content h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .trips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .trip-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .trip-card img {
+            width: 100%;
+            height: 220px; /* Nieco większa wysokość dla obrazków */
+            object-fit: cover;
+            display: block;
+        }
+
+        .trip-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trip-card-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .trip-card-content p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .trip-card-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 15px;
+            text-align: right;
+        }
+
+        .btn-details {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s ease;
+            margin-top: auto;
+        }
+
+        .btn-details:hover {
+            background: #2980b9;
+        }
+
+        /* Stopka */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 40px;
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .main-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .trips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chile - Wycieczka marzeń na koniec świata!</h1>
+            <p>Odkryj niezwykłe krajobrazy i tajemnice Patagonii oraz Rapa Nui.</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2>Nasze Wycieczki do Chile</h2>
+            <div class="trips-grid">
+                <div class="trip-card">
+                    <img src="https://via.placeholder.com/400x220?text=Rapa+Nui+Moai" alt="Tajemnicze Moai na Rapa Nui">
+                    <div class="trip-card-content">
+                        <h3>Rapa Nui (Wyspa Wielkanocna): Śladami Moai</h3>
+                        <p>Niezapomniana podróż na najbardziej odizolowaną wyspę świata. Odkryj tajemnice Moai, zwiedź wulkan Rano Kau i relaksuj się na plaży Anakena.</p>
+                        <div class="trip-card-price">Cena: od 8500 PLN</div>
+                        <a href="#" class="btn-details">Więcej o Rapa Nui</a>
+                    </div>
+                </div>
+
+                <div class="trip-card">
+                    <img src="https://via.placeholder.com/400x220?text=Patagonia+Chile" alt="Majestatyczne góry Patagonii Chilijskiej">
+                    <div class="trip-card-content">
+                        <h3>Patagonia Chilijska: Lodowce i Fiordy</h3>
+                        <p>Przygoda w sercu Patagonii! Trekking w Parku Narodowym Torres del Paine, rejsy po fiordach i podziwianie monumentalnych lodowców.</p>
+                        <div class="trip-card-price">Cena: od 6900 PLN</div>
+                        <a href="#" class="btn-details">Więcej o Patagonii</a>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Wycieczki Marzeń. Odkryj Chile z nami!</p>
+        </div>
+    </footer>
+</body>
+</html>
