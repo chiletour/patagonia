@@ -192,6 +192,95 @@
         </div>
     </main>
 
+    /* Ogólne style dla lepszej prezentacji */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border-top: 1px solid #444;
+}
+
+/* Style dla kontenera rubryk */
+.container {
+    display: flex; /* Używamy flexboxa do ułożenia rubryk */
+    flex-wrap: wrap; /* Pozwala rubrykom przenosić się do nowej linii na mniejszych ekranach */
+    gap: 20px; /* Odstęp między rubrykami */
+    justify-content: space-around; /* Rozkłada rubryki równomiernie */
+    margin-top: 30px;
+}
+
+/* Style dla pojedynczej rubryki */
+.rubric {
+    flex: 1; /* Pozwala rubryce rozciągać się */
+    min-width: 300px; /* Minimalna szerokość rubryki, aby nie były za małe */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex; /* Włączamy flexbox dla treści w rubryce */
+    flex-direction: column; /* Układamy elementy w kolumnie */
+    align-items: center; /* Centrujemy elementy w rubryce */
+}
+
+.rubric img {
+    max-width: 100%; /* Obrazek nie będzie wychodził poza rubrykę */
+    height: auto; /* Zachowuje proporcje obrazka */
+    border-radius: 4px;
+    margin-bottom: 15px; /* Odstęp pod obrazkiem */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rubric h2 {
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.rubric p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    text-align: left; /* Wyrównanie tekstu do lewej */
+}
+
+/* Responsywność dla mniejszych ekranów */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Rubryki układają się jedna pod drugą na małych ekranach */
+        align-items: center;
+    }
+    .rubric {
+        width: 90%; /* Zwiększamy szerokość rubryki na małych ekranach */
+    }
+}
     <footer>
         <div class="container">
             <p>&copy; 2025 Wycieczki Marzeń. Odkryj Chile z nami!</p>
