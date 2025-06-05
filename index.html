@@ -21,21 +21,21 @@
             font-family: 'Montserrat', sans-serif;
             text-align: center;
             color: #a8dadc; /* Jasny błękit/turkus */
-            margin: 60px 0 20px 0; /* Zmniejszono dolny margines, aby zrobić miejsce na obrazek */
+            margin: 60px 0 20px 0;
             font-size: 3em;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
             letter-spacing: 1px;
         }
 
-        /* Styl dla obrazka w tytule - PRZENIESIONO TUTAJ */
+        /* Styl dla obrazka w tytule strony (głównego) */
         .title-image {
-            display: block; /* Sprawia, że obrazek zajmuje całą szerokość i jest wyśrodkowany */
-            max-width: 800px; /* Maksymalna szerokość obrazka */
-            width: 90%; /* Obrazek będzie responsywny */
-            height: auto; /* Zachowuje proporcje */
-            margin: 0 auto 50px auto; /* Wyśrodkowanie i margines dolny */
-            border-radius: 10px; /* Lekkie zaokrąglenie rogów */
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Subtelny cień */
+            display: block;
+            max-width: 800px;
+            width: 90%;
+            height: auto;
+            margin: 0 auto 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
         /* Kontener dla ofert - Flexbox */
@@ -72,14 +72,37 @@
             border-color: #7bdcb5; /* Rzucający się w oczy zielony akcent na hoverze */
         }
 
+        /* NOWY STYL DLA TYTUŁÓW OFERT ZE ZDJĘCIEM W TLE */
         .oferta-wycieczki h2 {
             font-family: 'Montserrat', sans-serif;
-            color: #7bdcb5; /* Rzucający się w oczy zielony/miętowy dla tytułów ofert */
-            margin-top: 0;
+            color: #FFFFFF; /* Biały kolor tekstu dla lepszej czytelności na tle obrazu */
+            margin-top: -35px; /* Przesunięcie tytułu lekko w górę, aby był w obrębie zaokrąglonych rogów */
+            margin-left: -35px; /* Przesunięcie tytułu do lewej krawędzi kontenera */
+            margin-right: -35px; /* Przesunięcie tytułu do prawej krawędzi kontenera */
+            padding: 70px 20px 20px 20px; /* Większy padding, aby tekst był na tle obrazu */
             font-size: 2.2em;
-            margin-bottom: 25px;
             text-align: center;
             line-height: 1.3;
+            background-size: cover; /* Dopasowuje obrazek tła, aby pokrył całą powierzchnię */
+            background-position: center center; /* Centruje obrazek tła */
+            background-repeat: no-repeat; /* Zapobiega powtarzaniu się obrazka */
+            border-top-left-radius: 15px; /* Dopasowanie zaokrąglenia do kontenera oferty */
+            border-top-right-radius: 15px; /* Dopasowanie zaokrąglenia do kontenera oferty */
+            box-shadow: inset 0 -50px 50px rgba(0,0,0,0.5); /* Cień na dole obrazu dla lepszej czytelności tekstu */
+            display: flex; /* Użycie flexbox dla centrowania tekstu w pionie */
+            align-items: flex-end; /* Wyrównanie tekstu do dołu (nad cieniem) */
+            justify-content: center; /* Wyśrodkowanie tekstu w poziomie */
+        }
+
+        /* Specyficzne obrazy tła dla każdego h2 - ZMIEŃ TE URL-E! */
+        .oferta-wycieczki:nth-child(1) h2 {
+            background-image: url('https://images.unsplash.com/photo-1577717464016-562a9c394c86?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* ZMIEŃ TEN URL na swoje zdjęcie dla pierwszej oferty (np. zdjęcie Atakamy) */
+        }
+
+        .oferta-wycieczki:nth-child(2) h2 {
+            background-image: url('https://images.unsplash.com/photo-1502462215273-b3d11b519a86?q=80&w=2800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* ZMIEŃ TEN URL na swoje zdjęcie dla drugiej oferty (np. zdjęcie Patagonii) */
         }
 
         .oferta-wycieczki h3 {
@@ -181,7 +204,7 @@
         /* Responsywność dla małych ekranów */
         @media (max-width: 992px) {
             .title-image {
-                max-width: 95%; /* Zwiększamy szerokość na mniejszych ekranach */
+                max-width: 95%;
             }
             .oferty-container {
                 flex-direction: column;
@@ -210,11 +233,12 @@
             }
             .oferta-wycieczki h2 {
                 font-size: 1.8em;
+                padding: 50px 15px 15px 15px; /* Mniejszy padding dla małych ekranów */
             }
             .oferta-wycieczki p, .oferta-wycieczki ul li {
                 font-size: 0.95em;
             }
-            .button-link { /* Zamiast .oferta-wycieczki button */
+            .button-link {
                 padding: 12px 25px;
                 font-size: 1.1em;
             }
@@ -232,6 +256,7 @@
     <div class="oferty-container">
         <div class="oferta-wycieczki">
             <h2>Chile - Wyprawa marzeń na koniec świata</h2>
+
             <p>
                 Niezwykła podróż przez serce Chile, od tętniącej życiem stolicy,
                 przez magiczne wybrzeże, majestatyczną Pustynię Atakama,
@@ -302,7 +327,7 @@
                 <li>
                     <strong>Dzień 1: Przylot do Santiago de Chile</strong>
                     <br>Przylot na lotnisko Santiago de Chile, transfer do hotelu. Odpoczynek po podróży. Wspólna kolacja zapoznawcza wraz z całą grupą.
-                 <li>
+                </li>
                 <li>
                     <strong>Dzień 2: Lot do Punta Arenas</strong>
                     <br>Przylot na lotnisko w Punta Arenas, transfer do hotelu. Czas wolny na odpoczynek i zwiedzanie miasta, spacer po nabrzeżu, wizyta na cmentarzu miejskim (uznawanym za jeden z piękniejszych).
@@ -336,19 +361,15 @@
                     <br>Całodniowa wycieczka do <strong>Parku Narodowego Pali Aike</strong>, położonego na granicy z Argentyną. Region wulkanicznych stożków, kraterów i jaskiń. Możliwość spotkania guanaco. Unikalne pustynne krajobrazy Patagonii.
                 </li>
                 <li>
-                    <strong>Dzień 9: Fort Bulnes i koniec świata</strong>
-                    <br>Wycieczka na południe od Punta Arenas do zrekonstruowanego <strong>Fortu Bulnes</strong>, pierwszej chilijskiej osady na Cieśninie Magellana. Odwiedzimy również <strong>Puerto del Hambre (Port Głodu)</5str5555555ong> oraz pomnik symbolizujący geograficzny środek Chile.
+                    <strong>Dzień 10: Fort Bulnes i koniec świata</strong>
+                    <br>Wycieczka na południe od Punta Arenas do zrekonstruowanego <strong>Fortu Bulnes</strong>, pierwszej chilijskiej osady na Cieśninie Magellana. Odwiedzimy również <strong>Puerto del Hambre (Port Głodu)</strong> oraz pomnik symbolizujący geograficzny środek Chile.
                 </li>
                 <li>
-                    <strong>Dzień 10: Wylot z Punta Arenas</strong>
-                    <br>Śniadanie. Czas wolny w zależności od rozkładu lotów. Transfer na lotnisko i wylot.
-                </li>
-               <li>
-                    <strong>Dzień 11: Termy i  wizyta w winiarni </strong>
+                    <strong>Dzień 11: Termy i wizyta w winiarni</strong>
                     <br>Wyjazd do Cajon del Maipu i naturalnych term o poranku. Naoczna wizyta z Andami. W drugiej części dnia wizyta w najpopularniejszej winiarni Chile Concha y Toro i degustacja wina słynnego na cały świat.
-               </li>
+                </li>
             </ul>
-            <div class="koszt">Koszt wyprawy: 7000 PLN + 5000 PLN (lot z Polski)</div>
+            <div class="koszt">Koszt wyprawy: 8000 PLN + 5000 PLN (lot z Polski)</div>
             <a href="mailto:chileforvisit@gmail.com" class="button-link">Zapytaj o tę ofertę</a>
         </div>
     </div>
