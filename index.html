@@ -21,10 +21,21 @@
             font-family: 'Montserrat', sans-serif;
             text-align: center;
             color: #a8dadc; /* Jasny błękit/turkus */
-            margin: 60px 0 50px 0;
+            margin: 60px 0 20px 0; /* Zmniejszono dolny margines, aby zrobić miejsce na obrazek */
             font-size: 3em;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
             letter-spacing: 1px;
+        }
+
+        /* Styl dla obrazka w tytule - PRZENIESIONO TUTAJ */
+        .title-image {
+            display: block; /* Sprawia, że obrazek zajmuje całą szerokość i jest wyśrodkowany */
+            max-width: 800px; /* Maksymalna szerokość obrazka */
+            width: 90%; /* Obrazek będzie responsywny */
+            height: auto; /* Zachowuje proporcje */
+            margin: 0 auto 50px auto; /* Wyśrodkowanie i margines dolny */
+            border-radius: 10px; /* Lekkie zaokrąglenie rogów */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Subtelny cień */
         }
 
         /* Kontener dla ofert - Flexbox */
@@ -48,7 +59,7 @@
             border-radius: 15px;
             padding: 35px;
             background-color: #34495e; /* Nieco jaśniejszy granat dla tła oferty */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Mocniejszy cień */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -116,12 +127,13 @@
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
         }
 
-        .oferta-wycieczki button {
+        /* Styl dla linku udającego przycisk */
+        .button-link {
             background-color: #7bdcb5; /* Rzucający się w oczy zielony/miętowy */
             color: #2c3e50; /* Ciemny tekst na przycisku */
             padding: 16px 35px;
             border: none;
-            border-radius: 50px;
+            border-radius: 50px; /* Bardziej zaokrąglony przycisk */
             font-size: 1.3em;
             font-weight: 700; /* Mocniejsze pogrubienie */
             cursor: pointer;
@@ -129,9 +141,11 @@
             margin-top: 40px;
             align-self: center;
             box-shadow: 0 5px 15px rgba(123,220,181,0.4);
+            text-decoration: none; /* Usuwa podkreślenie z linku */
+            display: inline-block; /* Aby padding i marginesy działały poprawnie */
         }
 
-        .oferta-wycieczki button:hover {
+        .button-link:hover {
             background-color: #4a90e2; /* Niebieski na hoverze dla przycisku */
             color: white; /* Biały tekst na hoverze */
             transform: translateY(-3px) scale(1.02);
@@ -166,6 +180,9 @@
 
         /* Responsywność dla małych ekranów */
         @media (max-width: 992px) {
+            .title-image {
+                max-width: 95%; /* Zwiększamy szerokość na mniejszych ekranach */
+            }
             .oferty-container {
                 flex-direction: column;
                 align-items: center;
@@ -185,6 +202,9 @@
                 font-size: 2em;
                 margin: 40px 0 30px 0;
             }
+            .title-image {
+                margin-bottom: 30px;
+            }
             .oferta-wycieczki {
                 padding: 25px;
             }
@@ -194,7 +214,7 @@
             .oferta-wycieczki p, .oferta-wycieczki ul li {
                 font-size: 0.95em;
             }
-            .oferta-wycieczki button {
+            .button-link { /* Zamiast .oferta-wycieczki button */
                 padding: 12px 25px;
                 font-size: 1.1em;
             }
@@ -208,16 +228,7 @@
 <body>
 
     <h1>Chile - Wyprawa marzeń na koniec świata</h1>
-<img src="https://github.com/user-attachments/assets/ab576a4f-0adb-4ed9-9c31-ef9e8de7b94f" alt="patagonia.jpg" class="title-image"
-    .title-image {
-    display: block;
-    max-width: 800px; /* Maksymalna szerokość obrazka */
-    width: 90%; /* Obrazek będzie responsywny */
-    height: auto; /* Zachowuje proporcje */
-    margin: 0 auto 50px auto; /* Wyśrodkowanie i margines dolny */
-    border-radius: 10px; /* Lekkie zaokrąglenie rogów */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Subtelny cień */
-}
+    <img src="https://github.com/user-attachments/assets/ab576a4f-0adb-4ed9-9c31-ef9e8de7b94f" alt="patagonia.jpg" class="title-image">
     <div class="oferty-container">
         <div class="oferta-wycieczki">
             <h2>Chile - Wyprawa marzeń na koniec świata</h2>
@@ -275,7 +286,7 @@
                 </li>
             </ul>
             <div class="koszt">Koszt wycieczki: 8600 PLN + 5000 PLN (lot z Polski)</div>
-            <button>Zapytaj o tę ofertę</button>
+            <a href="mailto:chileforvisit@gmail.com" class="button-link">Zapytaj o tę ofertę</a>
         </div>
 
         <div class="oferta-wycieczki">
@@ -330,7 +341,7 @@
                 </li>
             </ul>
             <div class="koszt">Koszt wyprawy: 7000 PLN + 5000 PLN (lot z Polski)</div>
-            <button>Zapytaj o tę ofertę</button>
+            <a href="mailto:chileforvisit@gmail.com" class="button-link">Zapytaj o tę ofertę</a>
         </div>
     </div>
 
