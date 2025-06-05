@@ -63,7 +63,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.4s ease-in-out, box-=shadow 0.4s ease-in-out, border-color 0.3s ease;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.3s ease;
         }
 
         .oferta-wycieczki:hover {
@@ -79,15 +79,15 @@
             margin-top: -35px;
             margin-left: -35px;
             margin-right: -35px;
-            padding: 70px 20px 20px 20px;=
-            font-size: 2.2em;=
-            text-align: center=;
+            padding: 70px 20px 20px 20px;
+            font-size: 2.2em;
+            text-align: center;
             line-height: 1.3;
-            background-size: co=ver;
-            background-position:= center center;
-            background-repeat: no========-+repeat;
-            border-top-left-radius: 15px;+
-            border-top-right-radius: 15px+;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
             box-shadow: inset 0 -50px 50px rgba(0,0,0,0.5);
             display: flex;
             align-items: flex-end;
@@ -101,7 +101,7 @@
         }
 
         .oferta-wycieczki:nth-child(2) h2 {
-            background-image: url('kajak.png');
+            background-image: url('kajak.png'); /* Upewnij się, że ten plik jest dostępny! */
         }
 
         /* Styl dla paragrafu z opisem oferty (dodane tło Pustyni Atakama) */
@@ -174,10 +174,12 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
             margin-top: 40px;
-            align-self: center;
-            box-shadow: 0 5px 15px rgba(123,220,181,0.4);
+            /* align-self: center; */ /* Usunięto, bo display: inline-block i margin: 0 auto; lepiej działa dla wyśrodkowania bloku */
             text-decoration: none;
-            display: inline-block;
+            display: block; /* Zmieniono na block, żeby margin auto działało */
+            margin-left: auto; /* Wyśrodkowanie przycisku */
+            margin-right: auto; /* Wyśrodkowanie przycisku */
+            box-shadow: 0 5px 15px rgba(123,220,181,0.4);
         }
 
         .button-link:hover {
@@ -379,7 +381,7 @@
                     <strong>Dzień 10: Fort Bulnes i koniec świata</strong>
                     <br>Wycieczka na południe od Punta Arenas do zrekonstruowanego <strong>Fortu Bulnes</strong>, pierwszej chilijskiej osady na Cieśninie Magellana. Odwiedzimy również <strong>Puerto del Hambre (Port Głodu)</strong> oraz pomnik symbolizujący geograficzny środek Chile.
                 </li>
-                 <li>
+                <li>
                     <strong>Dzień 11: Termy i wizyta w winiarni</strong>
                     <br>Wyjazd do Cajon del Maipu i naturalnych term o poranku. Naoczna wizyta z Andami. W drugiej części dnia wizyta w najpopularniejszej winiarni Chile Concha y Toro i degustacja wina słynnego na cały świat.
                 </li>
