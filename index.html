@@ -11,8 +11,8 @@
             font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #2c3e50; /* Ciemny granatowy/głęboki błękit */
-            color: #ecf0f1; /* Jasny szary dla lepszego kontrastu */
+            background-color: #2c3e50;
+            color: #ecf0f1;
             line-height: 1.7;
             overflow-x: hidden;
         }
@@ -20,7 +20,7 @@
         h1 {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
-            color: #a8dadc; /* Jasny błękit/turkus */
+            color: #a8dadc;
             margin: 60px 0 20px 0;
             font-size: 3em;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
@@ -55,10 +55,10 @@
             flex: 1;
             min-width: 380px;
             max-width: 48%;
-            border: 2px solid #4a90e2; /* Wyraźna niebieska ramka */
+            border: 2px solid #4a90e2;
             border-radius: 15px;
             padding: 35px;
-            background-color: #34495e; /* Nieco jaśniejszy granat dla tła oferty */
+            background-color: #34495e;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
@@ -69,29 +69,29 @@
         .oferta-wycieczki:hover {
             transform: translateY(-12px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            border-color: #7bdcb5; /* Rzucający się w oczy zielony akcent na hoverze */
+            border-color: #7bdcb5;
         }
 
         /* NOWY STYL DLA TYTUŁÓW OFERT ZE ZDJĘCIEM W TLE */
         .oferta-wycieczki h2 {
             font-family: 'Montserrat', sans-serif;
-            color: #FFFFFF; /* Biały kolor tekstu dla lepszej czytelności na tle obrazu */
-            margin-top: -35px; /* Przesunięcie tytułu lekko w górę, aby był w obrębie zaokrąglonych rogów */
-            margin-left: -35px; /* Przesunięcie tytułu do lewej krawędzi kontenera */
-            margin-right: -35px; /* Przesunięcie tytułu do prawej krawędzi kontenera */
-            padding: 70px 20px 20px 20px; /* Większy padding, aby tekst był na tle obrazu */
+            color: #FFFFFF;
+            margin-top: -35px;
+            margin-left: -35px;
+            margin-right: -35px;
+            padding: 70px 20px 20px 20px;
             font-size: 2.2em;
             text-align: center;
             line-height: 1.3;
-            background-size: cover; /* Dopasowuje obrazek tła, aby pokrył całą powierzchnię */
-            background-position: center center; /* Centruje obrazek tła */
-            background-repeat: no-repeat; /* Zapobiega powtarzaniu się obrazka */
-            border-top-left-radius: 15px; /* Dopasowanie zaokrąglenia do kontenera oferty */
-            border-top-right-radius: 15px; /* Dopasowanie zaokrąglenia do kontenera oferty */
-            box-shadow: inset 0 -50px 50px rgba(0,0,0,0.5); /* Cień na dole obrazu dla lepszej czytelności tekstu */
-            display: flex; /* Użycie flexbox dla centrowania tekstu w pionie */
-            align-items: flex-end; /* Wyrównanie tekstu do dołu (nad cieniem) */
-            justify-content: center; /* Wyśrodkowanie tekstu w poziomie */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            box-shadow: inset 0 -50px 50px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
         }
 
         /* Specyficzne obrazy tła dla każdego h2 - ZMIEŃ TE URL-E! */
@@ -105,20 +105,32 @@
             /* ZMIEŃ TEN URL na swoje zdjęcie dla drugiej oferty (np. zdjęcie Patagonii) */
         }
 
+        /* Styl dla paragrafu z opisem oferty (dodane tło) */
+        .oferta-wycieczki:nth-child(1) p {
+            background-image: url('URL_DO_ZDJĘCIA_ATAKAMY'); /* Dodaj URL do zdjęcia Pustyni Atakama */
+            background-size: cover;
+            background-position: center;
+            color: white; /* Zapewnienie widoczności tekstu na tle */
+            padding: 20px; /* Dodatkowy padding dla lepszego wyglądu */
+            border-radius: 10px; /* Zaokrąglenie rogów */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Cień dla lepszej czytelności tekstu */
+            position: relative; /* Potrzebne dla pozycjonowania pseudo-elementu */
+        }
+
         .oferta-wycieczki h3 {
             font-family: 'Montserrat', sans-serif;
-            color: #a8dadc; /* Jasny błękit/turkus */
+            color: #a8dadc;
             margin-top: 30px;
             margin-bottom: 15px;
             font-size: 1.4em;
-            border-bottom: 2px solid #4a90e2; /* Niebieskie podkreślenie */
+            border-bottom: 2px solid #4a90e2;
             padding-bottom: 8px;
         }
 
         .oferta-wycieczki p, .oferta-wycieczki ul {
             font-size: 1.05em;
             margin-bottom: 15px;
-            color: #ecf0f1; /* Jasny tekst wewnątrz ofert */
+            color: #ecf0f1;
         }
 
         .oferta-wycieczki ul {
@@ -128,61 +140,61 @@
         }
 
         .oferta-wycieczki ul li {
-            background-color: #3f5b75; /* Nieco jaśniejsze tło dla elementów listy */
+            background-color: #3f5b75;
             margin-bottom: 8px;
             padding: 12px 18px;
             border-radius: 8px;
             font-size: 0.98em;
-            color: #ecf0f1; /* Jasny tekst na liście */
-            border-left: 5px solid #7bdcb5; /* Rzucający się w oczy zielony akcent */
+            color: #ecf0f1;
+            border-left: 5px solid #7bdcb5;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .oferta-wycieczki .koszt {
             font-size: 1.4em;
             font-weight: 700;
-            color: #ffda79; /* Rzucający się w oczy żółty/złoty dla kosztu */
+            color: #ffda79;
             margin-top: 30px;
             text-align: center;
             padding: 15px 0;
-            background-color: #4a6a8c; /* Ciemniejsze tło dla kosztu */
+            background-color: #4a6a8c;
             border-radius: 8px;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
         }
 
         /* Styl dla linku udającego przycisk */
         .button-link {
-            background-color: #7bdcb5; /* Rzucający się w oczy zielony/miętowy */
-            color: #2c3e50; /* Ciemny tekst na przycisku */
+            background-color: #7bdcb5;
+            color: #2c3e50;
             padding: 16px 35px;
             border: none;
-            border-radius: 50px; /* Bardziej zaokrąglony przycisk */
+            border-radius: 50px;
             font-size: 1.3em;
-            font-weight: 700; /* Mocniejsze pogrubienie */
+            font-weight: 700;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
             margin-top: 40px;
             align-self: center;
             box-shadow: 0 5px 15px rgba(123,220,181,0.4);
-            text-decoration: none; /* Usuwa podkreślenie z linku */
-            display: inline-block; /* Aby padding i marginesy działały poprawnie */
+            text-decoration: none;
+            display: inline-block;
         }
 
         .button-link:hover {
-            background-color: #4a90e2; /* Niebieski na hoverze dla przycisku */
-            color: white; /* Biały tekst na hoverze */
+            background-color: #4a90e2;
+            color: white;
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 8px 20px rgba(74,144,226,0.5);
         }
 
         /* Sekcja kontaktowa (stopka) */
         .contact-footer {
-            background-color: #1a252f; /* Jeszcze ciemniejszy granat */
+            background-color: #1a252f;
             color: #ecf0f1;
             text-align: center;
             padding: 40px 20px;
             font-size: 1.1em;
-            border-top: 5px solid #7bdcb5; /* Rzucający się w oczy zielony/miętowy akcent */
+            border-top: 5px solid #7bdcb5;
         }
 
         .contact-footer p {
@@ -190,14 +202,14 @@
         }
 
         .contact-footer a {
-            color: #4a90e2; /* Aktywny niebieski dla linków */
+            color: #4a90e2;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .contact-footer a:hover {
-            color: #a8dadc; /* Jasny błękit na hoverze linku */
+            color: #a8dadc;
             text-decoration: underline;
         }
 
@@ -233,7 +245,10 @@
             }
             .oferta-wycieczki h2 {
                 font-size: 1.8em;
-                padding: 50px 15px 15px 15px; /* Mniejszy padding dla małych ekranów */
+                padding: 50px 15px 15px 15px;
+            }
+             .oferta-wycieczki p {
+                padding: 15px; /* Mniejszy padding dla mniejszych ekranów */
             }
             .oferta-wycieczki p, .oferta-wycieczki ul li {
                 font-size: 0.95em;
@@ -350,36 +365,4 @@
                 </li>
                 <li>
                     <strong>Dzień 7: Torres del Paine - Dolina Francuska (opcjonalnie) / Wędrówki przy jeziorach</strong>
-                    <br>Kolejny dzień w parku. Opcja trekkingu do <strong>Dolina Francuska</strong> (wymaga promowania przez Jezioro Pehoé). Alternatywnie, lżejsze szlaki wokół jezior, podziwianie fauny (guanaco, nandu). Powrót do Puerto Natales.
-                </li>
-                <li>
-                    <strong>Dzień 8: Jaskinia Milodon i powrót do Punta Arenas</strong>
-                    <br>Przed powrotem do Punta Arenas, wizyta w <strong>Cueva del Milodón</strong> – jaskini, gdzie znaleziono szczątki prehistorycznego leniwca olbrzymiego. Po południu powrót do Punta Arenas, czas wolny na kolację.
-                </li>
-                <li>
-                    <strong>Dzień 9: Park Narodowy Pali Aike i wulkaniczne krajobrazy</strong>
-                    <br>Całodniowa wycieczka do <strong>Parku Narodowego Pali Aike</strong>, położonego na granicy z Argentyną. Region wulkanicznych stożków, kraterów i jaskiń. Możliwość spotkania guanaco. Unikalne pustynne krajobrazy Patagonii.
-                </li>
-                <li>
-                    <strong>Dzień 10: Fort Bulnes i koniec świata</strong>
-                    <br>Wycieczka na południe od Punta Arenas do zrekonstruowanego <strong>Fortu Bulnes</strong>, pierwszej chilijskiej osady na Cieśninie Magellana. Odwiedzimy również <strong>Puerto del Hambre (Port Głodu)</strong> oraz pomnik symbolizujący geograficzny środek Chile.
-                </li>
-                <li>
-                    <strong>Dzień 11: Termy i wizyta w winiarni</strong>
-                    <br>Wyjazd do Cajon del Maipu i naturalnych term o poranku. Naoczna wizyta z Andami. W drugiej części dnia wizyta w najpopularniejszej winiarni Chile Concha y Toro i degustacja wina słynnego na cały świat.
-                </li>
-            </ul>
-            <div class="koszt">Koszt wyprawy: 8000 PLN + 5000 PLN (lot z Polski)</div>
-            <a href="mailto:chileforvisit@gmail.com" class="button-link">Zapytaj o tę ofertę</a>
-        </div>
-    </div>
-
-    <footer class="contact-footer">
-        <p>Masz pytania? Skontaktuj się z nami!</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank">+48 519 442 579</a></p>
-        <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
-        <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
-    </footer>
-
-</body>
-</html>
+                    <br>Kolejny dzień w parku. Opcja trekkingu do <strong>Dolina Francuska</strong> (wymaga promowania przez Jezioro Pehoé). Alternatywnie, lżejsze szlaki wokół jezior, pod
