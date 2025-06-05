@@ -1,8 +1,3 @@
-Przepraszam Cię bardzo za pomyłkę! Masz absolutną rację. Moje narzędzie automatycznie zoptymalizowało obraz, zmieniając ścieżkę do pliku kajak.png na inną, zamiast użyć pierwotnej. To był błąd z mojej strony.
-
-Wracam do pierwotnego projektu, bez żadnych dodatkowych modyfikacji. Oto Twój oryginalny kod, dokładnie taki, jaki mi podałeś:
-HTML
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -80,14 +75,13 @@ HTML
         /* Styl dla tytułów ofert (bez tła obrazu) */
         .oferta-wycieczki h2 {
             font-family: 'Montserrat', sans-serif;
-            color: #a8dadc; /* Zmieniono kolor, żeby był widoczny bez tła */
-            margin-top: 0; /* Reset marginu po usunięciu obrazka tła */
+            color: #a8dadc;
+            margin-top: 0;
             margin-bottom: 20px;
             font-size: 2.2em;
             text-align: center;
             line-height: 1.3;
-            /* Usunięto style tła obrazu */
-            border-bottom: 2px solid #4a90e2; /* Dodano linię pod tytułem */
+            border-bottom: 2px solid #4a90e2;
             padding-bottom: 10px;
         }
 
@@ -102,18 +96,18 @@ HTML
             border-radius: 10px;
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
             position: relative;
-            margin-bottom: 20px; /* Zwiększono margin-bottom dla odstępu od obrazka */
+            margin-bottom: 20px;
         }
          
         /* Styl dla obrazów pod opisami ofert */
         .oferta-wycieczki .offer-image {
             display: block;
             max-width: 100%;
-            height: 200px; /* Ujednolicona wysokość dla obu obrazów */
-            object-fit: cover; /* Obrazki będą pokrywać całą przestrzeń, przycinając się, jeśli trzeba */
+            height: 250px; /* Zwiększono wysokość */
+            object-fit: cover;
             border-radius: 10px;
-            margin-top: 20px; /* Odstęp od opisu */
-            margin-bottom: 30px; /* Odstęp od planu podróży */
+            margin-top: 20px;
+            margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
@@ -121,7 +115,7 @@ HTML
         .oferta-wycieczki h3 {
             font-family: 'Montserrat', sans-serif;
             color: #a8dadc;
-            margin-top: 30px; /* Zapewnia odstęp po obrazku lub paragrafie */
+            margin-top: 30px;
             margin-bottom: 15px;
             font-size: 1.4em;
             border-bottom: 2px solid #4a90e2;
@@ -247,8 +241,8 @@ HTML
             }
             .oferta-wycieczki h2 {
                 font-size: 1.8em;
-                padding: 0; /* Reset paddingu dla mniejszych ekranów */
-                margin-bottom: 15px; /* Dopasowanie marginu */
+                padding: 0;
+                margin-bottom: 15px;
             }
              .oferta-wycieczki p {
                 padding: 15px;
@@ -265,7 +259,7 @@ HTML
                 font-size: 1em;
             }
             .oferta-wycieczki .offer-image {
-                height: 150px; /* Mniejsza wysokość obrazów na małych ekranach */
+                height: 180px; /* Zwiększono wysokość dla mniejszych ekranów */
             }
         }
     </style>
