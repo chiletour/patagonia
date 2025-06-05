@@ -42,7 +42,7 @@
         .oferty-container {
             display: flex;
             justify-content: center;
-            align-items: stretch;
+            align-items: stretch; /* To sprawia, że kolumny są równej wysokości */
             gap: 30px;
             flex-wrap: wrap;
             max-width: 1300px;
@@ -88,7 +88,7 @@
         /* Styl dla paragrafu z opisem oferty (tło Pustyni Atakama) */
         .oferta-wycieczki:nth-child(1) p,
         .oferta-wycieczki:nth-child(2) p {
-            background-image: url('https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
             color: white;
@@ -97,13 +97,21 @@
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
             position: relative;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Dodano cień tekstowy */
+
+            /* NOWE STYLE DLA WYRÓWNANIA AKAPITÓW */
+            min-height: 120px; /* Minimalna wysokość akapitu */
+            display: flex; /* Użyj Flexboxa wewnątrz paragrafu */
+            align-items: center; /* Wyśrodkuj tekst w pionie */
+            justify-content: center; /* Wyśrodkuj tekst w poziomie */
+            text-align: center; /* Wyśrodkuj tekst */
         }
          
         /* Styl dla obrazów pod opisami ofert */
         .oferta-wycieczki .offer-image {
             display: block;
             max-width: 100%;
-            height: 250px; /* Zwiększono wysokość */
+            height: 250px; /* Zwiększona wysokość */
             object-fit: cover;
             border-radius: 10px;
             margin-top: 20px;
@@ -246,6 +254,7 @@
             }
              .oferta-wycieczki p {
                 padding: 15px;
+                min-height: unset; /* Usuń min-height na małych ekranach, jeśli nie jest potrzebne */
             }
             .oferta-wycieczki p, .oferta-wycieczki ul li {
                 font-size: 0.95em;
