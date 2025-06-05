@@ -1,3 +1,16 @@
+Jasne, zrozumiałem! Usuniemy zdjęcia z tła tytułów ofert i umieścimy je jako standardowe elementy <img> tuż pod paragrafami opisującymi każdą wycieczkę.
+
+Poniżej znajdziesz zaktualizowany kod HTML i CSS.
+Zaktualizowany kod HTML i CSS
+
+Wprowadzone zmiany:
+
+    Usunięto tła obrazów z selektorów .oferta-wycieczki h2 w CSS.
+    Dodano znaczniki <img> do HTML pod każdym paragrafem opisującym wycieczkę.
+    Dodano style CSS dla tych nowych obrazów, aby wyglądały estetycznie w ramach ofert.
+
+HTML
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -72,56 +85,51 @@
             border-color: #7bdcb5;
         }
 
-        /* NOWY STYL DLA TYTUŁÓW OFERT ZE ZDJĘCIEM W TLE */
+        /* Styl dla tytułów ofert (bez tła obrazu) */
         .oferta-wycieczki h2 {
             font-family: 'Montserrat', sans-serif;
-            color: #FFFFFF;
-            margin-top: -35px;
-            margin-left: -35px;
-            margin-right: -35px;
-            padding: 70px 20px 20px 20px;
+            color: #a8dadc; /* Zmieniono kolor, żeby był widoczny bez tła */
+            margin-top: 0; /* Reset marginu po usunięciu obrazka tła */
+            margin-bottom: 20px;
             font-size: 2.2em;
             text-align: center;
             line-height: 1.3;
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            box-shadow: inset 0 -50px 50px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
+            /* Usunięto style tła obrazu */
+            border-bottom: 2px solid #4a90e2; /* Dodano linię pod tytułem */
+            padding-bottom: 10px;
         }
 
-        /* Specyficzne obrazy tła dla każdego h2 - ZMIEŃ TE URL-E! */
-        .oferta-wycieczki:nth-child(1) h2 {
-            /* Bezpośredni link do obrazu Autobus, zakładając, że taki chcesz mieć w tytule pierwszej oferty */
-            background-image: url('https://raw.githubusercontent.com/chilijczyk/chiletournee/47777b3ebfa58171ba133f73456c286b248b255d/autobus.jpg');
-        }
-
-        .oferta-wycieczki:nth-child(2) h2 {
-            background-image: url('kajak.png'); /* Upewnij się, że ten plik jest dostępny! */
-        }
-
-        /* Styl dla paragrafu z opisem oferty (dodane tło Pustyni Atakama) */
+        /* Styl dla paragrafu z opisem oferty (tło Pustyni Atakama) */
         .oferta-wycieczki:nth-child(1) p,
-        .oferta-wycieczki:nth-child(2) p { /* Dodana ta linia dla drugiego paragrafu */
-            /* BEZPOŚREDNI LINK DO ZDJĘCIA PUSTYNI ATAKAMA */
+        .oferta-wycieczki:nth-child(2) p {
             background-image: url('https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
-            color: white; /* Zapewnienie widoczności tekstu na tle */
-            padding: 20px; /* Dodatkowy padding dla lepszego wyglądu */
-            border-radius: 10px; /* Zaokrąglenie rogów */
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Cień dla lepszej czytelności tekstu */
-            position: relative; /* Potrzebne dla pozycjonowania pseudo-elementu */
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            margin-bottom: 20px; /* Zwiększono margin-bottom dla odstępu od obrazka */
         }
+        
+        /* Styl dla obrazów pod opisami ofert */
+        .oferta-wycieczki .offer-image {
+            display: block;
+            max-width: 100%;
+            height: 200px; /* Ujednolicona wysokość dla obu obrazów */
+            object-fit: cover; /* Obrazki będą pokrywać całą przestrzeń, przycinając się, jeśli trzeba */
+            border-radius: 10px;
+            margin-top: 20px; /* Odstęp od opisu */
+            margin-bottom: 30px; /* Odstęp od planu podróży */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
 
         .oferta-wycieczki h3 {
             font-family: 'Montserrat', sans-serif;
             color: #a8dadc;
-            margin-top: 30px;
+            margin-top: 30px; /* Zapewnia odstęp po obrazku lub paragrafie */
             margin-bottom: 15px;
             font-size: 1.4em;
             border-bottom: 2px solid #4a90e2;
@@ -176,9 +184,9 @@
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
             margin-top: 40px;
             text-decoration: none;
-            display: block; /* Zmieniono na block, żeby margin auto działało */
-            margin-left: auto; /* Wyśrodkowanie przycisku */
-            margin-right: auto; /* Wyśrodkowanie przycisku */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
             box-shadow: 0 5px 15px rgba(123,220,181,0.4);
         }
 
@@ -247,10 +255,11 @@
             }
             .oferta-wycieczki h2 {
                 font-size: 1.8em;
-                padding: 50px 15px 15px 15px;
+                padding: 0; /* Reset paddingu dla mniejszych ekranów */
+                margin-bottom: 15px; /* Dopasowanie marginu */
             }
              .oferta-wycieczki p {
-                padding: 15px; /* Mniejszy padding dla mniejszych ekranów */
+                padding: 15px;
             }
             .oferta-wycieczki p, .oferta-wycieczki ul li {
                 font-size: 0.95em;
@@ -263,13 +272,16 @@
                 padding: 30px 15px;
                 font-size: 1em;
             }
+            .oferta-wycieczki .offer-image {
+                height: 150px; /* Mniejsza wysokość obrazów na małych ekranach */
+            }
         }
     </style>
 </head>
 <body>
 
     <h1>Wyprawa na Wyspę Wielkanocną i Pustynię Atakama </h1>
-    <img src="https://github.com/user-attachments/assets/ab576a4f-0adb-4ed9-9c31-ef9e8de7b94f" alt="patagonia.jpg" class="title-image">
+    <img src="https://github.com/user-attachments/assets/ab576a4f-0adb-4ed9-9c31-ef9e8de7b94f" alt="Patagonia" class="title-image">
     <div class="oferty-container">
         <div class="oferta-wycieczki">
             <h2>Chile - Wyprawa marzeń na koniec świata</h2>
@@ -279,6 +291,7 @@
                 przez magiczne wybrzeże, majestatyczną Pustynię Atakama,
                 aż po tajemniczą Wyspę Wielkanocną i podniebne Andy.
             </p>
+            <img src="https://raw.githubusercontent.com/chilijczyk/chiletournee/47777b3ebfa58171ba133f73456c286b248b255d/autobus.jpg" alt="Autobus w Chile" class="offer-image">
 
             <h3>Plan Podróży:</h3>
             <ul>
@@ -338,6 +351,7 @@
                 skupiona na odkrywaniu majestatycznych lodowców, dziewiczej przyrody
                 i Parku Narodowego Torres del Paine.
             </p>
+            <img src="kajak.png" alt="Kajak w Patagonii" class="offer-image">
 
             <h3>Plan Podróży (szczegółowy plan dniowy):</h3>
             <ul>
@@ -347,8 +361,7 @@
                 </li>
                 <li>
                     <strong>Dzień 2: Lot do Punta Arenas</strong>
-                    <br>Przylot na lotnisko w Punta Arenas, transfer do hotelu. Czas wolny na odpoczynek i zwiedzanie miasta, spacer po nabrzeżu, wizyta na cmentarzu mieznacza
-                    za jeden z piękniejszych).
+                    <br>Przylot na lotnisko w Punta Arenas, transfer do hotelu. Czas wolny na odpoczynek i zwiedzanie miasta, spacer po nabrzeżu, wizyta na cmentarzu miejskim (uznawanym za jeden z piękniejszych).
                 </li>
                 <li>
                     <strong>Dzień 3: Pingwiny na Isla Magdalena i podróż do Puerto Natales</strong>
