@@ -4,74 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chile - Wyprawa marzeń na koniec świata | Twoje Biuro Podróży</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* Globalne style */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0; /* Usunięto padding, aby tło zajmowało całą szerokość */
+            background-color: #eaf2f8; /* Jasny, świeży błękit */
             color: #333;
-            line-height: 1.6;
+            line-height: 1.7;
+            overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
         }
 
         h1 {
+            font-family: 'Montserrat', sans-serif;
             text-align: center;
-            color: #0056b3;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            color: #1e8449; /* Głęboka zieleń */
+            margin: 60px 0 50px 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
         }
 
         /* Kontener dla ofert - Flexbox */
         .oferty-container {
-            display: flex; /* Włącza Flexbox */
-            justify-content: center; /* Wyśrodkowuje oferty */
-            align-items: stretch; /* Rozciąga oferty do tej samej wysokości */
-            gap: 30px; /* Odstęp między kolumnami */
-            flex-wrap: wrap; /* Pozwala na zawijanie na mniejszych ekranach */
-            max-width: 1300px; /* Maksymalna szerokość kontenera */
-            margin: 0 auto; /* Wyśrodkowanie kontenera na stronie */
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1300px;
+            margin: 0 auto 80px auto; /* Dodano dolny margines przed stopką */
+            padding: 0 20px; /* Dodano padding dla mniejszych ekranów */
         }
 
         /* Styl dla pojedynczej oferty */
         .oferta-wycieczki {
-            flex: 1; /* Każda oferta zajmuje równą przestrzeń */
-            min-width: 400px; /* Minimalna szerokość przed zawijaniem */
-            max-width: 48%; /* Maksymalna szerokość dla dwóch kolumn */
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            display: flex; /* Flexbox wewnątrz oferty dla lepszego układu treści */
-            flex-direction: column; /* Elementy w kolumnie */
-            justify-content: space-between; /* Rozłożenie treści */
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            flex: 1;
+            min-width: 380px;
+            max-width: 48%;
+            border: none; /* Usunięto ramkę */
+            border-radius: 15px; /* Bardziej zaokrąglone rogi */
+            padding: 35px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Delikatny gradient */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Mocniejszy cień */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
         }
 
         .oferta-wycieczki:hover {
-            transform: translateY(-8px); /* Lekkie podniesienie przy najechaniu */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: translateY(-12px); /* Większe podniesienie */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
         .oferta-wycieczki h2 {
-            color: #007bff;
+            font-family: 'Montserrat', sans-serif;
+            color: #28a745; /* Żywa zieleń */
             margin-top: 0;
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 2.2em;
+            margin-bottom: 25px;
             text-align: center;
+            line-height: 1.3;
         }
 
         .oferta-wycieczki h3 {
-            color: #0056b3;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.3em;
+            font-family: 'Montserrat', sans-serif;
+            color: #1e8449; /* Głęboka zieleń */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 2px solid #a8dadc; /* Podkreślenie */
+            padding-bottom: 8px;
         }
 
         .oferta-wycieczki p, .oferta-wycieczki ul {
-            font-size: 1.1em;
+            font-size: 1.05em;
             margin-bottom: 15px;
         }
 
@@ -82,73 +92,111 @@
         }
 
         .oferta-wycieczki ul li {
-            background-color: #e9f5ff;
+            background-color: #f7fcfc; /* Bardzo jasny błękit */
             margin-bottom: 8px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 0.95em;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 0.98em;
             color: #0056b3;
-            border-left: 4px solid #007bff;
+            border-left: 5px solid #4a90e2; /* Wyraźna niebieska linia */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .oferta-wycieczki .koszt {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #e67e22; /* Pomarańczowy kolor dla kosztu */
-            margin-top: 25px;
+            font-size: 1.4em;
+            font-weight: 700; /* Pogrubienie */
+            color: #e67e22; /* Pomarańczowy */
+            margin-top: 30px;
             text-align: center;
-            padding: 10px 0;
-            border-top: 1px dashed #ccc;
-            border-bottom: 1px dashed #ccc;
+            padding: 15px 0;
+            background-color: #fcefdc; /* Jasno pomarańczowe tło */
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .oferta-wycieczki button {
-            background-color: #28a745;
+            background-color: #28a745; /* Soczysta zieleń */
             color: white;
-            padding: 15px 30px;
+            padding: 16px 35px;
             border: none;
-            border-radius: 8px;
-            font-size: 1.2em;
+            border-radius: 50px; /* Bardziej zaokrąglony przycisk */
+            font-size: 1.3em;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: 30px;
-            align-self: center; /* Wyśrodkowanie przycisku w kolumnie */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 40px;
+            align-self: center;
+            box-shadow: 0 5px 15px rgba(40,167,69,0.3);
         }
 
         .oferta-wycieczki button:hover {
             background-color: #218838;
-            transform: scale(1.03);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(33,136,56,0.4);
+        }
+
+        /* Sekcja kontaktowa (stopka) */
+        .contact-footer {
+            background-color: #2c3e50; /* Ciemny granat */
+            color: #ecf0f1; /* Jasny szary */
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.1em;
+            border-top: 5px solid #4a90e2; /* Niebieska linia */
+        }
+
+        .contact-footer p {
+            margin: 10px 0;
+        }
+
+        .contact-footer a {
+            color: #85c1e9; /* Jasny błękit */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-footer a:hover {
+            color: #ecf0f1;
+            text-decoration: underline;
         }
 
         /* Responsywność dla małych ekranów */
         @media (max-width: 992px) {
             .oferty-container {
-                flex-direction: column; /* Układa oferty jedna pod drugą */
-                align-items: center; /* Wyśrodkowuje je */
+                flex-direction: column;
+                align-items: center;
+                gap: 40px; /* Większy odstęp między ofertami w widoku kolumnowym */
             }
             .oferta-wycieczki {
-                max-width: 95%; /* Zapewnia większą szerokość na mniejszych ekranach */
-                min-width: unset; /* Usuwa minimalną szerokość, aby dostosować się do ekranu */
+                max-width: 90%;
+                min-width: unset;
+            }
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 40px;
             }
         }
         @media (max-width: 576px) {
-            body {
-                padding: 10px;
-            }
             h1 {
                 font-size: 2em;
+                margin: 40px 0 30px 0;
             }
             .oferta-wycieczki {
-                padding: 20px;
+                padding: 25px;
             }
             .oferta-wycieczki h2 {
-                font-size: 1.6em;
+                font-size: 1.8em;
             }
             .oferta-wycieczki p, .oferta-wycieczki ul li {
-                font-size: 1em;
+                font-size: 0.95em;
             }
             .oferta-wycieczki button {
-                padding: 12px 20px;
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+            .contact-footer {
+                padding: 30px 15px;
                 font-size: 1em;
             }
         }
@@ -274,84 +322,11 @@
         </div>
     </div>
 
-</body>
-</html>
-                <h3>Pustynia Atakama - 3 Dni Niesamowitych Przygód</h3>
-                <ul>
-                    <li><strong>Dzień 1: San Pedro de Atacama i Valle de la Luna (Dolina Księżycowa)</strong>
-                        <p>Przylot do Calama (CJC). Transfer do San Pedro de Atacama. Zakwaterowanie. Po południu wycieczka do Valle de la Luna, słynącej z dramatycznych krajobrazów przypominających powierzchnię Księżyca. Podziwianie zachodu słońca nad wydmami i formacjami skalnymi.</p>
-                    </li>
-                    <li><strong>Dzień 2: Gejzery El Tatio i Machuca</strong>
-                        <p>Wczesnym rankiem wyjazd do geotermalnego pola El Tatio (ok. 4300 m n.p.m.), gdzie można podziwiać imponujące gejzery i fumarole o świcie. Następnie wizyta w uroczej wiosce Machuca z tradycyjnymi domami z adobe i kościołem. W drodze powrotnej podziwianie krajobrazów i flory andyjskiej.</p>
-                    </li>
-                    <li><strong>Dzień 3: Laguna Cejar i Ojos del Salar</strong>
-                        <p>Wycieczka do Laguny Cejar, słonej laguny, w której można unosić się na powierzchni wody dzięki wysokiemu stężeniu soli. Odwiedziny Ojos del Salar (Oczy Salaru) - dwóch głębokich słodkowodnych jeziorek pośrodku solniska. Czas na relaks i podziwianie rozległych białych przestrzeni.</p>
-                    </li>
-                </ul>
-
-                <h3>Rapa Nui (Wyspa Wielkanocna) - 3 Dni Pełne Tajemnic</h3>
-                <ul>
-                    <li><strong>Dzień 1: Ahu Tahai i Hanga Roa</strong>
-                        <p>Przylot na Wyspę Wielkanocną (IPC). Transfer do Hanga Roa i zakwaterowanie. Po południu wizyta w Ahu Tahai, jednym z najważniejszych kompleksów ceremonialnych z pięcioma moai. Spacer po Hanga Roa, jedynym mieście na wyspie.</p>
-                    </li>
-                    <li><strong>Dzień 2: Wulkan Rano Kau i Orongo</strong>
-                        <p>Wycieczka do wulkanu Rano Kau z imponującym jeziorem kraterowym. Odwiedziny ceremonialnej wioski Orongo, położonej na krawędzi krateru, związanej z kultem Człowieka Ptaka. Podziwianie widoków na ocean i linię brzegową.</p>
-                    </li>
-                    <li><strong>Dzień 3: Ahu Tongariki i Anakena</strong>
-                        <p>Wizyta w Ahu Tongariki, największym kompleksie moai na wyspie z piętnastoma monumentalnymi posągami. Przejazd na plażę Anakena z białym piaskiem i palmami kokosowymi, gdzie można odpocząć i popływać. Po południu transfer na lotnisko.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="offer">
-            <h2>Oferta 2: Chilijska Patagonia - 10 Dni Przygody</h2>
-            <p class="price">Cena: 7500 PLN + 5000 PLN przelot z Polski</p>
-
-            <div class="itinerary">
-                <h3>Patagonia Chilijska - 10 Dni Odkrywania</h3>
-                <ul>
-                    <li><strong>Dzień 1: Przylot do Punta Arenas i transfer do Puerto Natales</strong>
-                        <p>Przylot do Punta Arenas (PUQ). Transfer autobusem do Puerto Natales (ok. 3 godziny). Zakwaterowanie w hotelu.</p>
-                    </li>
-                    <li><strong>Dzień 2: Park Narodowy Torres del Paine - Dzień 1 (Mirador Cuernos)</strong>
-                        <p>Całodniowa wycieczka do Parku Narodowego Torres del Paine. Trekking do punktu widokowego Mirador Cuernos, skąd rozpościera się wspaniały widok na charakterystyczne rogi Paine. Podziwianie jezior Nordenskjöld i Sarmiento.</p>
-                    </li>
-                    <li><strong>Dzień 3: Park Narodowy Torres del Paine - Dzień 2 (Trekking do Lago Grey)</strong>
-                        <p>Wycieczka nad jezioro Grey. Opcjonalnie rejs łodzią po jeziorze w pobliżu lodowca Grey (dodatkowo płatne). Trekking wzdłuż brzegu jeziora z widokami na lodowiec.</p>
-                    </li>
-                    <li><strong>Dzień 4: Park Narodowy Torres del Paine - Dzień 3 (Valle del Francés - opcjonalnie)</strong>
-                        <p>Dla chętnych wymagający trekking do Valle del Francés (Francuskiej Doliny) z panoramicznymi widokami na masyw Paine. Alternatywnie krótsze spacery po parku.</p>
-                    </li>
-                    <li><strong>Dzień 5: Przeprawa promem przez fiordy Patagonii</strong>
-                        <p>Długa, ale malownicza przeprawa promem przez fiordy Patagonii (np. Seno Última Esperanza) z Puerto Natales do rejonu lodowców Balmaceda i Serrano.</p>
-                    </li>
-                    <li><strong>Dzień 6: Wycieczka na Lodowiec Balmaceda i Serrano</strong>
-                        <p>Wycieczka łodzią po fiordach z bliska podziwiając lodowce Balmaceda i Serrano. Możliwość krótkiego trekkingu w okolicach lodowca Serrano.</p>
-                    </li>
-                    <li><strong>Dzień 7: Powrót do Puerto Natales i dzień wolny</strong>
-                        <p>Powrót promem lub transfer lądowy do Puerto Natales. Czas wolny na odpoczynek lub zwiedzanie miasta.</p>
-                    </li>
-                    <li><strong>Dzień 8: Wycieczka fakultatywna do Milodon Cave</strong>
-                        <p>Możliwość zorganizowania wycieczki do jaskini Milodon, gdzie odkryto szczątki prehistorycznego leniwca olbrzymiego (dodatkowo płatne).</p>
-                    </li>
-                    <li><strong>Dzień 9: Podróż do El Calafate (Argentyna) - opcjonalnie</strong>
-                        <p>Dla chętnych możliwość zorganizowania wycieczki do argentyńskiej części Patagonii i słynnego lodowca Perito Moreno (dodatkowo płatne, wymaga przekroczenia granicy).</p>
-                    </li>
-                    <li><strong>Dzień 10: Transfer na lotnisko w Punta Arenas</strong>
-                        <p>Transfer autobusem z Puerto Natales na lotnisko w Punta Arenas (PUQ) i wylot.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <h2>Kontakt</h2>
-        <p>Zapraszamy do kontaktu w celu rezerwacji lub uzyskania dodatkowych informacji:</p>
-        <p><strong>WhatsApp:</strong> +48 519 442 579</p>
-        <p><strong>E-mail:</strong> <a href="mailto:p.roszak@outlook.com">p.roszak@outlook.com</a></p>
-        <p>&copy; 2023 Chiletournee - Wszelkie prawa zastrzeżone.</p>
+    <footer class="contact-footer">
+        <p>Masz pytania? Skontaktuj się z nami!</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank">+48 519 442 579</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
+        <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
 </body>
