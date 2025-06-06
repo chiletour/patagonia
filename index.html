@@ -42,7 +42,8 @@
         .oferty-container {
             display: flex;
             justify-content: center;
-            align-items: stretch; /* Kluczowe dla wyrównania wysokości całych kolumn */
+            /* KLUCZOWA ZMIANA: wyrównanie do góry */
+            align-items: flex-start; 
             gap: 30px;
             flex-wrap: wrap;
             max-width: 1300px;
@@ -61,8 +62,8 @@
             background-color: #34495e;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: flex;
-            flex-direction: column; /* Umożliwia ułożenie elementów w kolumnie */
-            justify-content: space-between; /* Rozkłada przestrzeń między głównymi sekcjami (tytuł, opis+zdjęcie, plan, koszt, przycisk) */
+            flex-direction: column; 
+            justify-content: space-between; 
             transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.3s ease;
         }
 
@@ -85,13 +86,13 @@
             padding-bottom: 10px;
         }
 
-        /* Nowy kontener dla opisu i obrazka - KLUCZOWE DLA WYRÓWNANIA ZDJĘĆ */
+        /* Kontener dla opisu i obrazka */
         .offer-description-media {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Wyrównuje opis do góry, obrazek do dołu */
+            justify-content: space-between; 
             flex-grow: 1; /* Pozwala temu kontenerowi na rozciąganie się */
-            min-height: 350px; /* **Ustaw tę wartość, aby wyrównać obrazy!** Dostosuj, jeśli potrzebujesz więcej/mniej miejsca na opis */
+            min-height: 350px; /* Nadal utrzymujemy min-height, aby zdjęcia były na tej samej wysokości */
             margin-bottom: 20px; /* Odstęp od nagłówka "Plan Podróży" */
         }
         
@@ -105,8 +106,8 @@
             border-radius: 10px;
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
             position: relative;
-            margin-bottom: 20px; /* Odstęp między opisem a zdjęciem */
-            flex-grow: 1; /* Pozwala paragrafowi na rozciąganie się i wypełnianie miejsca */
+            margin-bottom: 20px; 
+            flex-grow: 1; 
         }
         
         /* Styl dla obrazów pod opisami ofert */
@@ -114,17 +115,17 @@
             display: block;
             max-width: 100%;
             height: 200px; /* Stała wysokość obrazków */
-            object-fit: cover; /* Obrazki pokryją całą przestrzeń, przycinając się, jeśli trzeba */
+            object-fit: cover; 
             border-radius: 10px;
-            margin-top: auto; /* Wyrównuje obrazek do dołu swojego kontenera (offer-description-media) */
-            margin-bottom: 0; /* Upewnia się, że nie ma zbędnego marginu na dole */
+            margin-top: auto; 
+            margin-bottom: 0; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .oferta-wycieczki h3 {
             font-family: 'Montserrat', sans-serif;
             color: #a8dadc;
-            margin-top: 30px; /* Odstęp od sekcji z obrazkiem */
+            margin-top: 30px; 
             margin-bottom: 15px;
             font-size: 1.4em;
             border-bottom: 2px solid #4a90e2;
@@ -141,7 +142,8 @@
             list-style: none;
             padding: 0;
             margin-top: 10px;
-            flex-grow: 1; /* Sprawia, że lista zajmuje dostępną przestrzeń, wypychając koszt i przycisk na dół */
+            /* Tutaj nie używamy flex-grow: 1, jeśli chcemy, aby dół się nie wyrównywał. */
+            /* Jeśli chcesz, żeby listę WYPCHAŁO w górę, usuń ten komentarz i dodaj flex-grow: 1; */
         }
 
         .oferta-wycieczki ul li {
@@ -272,18 +274,18 @@
                 height: 150px;
             }
             .offer-description-media {
-                min-height: 280px; /* Dostosuj min-height dla mniejszych ekranów, aby obrazy się wyrównały */
+                min-height: 280px; 
             }
         }
     </style>
 </head>
 <body>
 
-    <h1>Wyprawa na Wyspę Wielkanocną i Pustynię Atakama </h1>
+    <h1>Chile - Wyprawa marzeń na koniec świata </h1>
     <img src="https://github.com/user-attachments/assets/ab576a4f-0adb-4ed9-9c31-ef9e8de7b94f" alt="Patagonia" class="title-image">
     <div class="oferty-container">
         <div class="oferta-wycieczki">
-            <h2>Chile - Wyprawa marzeń na koniec świata</h2>
+            <h2>Rapa Nui i Pustynia Atakama</h2>
 
             <div class="offer-description-media">
                 <p>
@@ -322,7 +324,7 @@
                     </ul>
                 </li>
                 <li>
-                    <strong>Dzień 7: Powrót do Santiago i Winiarnia</strong>
+                    5<strong>Dzień 7: Powrót do Santiago i Winiarnia</strong>
                     <br>Lot powrotny z Calamy do Santiago. Po południu zwiedzanie jednej z renomowanych winiarni w Dolinie Maipo (np. Concha y Toro) z degustacją najlepszych chilijskich win.
                 </li>
                 <li>
@@ -351,12 +353,12 @@
                 <p>
                     Wyprawa w głąb chilijskiej Patagonii,
                     skupiona na odkrywaniu majestatycznych lodowców, dziewiczej przyrody
-                    i Parku Narodowego Torres del Paine.
+                    i Parku Narodowego Torres del0 Paine.
                 </p>
                 <img src="kajak.png" alt="Kajak w Patagonii" class="offer-image">
             </div>
-
-            <h3>Plan Podróży (szczegółowy plan dniowy):</h3>
+            
+            <h3>Plan Podróży:</h3>
             <ul>
                 <li>
                     <strong>Dzień 1: Przylot do Santiago de Chile</strong>
@@ -373,7 +375,7 @@
                 <li>
                     <strong>Dzień 4: Rejs do lodowców Balmaceda i Serrano</strong>
                     <br>Całodniowy rejs z Puerto Natales. Podziwianie fiordów, wizyta przy <strong>Lodowcu Balmaceda</strong> (widok z pokładu statku) oraz spacer do stóp <strong>Lodowca Serrano</strong>. Lunch w formie pikniku lub w chacie ranchera. Powrót do Puerto Natales.
-                </li>
+                </li>5
                 <li>
                     <strong>Dzień 5: Park Narodowy Torres del Paine - Laguna Amarga i Cascada Paine</strong>
                     <br>Całodniowa wycieczka autokarowa po Parku Narodowym Torres del Paine. Odwiedzimy <strong>Laguna Amarga</strong> z widokiem na wieże Torres, <strong>Cascada Paine</strong> (wodospad), <strong>Lago Nordenskjöld</strong> i <strong>Lago Pehoé</strong>. Szlaki spacerowe dostosowane do możliwości grupy. Nocleg w hotelu w pobliżu parku.
