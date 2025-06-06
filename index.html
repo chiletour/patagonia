@@ -42,7 +42,7 @@
         .oferty-container {
             display: flex;
             justify-content: center;
-            align-items: stretch; /* Kluczowe dla wyrównania wysokości kolumn */
+            align-items: stretch; /* Kluczowe dla wyrównania wysokości całych kolumn */
             gap: 30px;
             flex-wrap: wrap;
             max-width: 1300px;
@@ -62,7 +62,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column; /* Umożliwia ułożenie elementów w kolumnie */
-            justify-content: space-between; /* Rozkłada przestrzeń między elementami */
+            justify-content: space-between; /* Rozkłada przestrzeń między głównymi sekcjami (tytuł, opis+zdjęcie, plan, koszt, przycisk) */
             transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.3s ease;
         }
 
@@ -85,18 +85,18 @@
             padding-bottom: 10px;
         }
 
-        /* Nowy kontener dla opisu i obrazka */
-        .description-and-image {
+        /* Nowy kontener dla opisu i obrazka - KLUCZOWE DLA WYRÓWNANIA ZDJĘĆ */
+        .offer-description-media {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Upewnij się, że opis jest na górze, a obrazek na dole */
+            justify-content: space-between; /* Wyrównuje opis do góry, obrazek do dołu */
             flex-grow: 1; /* Pozwala temu kontenerowi na rozciąganie się */
-            min-height: 380px; /* **KLUCZOWE: Ustawienie minimalnej wysokości dla wyrównania obrazków** */
+            min-height: 350px; /* **Ustaw tę wartość, aby wyrównać obrazy!** Dostosuj, jeśli potrzebujesz więcej/mniej miejsca na opis */
             margin-bottom: 20px; /* Odstęp od nagłówka "Plan Podróży" */
         }
         
         /* Styl dla paragrafu z opisem oferty (tło Pustyni Atakama) */
-        .description-and-image p { /* Zmieniono selektor na bardziej specyficzny */
+        .offer-description-media p {
             background-image: url('https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
@@ -105,19 +105,19 @@
             border-radius: 10px;
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
             position: relative;
-            margin-bottom: 20px;
-            flex-grow: 1; /* Pozwala paragrafowi na rozciąganie się */
+            margin-bottom: 20px; /* Odstęp między opisem a zdjęciem */
+            flex-grow: 1; /* Pozwala paragrafowi na rozciąganie się i wypełnianie miejsca */
         }
         
         /* Styl dla obrazów pod opisami ofert */
-        .oferta-wycieczki .offer-image {
+        .offer-description-media .offer-image {
             display: block;
             max-width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 200px; /* Stała wysokość obrazków */
+            object-fit: cover; /* Obrazki pokryją całą przestrzeń, przycinając się, jeśli trzeba */
             border-radius: 10px;
-            margin-top: auto; /* Wyrównuje obrazek do dołu kontenera .description-and-image */
-            margin-bottom: 0; /* Reset domyślnego marginu, jeśli był */
+            margin-top: auto; /* Wyrównuje obrazek do dołu swojego kontenera (offer-description-media) */
+            margin-bottom: 0; /* Upewnia się, że nie ma zbędnego marginu na dole */
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
@@ -141,7 +141,7 @@
             list-style: none;
             padding: 0;
             margin-top: 10px;
-            flex-grow: 1; /* Sprawia, że lista zajmuje dostępną przestrzeń */
+            flex-grow: 1; /* Sprawia, że lista zajmuje dostępną przestrzeń, wypychając koszt i przycisk na dół */
         }
 
         .oferta-wycieczki ul li {
@@ -254,7 +254,7 @@
                 padding: 0;
                 margin-bottom: 15px;
             }
-             .description-and-image p {
+            .offer-description-media p {
                 padding: 15px;
             }
             .oferta-wycieczki p, .oferta-wycieczki ul li {
@@ -268,11 +268,11 @@
                 padding: 30px 15px;
                 font-size: 1em;
             }
-            .oferta-wycieczki .offer-image {
+            .offer-description-media .offer-image {
                 height: 150px;
             }
-            .description-and-image {
-                min-height: 300px; /* Dostosuj na mniejszych ekranach */
+            .offer-description-media {
+                min-height: 280px; /* Dostosuj min-height dla mniejszych ekranów, aby obrazy się wyrównały */
             }
         }
     </style>
@@ -285,7 +285,7 @@
         <div class="oferta-wycieczki">
             <h2>Chile - Wyprawa marzeń na koniec świata</h2>
 
-            <div class="description-and-image">
+            <div class="offer-description-media">
                 <p>
                     Niezwykła podróż przez serce Chile, od tętniącej życiem stolicy,
                     przez magiczne wybrzeże, majestatyczną Pustynię Atakama,
@@ -347,7 +347,7 @@
 
         <div class="oferta-wycieczki">
             <h2>Wyprawa do Patagonii: Lodowce Balmaceda i Serrano</h2>
-            <div class="description-and-image">
+            <div class="offer-description-media">
                 <p>
                     Wyprawa w głąb chilijskiej Patagonii,
                     skupiona na odkrywaniu majestatycznych lodowców, dziewiczej przyrody
