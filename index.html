@@ -72,7 +72,7 @@
             border-color: #7bdcb5;
         }
 
-        /* Styl dla tytułów ofert (bez tła obrazu) */
+        /* Styl dla tytułów ofert */
         .oferta-wycieczki h2 {
             font-family: 'Montserrat', sans-serif;
             color: #a8dadc;
@@ -85,9 +85,18 @@
             padding-bottom: 10px;
         }
 
-        /* Styl dla paragrafu z opisem oferty */
-        .oferta-wycieczki:nth-child(1) p,
-        .oferta-wycieczki:nth-child(2) p {
+        /* Nowy kontener dla opisu i obrazka */
+        .description-and-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Upewnij się, że opis jest na górze, a obrazek na dole */
+            flex-grow: 1; /* Pozwala temu kontenerowi na rozciąganie się */
+            min-height: 380px; /* **KLUCZOWE: Ustawienie minimalnej wysokości dla wyrównania obrazków** */
+            margin-bottom: 20px; /* Odstęp od nagłówka "Plan Podróży" */
+        }
+        
+        /* Styl dla paragrafu z opisem oferty (tło Pustyni Atakama) */
+        .description-and-image p { /* Zmieniono selektor na bardziej specyficzny */
             background-image: url('https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
@@ -97,6 +106,7 @@
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
             position: relative;
             margin-bottom: 20px;
+            flex-grow: 1; /* Pozwala paragrafowi na rozciąganie się */
         }
         
         /* Styl dla obrazów pod opisami ofert */
@@ -106,15 +116,15 @@
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            margin-top: 20px;
-            margin-bottom: 30px;
+            margin-top: auto; /* Wyrównuje obrazek do dołu kontenera .description-and-image */
+            margin-bottom: 0; /* Reset domyślnego marginu, jeśli był */
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .oferta-wycieczki h3 {
             font-family: 'Montserrat', sans-serif;
             color: #a8dadc;
-            margin-top: 30px;
+            margin-top: 30px; /* Odstęp od sekcji z obrazkiem */
             margin-bottom: 15px;
             font-size: 1.4em;
             border-bottom: 2px solid #4a90e2;
@@ -244,7 +254,7 @@
                 padding: 0;
                 margin-bottom: 15px;
             }
-             .oferta-wycieczki p {
+             .description-and-image p {
                 padding: 15px;
             }
             .oferta-wycieczki p, .oferta-wycieczki ul li {
@@ -261,6 +271,9 @@
             .oferta-wycieczki .offer-image {
                 height: 150px;
             }
+            .description-and-image {
+                min-height: 300px; /* Dostosuj na mniejszych ekranach */
+            }
         }
     </style>
 </head>
@@ -272,12 +285,14 @@
         <div class="oferta-wycieczki">
             <h2>Chile - Wyprawa marzeń na koniec świata</h2>
 
-            <p>
-                Niezwykła podróż przez serce Chile, od tętniącej życiem stolicy,
-                przez magiczne wybrzeże, majestatyczną Pustynię Atakama,
-                aż po tajemniczą Wyspę Wielkanocną i podniebne Andy.
-            </p>
-            <img src="https://raw.githubusercontent.com/chilijczyk/chiletournee/47777b3ebfa58171ba133f73456c286b248b255d/autobus.jpg" alt="Autobus w Chile" class="offer-image">
+            <div class="description-and-image">
+                <p>
+                    Niezwykła podróż przez serce Chile, od tętniącej życiem stolicy,
+                    przez magiczne wybrzeże, majestatyczną Pustynię Atakama,
+                    aż po tajemniczą Wyspę Wielkanocną i podniebne Andy.
+                </p>
+                <img src="https://raw.githubusercontent.com/chilijczyk/chiletournee/47777b3ebfa58171ba133f73456c286b248b255d/autobus.jpg" alt="Autobus w Chile" class="offer-image">
+            </div>
 
             <h3>Plan Podróży:</h3>
             <ul>
@@ -332,12 +347,14 @@
 
         <div class="oferta-wycieczki">
             <h2>Wyprawa do Patagonii: Lodowce Balmaceda i Serrano</h2>
-            <p>
-                Wyprawa w głąb chilijskiej Patagonii,
-                skupiona na odkrywaniu majestatycznych lodowców, dziewiczej przyrody
-                i Parku Narodowego Torres del Paine.
-            </p>
-            <img src="kajak.png" alt="Kajak w Patagonii" class="offer-image">
+            <div class="description-and-image">
+                <p>
+                    Wyprawa w głąb chilijskiej Patagonii,
+                    skupiona na odkrywaniu majestatycznych lodowców, dziewiczej przyrody
+                    i Parku Narodowego Torres del Paine.
+                </p>
+                <img src="kajak.png" alt="Kajak w Patagonii" class="offer-image">
+            </div>
 
             <h3>Plan Podróży (szczegółowy plan dniowy):</h3>
             <ul>
