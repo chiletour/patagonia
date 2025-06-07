@@ -15,28 +15,36 @@
                 <li><a href="index.html">Strona Główna</a></li>
                 <li><a href="rapa-nui-atakama.html">Rapa Nui i Atakama</a></li>
                 <li><a href="patagonia.html">Patagonia</a></li>
-                <li><a href="o-mnie.html" class="active">O mnie</a></li>
+                <li><a href="#" id="openAboutModal" class="active">O mnie</a></li>
                 <li><a href="#" id="openMapModal">Mapa</a></li>
                 <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="about-me-content">
-        <h2>O mnie i moich podróżach po Chile</h2>
-        <p>
-            Witajcie! Nazywam się [Twoje Imię] i jestem pasjonatem Chile. Moja miłość do tego kraju zaczęła się wiele lat temu, kiedy po raz pierwszy postawiłem stopę na chilijskiej ziemi. Od tamtej pory wielokrotnie wracałem, odkrywając jego różnorodność – od suchych pustyń Atakamy, przez tętniące życiem miasta, po majestatyczne lodowce Patagonii.
-        </p>
-        <p>
-            Stworzyłem to biuro podróży, aby dzielić się moją wiedzą i doświadczeniem, oferując starannie zaplanowane wyprawy, które pozwolą Wam doświadczyć prawdziwego ducha Chile. Wierzę, że podróże to nie tylko zwiedzanie miejsc, ale przede wszystkim zanurzanie się w lokalną kulturę, poznawanie ludzi i tworzenie niezapomnianych wspomnień.
-        </p>
-        <img src="https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Twoje zdjęcie lub zdjęcie związane z podróżą po Chile">
-        <p>
-            Moim celem jest zapewnienie Wam bezpiecznej, komfortowej i przede wszystkim autentycznej przygody. Niezależnie od tego, czy marzysz o spotkaniu z moai na Wyspie Wielkanocnej, czy trekkingu w Parku Narodowym Torres del Paine, pomogę Ci zrealizować Twoje chilijskie marzenia.
-        </p>
-        <p>
-            Do zobaczenia w Chile!
-        </p>
+    <footer class="contact-footer">
+        <p>Masz pytania? Skontaktuj się z nami!</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank">+48 519 442 579</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
+        <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>O mnie i moich podróżach po Chile</h2>
+            <div class="about-content-wrapper"> <img src="profile.jpg" alt="Zdjęcie Patryka" class="profile-image"> <div class="about-text"> <p>
+                        Cześć, mam na imię Patryk i jestem Polakiem mieszkającym 3 lata w Chile.
+                        Dzięki mojej narzeczonej z Chile nauczyłem się sprawnie mówić po
+                        hiszpańsku oraz poznać bogatą kulturę podróżując po krajach Ameryki
+                        Południowej. Jeśli chcesz poznać kulturę latynoską, zapraszam Cię na
+                        podróż do mojego drugiego domu - Chile. Uwielbiam odkrywać ten kontynent
+                        i dzielić się jego tradycjami. Wycieczka w małej kameralnej grupie.
+                        Jeśli chcesz dołączyć, napisz do mnie, aby przeżyć niezapomnianą przygodę z lokalnym przewodnikiem!
+                    </p>
+                </div>
+            </div>
+            </div>
     </div>
 
     <div id="mapModal" class="modal">
@@ -48,18 +56,27 @@
         </div>
     </div>
 
-    <footer class="contact-footer">
-        <p>Masz pytania? Skontaktuj się z nami!</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank">+48 519 442 579</a></p>
-        <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
-        <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
-    </footer>
-
     <script>
-        // JavaScript do obsługi modala (identyczny jak w index.html)
+        // JavaScript do obsługi modala "O mnie"
+        const aboutModal = document.getElementById('aboutModal');
+        const openAboutBtn = document.getElementById('openAboutModal');
+        const closeAboutButton = aboutModal.querySelector('.close-button');
+
+        openAboutBtn.onclick = function(event) {
+            event.preventDefault();
+            aboutModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        closeAboutButton.onclick = function() {
+            aboutModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // JavaScript do obsługi modala "Mapa" (identyczny jak w index.html)
         const mapModal = document.getElementById('mapModal');
         const openMapBtn = document.getElementById('openMapModal');
-        const closeButton = document.querySelector('.close-button');
+        const closeMapButton = mapModal.querySelector('.close-button');
 
         openMapBtn.onclick = function(event) {
             event.preventDefault();
@@ -67,12 +84,17 @@
             document.body.style.overflow = 'hidden';
         }
 
-        closeButton.onclick = function() {
+        closeMapButton.onclick = function() {
             mapModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
+        // Zamykanie modali po kliknięciu poza ich zawartością lub klawiszem Esc
         window.onclick = function(event) {
+            if (event.target == aboutModal) {
+                aboutModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
             if (event.target == mapModal) {
                 mapModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
@@ -80,9 +102,15 @@
         }
 
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && mapModal.style.display === 'flex') {
-                mapModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
+            if (event.key === 'Escape') {
+                if (aboutModal.style.display === 'flex') {
+                    aboutModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (mapModal.style.display === 'flex') {
+                    mapModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
             }
         });
     </script>
