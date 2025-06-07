@@ -33,7 +33,10 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>O mnie i moich podróżach po Chile</h2>
-            <div class="about-content-wrapper"> <img src="profile.jpg" alt="Zdjęcie Patryka" class="profile-image"> <div class="about-text"> <p>
+            <div class="about-content-wrapper">
+                <img src="profile.jpg" alt="Zdjęcie Patryka" class="profile-image">
+                <div class="about-text">
+                    <p>
                         Cześć, mam na imię Patryk i jestem Polakiem mieszkającym 3 lata w Chile.
                         Dzięki mojej narzeczonej z Chile nauczyłem się sprawnie mówić po
                         hiszpańsku oraz poznać bogatą kulturę podróżując po krajach Ameryki
@@ -44,7 +47,7 @@
                     </p>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
     <div id="mapModal" class="modal">
@@ -60,7 +63,7 @@
         // JavaScript do obsługi modala "O mnie"
         const aboutModal = document.getElementById('aboutModal');
         const openAboutBtn = document.getElementById('openAboutModal');
-        const closeAboutButton = aboutModal.querySelector('.close-button');
+        const closeAboutButton = aboutModal.querySelector('.close-button'); // Użyj querySelector w kontekście aboutModal
 
         openAboutBtn.onclick = function(event) {
             event.preventDefault();
@@ -73,10 +76,10 @@
             document.body.style.overflow = 'auto';
         }
 
-        // JavaScript do obsługi modala "Mapa" (identyczny jak w index.html)
+        // JavaScript do obsługi modala "Mapa"
         const mapModal = document.getElementById('mapModal');
         const openMapBtn = document.getElementById('openMapModal');
-        const closeMapButton = mapModal.querySelector('.close-button');
+        const closeMapButton = mapModal.querySelector('.close-button'); // Użyj querySelector w kontekście mapModal
 
         openMapBtn.onclick = function(event) {
             event.preventDefault();
