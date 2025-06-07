@@ -370,7 +370,7 @@ h1 {
 
 /* Styl dla responsywnego obrazka w modalu */
 .responsive-map-image {
-    max-width: 100%;
+    max-width: 40%;
     height: auto;
     display: block;
     border-radius: 8px;
