@@ -5,281 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chile - Wyprawa marzeń na koniec świata | Twoje Biuro Podróży</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Globalne style */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            color: #a8dadc;
-            margin: 60px 0 20px 0;
-            font-size: 3em;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            letter-spacing: 1px;
-        }
-
-        /* Styl dla obrazka w tytule strony (głównego) */
-        .title-image {
-            display: block;
-            max-width: 800px;
-            width: 90%;
-            height: auto;
-            margin: 0 auto 50px auto;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-        }
-
-        /* Kontener dla ofert - Flexbox */
-        .oferty-container {
-            display: flex;
-            justify-content: center;
-            /* KLUCZOWA ZMIANA: wyrównanie do góry */
-            align-items: flex-start; 
-            gap: 30px;
-            flex-wrap: wrap;
-            max-width: 1300px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-        }
-
-        /* Styl dla pojedynczej oferty */
-        .oferta-wycieczki {
-            flex: 1;
-            min-width: 380px;
-            max-width: 48%;
-            border: 2px solid #4a90e2;
-            border-radius: 15px;
-            padding: 35px;
-            background-color: #34495e;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column; 
-            justify-content: space-between; 
-            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.3s ease;
-        }
-
-        .oferta-wycieczki:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            border-color: #7bdcb5;
-        }
-
-        /* Styl dla tytułów ofert */
-        .oferta-wycieczki h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: #a8dadc;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 2.2em;
-            text-align: center;
-            line-height: 1.3;
-            border-bottom: 2px solid #4a90e2;
-            padding-bottom: 10px;
-        }
-
-        /* Kontener dla opisu i obrazka */
-        .offer-description-media {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; 
-            flex-grow: 1; /* Pozwala temu kontenerowi na rozciąganie się */
-            min-height: 350px; /* Nadal utrzymujemy min-height, aby zdjęcia były na tej samej wysokości */
-            margin-bottom: 20px; /* Odstęp od nagłówka "Plan Podróży" */
-        }
-        
-        /* Styl dla paragrafu z opisem oferty (tło Pustyni Atakama) */
-        .offer-description-media p {
-            background-image: url('https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-            position: relative;
-            margin-bottom: 20px; 
-            flex-grow: 1; 
-        }
-        
-        /* Styl dla obrazów pod opisami ofert */
-        .offer-description-media .offer-image {
-            display: block;
-            max-width: 100%;
-            height: 200px; /* Stała wysokość obrazków */
-            object-fit: cover; 
-            border-radius: 10px;
-            margin-top: auto; 
-            margin-bottom: 0; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .oferta-wycieczki h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: #a8dadc;
-            margin-top: 30px; 
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            border-bottom: 2px solid #4a90e2;
-            padding-bottom: 8px;
-        }
-
-        .oferta-wycieczki p, .oferta-wycieczki ul {
-            font-size: 1.05em;
-            margin-bottom: 15px;
-            color: #ecf0f1;
-        }
-
-        .oferta-wycieczki ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 10px;
-            /* Tutaj nie używamy flex-grow: 1, jeśli chcemy, aby dół się nie wyrównywał. */
-            /* Jeśli chcesz, żeby listę WYPCHAŁO w górę, usuń ten komentarz i dodaj flex-grow: 1; */
-        }
-
-        .oferta-wycieczki ul li {
-            background-color: #3f5b75;
-            margin-bottom: 8px;
-            padding: 12px 18px;
-            border-radius: 8px;
-            font-size: 0.98em;
-            color: #ecf0f1;
-            border-left: 5px solid #7bdcb5;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .oferta-wycieczki .koszt {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #ffda79;
-            margin-top: 30px;
-            text-align: center;
-            padding: 15px 0;
-            background-color: #4a6a8c;
-            border-radius: 8px;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-        }
-
-        /* Styl dla linku udającego przycisk */
-        .button-link {
-            background-color: #7bdcb5;
-            color: #2c3e50;
-            padding: 16px 35px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.3em;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-            margin-top: 40px;
-            text-decoration: none;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 5px 15px rgba(123,220,181,0.4);
-        }
-
-        .button-link:hover {
-            background-color: #4a90e2;
-            color: white;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(74,144,226,0.5);
-        }
-
-        /* Sekcja kontaktowa (stopka) */
-        .contact-footer {
-            background-color: #1a252f;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 1.1em;
-            border-top: 5px solid #7bdcb5;
-        }
-
-        .contact-footer p {
-            margin: 10px 0;
-        }
-
-        .contact-footer a {
-            color: #4a90e2;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .contact-footer a:hover {
-            color: #a8dadc;
-            text-decoration: underline;
-        }
-
-        /* Responsywność dla małych ekranów */
-        @media (max-width: 992px) {
-            .title-image {
-                max-width: 95%;
-            }
-            .oferty-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 40px;
-            }
-            .oferta-wycieczki {
-                max-width: 90%;
-                min-width: unset;
-            }
-            h1 {
-                font-size: 2.5em;
-                margin-bottom: 40px;
-            }
-        }
-        @media (max-width: 576px) {
-            h1 {
-                font-size: 2em;
-                margin: 40px 0 30px 0;
-            }
-            .title-image {
-                margin-bottom: 30px;
-            }
-            .oferta-wycieczki {
-                padding: 25px;
-            }
-            .oferta-wycieczki h2 {
-                font-size: 1.8em;
-                padding: 0;
-                margin-bottom: 15px;
-            }
-            .offer-description-media p {
-                padding: 15px;
-            }
-            .oferta-wycieczki p, .oferta-wycieczki ul li {
-                font-size: 0.95em;
-            }
-            .button-link {
-                padding: 12px 25px;
-                font-size: 1.1em;
-            }
-            .contact-footer {
-                padding: 30px 15px;
-                font-size: 1em;
-            }
-            .offer-description-media .offer-image {
-                height: 150px;
-            }
-            .offer-description-media {
-                min-height: 280px; 
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Strona Główna</a></li>
+                <li><a href="rapa-nui-atakama.html">Rapa Nui i Atakama</a></li>
+                <li><a href="patagonia.html">Patagonia</a></li>
+                <li><a href="o-mnie.html">O mnie</a></li>
+                <li><a href="#" id="openMapModal">Mapa</a></li>
+                <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <h1>Chile - Wyprawa marzeń na koniec świata </h1>
     <img src="https://github.com/user-attachments/assets/ab576a4f-0adb-4ed9-9c31-ef9e8de7b94f" alt="Patagonia" class="title-image">
@@ -296,7 +37,7 @@
                 <img src="autobus.jpg" alt="Autobus w Chile" class="offer-image">
             </div>
 
-            <h3>Plan Podróży:</h3>
+            <h3 id="plan-rapanui">Plan Podróży:</h3>
             <ul>
                 <li>
                     <strong>Dzień 1: Przylot do Santiago de Chile i zwiedzanie</strong>
@@ -324,7 +65,7 @@
                     </ul>
                 </li>
                 <li>
-                    5<strong>Dzień 7: Powrót do Santiago i Winiarnia</strong>
+                    <strong>Dzień 7: Powrót do Santiago i Winiarnia</strong>
                     <br>Lot powrotny z Calamy do Santiago. Po południu zwiedzanie jednej z renomowanych winiarni w Dolinie Maipo (np. Concha y Toro) z degustacją najlepszych chilijskich win.
                 </li>
                 <li>
@@ -357,7 +98,7 @@
                 </p>
                 <img src="kajak.png" alt="Kajak w Patagonii" class="offer-image">
             </div>
-            
+
             <h3>Plan Podróży:</h3>
             <ul>
                 <li>
@@ -375,7 +116,7 @@
                 <li>
                     <strong>Dzień 4: Rejs do lodowców Balmaceda i Serrano</strong>
                     <br>Całodniowy rejs z Puerto Natales. Podziwianie fiordów, wizyta przy <strong>Lodowcu Balmaceda</strong> (widok z pokładu statku) oraz spacer do stóp <strong>Lodowca Serrano</strong>. Lunch w formie pikniku lub w chacie ranchera. Powrót do Puerto Natales.
-                </li>5
+                </li>
                 <li>
                     <strong>Dzień 5: Park Narodowy Torres del Paine - Laguna Amarga i Cascada Paine</strong>
                     <br>Całodniowa wycieczka autokarowa po Parku Narodowym Torres del Paine. Odwiedzimy <strong>Laguna Amarga</strong> z widokiem na wieże Torres, <strong>Cascada Paine</strong> (wodospad), <strong>Lago Nordenskjöld</strong> i <strong>Lago Pehoé</strong>. Szlaki spacerowe dostosowane do możliwości grupy. Nocleg w hotelu w pobliżu parku.
@@ -410,12 +151,58 @@
         </div>
     </div>
 
+
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Moja Podróż po Chile</h2>
+            <img src="Calama.jpg" alt="Moja mapa podróży po Chile" class="responsive-map-image">
+            <p class="modal-description">Wizualizacja moich przelotów i kluczowych miejsc w Chile.</p>
+        </div>
+    </div>
+
     <footer class="contact-footer">
         <p>Masz pytania? Skontaktuj się z nami!</p>
         <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank">+48 519 442 579</a></p>
         <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
         <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
     </footer>
+
+    <script>
+        // JavaScript do obsługi modala
+        const mapModal = document.getElementById('mapModal');
+        const openMapBtn = document.getElementById('openMapModal');
+        const closeButton = document.querySelector('.close-button');
+
+        // Otwiera modal
+        openMapBtn.onclick = function(event) {
+            event.preventDefault(); // Zapobiega przeładowaniu strony
+            mapModal.style.display = 'flex'; // Zmieniamy na flex, żeby flexbox centrował
+            document.body.style.overflow = 'hidden'; // Wyłącza scrollowanie strony pod modalem
+        }
+
+        // Zamyka modal po kliknięciu 'X'
+        closeButton.onclick = function() {
+            mapModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Przywraca scrollowanie strony
+        }
+
+        // Zamyka modal po kliknięciu poza jego zawartością
+        window.onclick = function(event) {
+            if (event.target == mapModal) {
+                mapModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Dodatkowa funkcja do zamykania modala klawiszem Esc
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mapModal.style.display === 'flex') {
+                mapModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 
 </body>
 </html>
