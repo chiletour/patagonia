@@ -13,7 +13,7 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Strona Główna</a></li>
-                <li><a href="rapa-nui-atakama.html">Galeria</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
                 <li><a href="#" id="openAboutModal" class="active">O mnie</a></li>
                 <li><a href="#" id="openMapModal">Mapa</a></li>
                 <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
