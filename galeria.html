@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Chile Wyprawa Marzeń</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dodaj podstawowe style dla galerii */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Odstęp między folderami */
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-folder {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px; /* Szerokość pojedynczego folderu */
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-folder:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-folder img {
+            width: 100%;
+            height: 200px; /* Stała wysokość obrazka */
+            object-fit: cover; /* Dopasowanie obrazka */
+            display: block;
+        }
+
+        .gallery-folder h3 {
+            margin: 15px 0;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .gallery-folder p {
+            padding: 0 15px 15px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .gallery-folder a.button-link {
+            display: block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-decoration: none;
+            border-radius: 0 0 8px 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-folder a.button-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="#" id="openAboutModal">O mnie</a></li>
+                <li><a href="galeria.html" class="active">Galeria</a></li> <li><a href="#" id="openMapModal">Mapa</a></li>
+                <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
+                <li><a href="https://www.instagram.com/chiletournee/" target="_blank">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nasze Galerie Zdjęć</h1>
+        <div class="gallery-container">
+            <div class="gallery-folder">
+                <img src="atakama_thumb.jpg" alt="Pustynia Atakama"> <h3>Pustynia Atakama</h3>
+                <p>Niesamowite krajobrazy najsuchszego miejsca na świecie.</p>
+                <a href="galeria-atakama.html" class="button-link">Zobacz galerię</a>
+            </div>
+
+            <div class="gallery-folder">
+                <img src="patagonia_thumb.jpg" alt="Patagonia"> <h3>Dzika Patagonia</h3>
+                <p>Majestatyczne góry, lodowce i niezapomniane widoki.</p>
+                <a href="galeria-patagonia.html" class="button-link">Zobacz galerię</a>
+            </div>
+
+            <div class="gallery-folder">
+                <img src="rapanui_thumb.jpg" alt="Rapa Nui"> <h3>Tajemnicza Rapa Nui</h3>
+                <p>Odkryj sekrety Wyspy Wielkanocnej i jej moai.</p>
+                <a href="galeria-rapanui.html" class="button-link">Zobacz galerię</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Roszak Patryk</h2>
+            <div class="about-content-wrapper">
+                <img src="profile.jpg" alt="Zdjęcie Patryka" class="profile-image">
+                <div class="about-text">
+                    <p>
+                        Cześć, mam na imię Patryk i jestem Polakiem mieszkającym 3 lata w Chile.
+                        Dzięki mojej narzeczonej z Chile nauczyłem się sprawnie mówić po
+                        hiszpańsku oraz poznać bogatą kulturę podróżując po krajach Ameryki
+                        Południowej. Jeśli chcesz poznać kulturę latynoską, zapraszam Cię na
+                        podróż do mojego drugiego domu - Chile. Uwielbiam odkrywać ten kontynent
+                        i dzielić się jego tradycjami. Wycieczka w małej kameralnej grupie.
+                        Jeśli chcesz dołączyć, napisz do mnie, aby przeżyć niezapomnianą przygodę z lokalnym przewodnikiem!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Twoja podróż po Chile</h2>
+            <img src="Calama.jpg" alt="Moja mapa podróży po Chile" class="responsive-map-image">
+            <p class="modal-description">Wizualizacja moich przelotów i kluczowych miejsc w Chile.</p>
+        </div>
+    </div>
+
+    <footer class="contact-footer">
+        <p>Masz pytania? Skontaktuj się z nami!</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank">+48 519 442 579</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
+        <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        // JavaScript do obsługi modala "O mnie"
+        const aboutModal = document.getElementById('aboutModal');
+        const openAboutBtn = document.getElementById('openAboutModal');
+        const closeAboutButton = aboutModal.querySelector('.close-button'); 
+
+        openAboutBtn.onclick = function(event) {
+            event.preventDefault();
+            aboutModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        closeAboutButton.onclick = function() {
+            aboutModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // JavaScript do obsługi modala "Mapa"
+        const mapModal = document.getElementById('mapModal');
+        const openMapBtn = document.getElementById('openMapModal');
+        const closeMapButton = mapModal.querySelector('.close-button'); 
+
+        openMapBtn.onclick = function(event) {
+            event.preventDefault();
+            mapModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        closeMapButton.onclick = function() {
+            mapModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Zamykanie modali po kliknięciu poza ich zawartością
+        window.onclick = function(event) {
+            if (event.target == aboutModal) {
+                aboutModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            if (event.target == mapModal) {
+                mapModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Zamykanie modali klawiszem Esc
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (aboutModal.style.display === 'flex') {
+                    aboutModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (mapModal.style.display === 'flex') {
+                    mapModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
