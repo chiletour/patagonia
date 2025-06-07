@@ -4,14 +4,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Delikatne tło */
-    color: #333;
+    background-color: #2c3e50; /* CIEMNE TŁO PRZYWRÓCONE */
+    color: #ecf0f1; /* Jasny tekst na ciemnym tle */
 }
 
 /* Ustawienia dla nagłówków */
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    color: #2c3e50;
+    color: #1abc9c; /* Kolor nagłówków */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -19,6 +19,7 @@ h1, h2, h3 {
 h1 {
     font-size: 2.5em;
     padding: 20px 0;
+    color: #ecf0f1; /* Kolor głównego nagłówka */
 }
 
 h2 {
@@ -28,15 +29,15 @@ h2 {
 
 h3 {
     font-size: 1.5em;
-    color: #34495e;
+    color: #ecf0f1; /* Kolor podnagłówków */
 }
 
 /* Nagłówek główny strony (header) */
 .main-header {
-    background-color: #34495e;
+    background-color: #34495e; /* Trochę jaśniejszy od tła, ale nadal ciemny */
     color: #ecf0f1;
     padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .main-nav ul {
@@ -45,7 +46,7 @@ h3 {
     margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Umożliwia zawijanie linków na małych ekranach */
+    flex-wrap: wrap;
 }
 
 .main-nav li {
@@ -62,7 +63,7 @@ h3 {
 
 .main-nav a:hover,
 .main-nav a.active {
-    color: #1abc9c; /* Aktywny/hover kolor */
+    color: #1abc9c;
 }
 
 /* Obrazek tytułowy pod nagłówkiem */
@@ -71,58 +72,49 @@ h3 {
     max-height: 400px;
     object-fit: cover;
     margin-bottom: 30px;
-    display: block; /* Upewnia się, że nie ma zbędnych spacji */
+    display: block;
 }
 
-/* --- Sekcja z ofertami wycieczek --- */
-
-/* Kontener dla wszystkich ofert wycieczek - aby były obok siebie */
+/* Kontener dla wszystkich ofert wycieczek - przywrócony układ blokowy */
 .oferty-container {
-    display: flex; /* Użyj Flexbox do ułożenia elementów obok siebie */
-    flex-wrap: wrap; /* Pozwól elementom zawijać się na mniejszych ekranach */
-    justify-content: center; /* Wyśrodkuj oferty, jeśli jest ich mniej niż dostępna szerokość */
-    gap: 30px; /* Dodaj odstęp między ofertami */
-    padding: 20px; /* Dodaj padding wokół kontenera ofert */
-    max-width: 1200px; /* Ogranicz maksymalną szerokość kontenera */
-    margin: 40px auto; /* Wyśrodkuj kontener na stronie i dodaj odstęp od góry/dołu */
+    padding: 20px;
+    max-width: 900px; /* Może być dostosowane */
+    margin: 40px auto;
 }
 
-/* Pojedyncza oferta wycieczki */
+/* Pojedyncza oferta wycieczki - przywrócony układ blokowy */
 .oferta-wycieczki {
-    background-color: #fff; /* Białe tło */
-    border-radius: 10px; /* Zaokrąglone rogi */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Delikatny cień */
-    padding: 30px; /* Wewnętrzny odstęp */
-    margin-bottom: 20px; /* Odstęp na dole (w przypadku, gdy się zawiną) */
-    width: 100%; /* Domyślna szerokość na małych ekranach */
-    max-width: 550px; /* Maksymalna szerokość każdej oferty */
-    box-sizing: border-box; /* Ważne dla paddingu i szerokości */
-    display: flex; /* Użyj flexbox wewnątrz oferty, aby ułatwić układ */
-    flex-direction: column; /* Elementy w ofercie ułożone kolumnowo */
+    background-color: #34495e; /* Ciemne tło rubryk */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 40px; /* Odstęp między rubrykami */
+    color: #ecf0f1; /* Jasny tekst w rubrykach */
 }
 
-/* Sekcja z opisem i obrazkiem w ofercie */
+/* Sekcja z opisem i obrazkiem w ofercie - PRZYWRÓCONO UKŁAD ZDJĘCIA POD TEKSTEM */
 .offer-description-media {
-    display: flex;
-    flex-direction: column; /* Domyślnie obrazek pod opisem na małych ekranach */
-    align-items: center; /* Wyśrodkuj zawartość */
-    gap: 15px; /* Odstęp między opisem a obrazkiem */
+    display: block; /* Upewnij się, że są one blokowo, a nie flexbox */
     margin-bottom: 20px;
+    text-align: center; /* Wyśrodkowanie obrazka */
 }
 
 .offer-description-media p {
-    flex: 1; /* Pozwól tekstowi zająć dostępną przestrzeń */
+    margin-bottom: 20px; /* Odstęp między tekstem a obrazkiem */
+    text-align: justify; /* Tekst justowany */
 }
 
 .offer-image {
-    max-width: 100%; /* Obrazki nie wyjdą poza swój kontener */
+    max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Zaokrąglone rogi obrazków */
+    border-radius: 8px;
+    display: block; /* Obrazek jako blok */
+    margin: 0 auto; /* Wyśrodkowanie obrazka */
 }
 
 /* Styl dla listy planu podróży */
 .oferta-wycieczki ul {
-    list-style: disc; /* Domyślne kropki */
+    list-style: disc;
     margin-left: 20px;
     padding-left: 0;
     margin-top: 20px;
@@ -133,8 +125,8 @@ h3 {
     line-height: 1.5;
 }
 
-.oferta-wycieczki ul ul { /* Wewnętrzne listy (np. punkty Gejzerów) */
-    list-style: circle; /* Kółka dla podpunktów */
+.oferta-wycieczki ul ul {
+    list-style: circle;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -151,11 +143,8 @@ h3 {
 
 /* Przyciski ofert */
 .offer-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: auto; /* Pchnie przyciski na dół karty, jeśli karta jest flex containerem */
-    padding-top: 20px; /* Odstęp od poprzedniej treści */
+    text-align: center;
+    margin-top: 20px;
 }
 
 .button-link {
@@ -174,33 +163,33 @@ h3 {
     transform: translateY(-2px);
 }
 
-
 /* --- Stylowanie modali (wysuwanych okienek) --- */
 .modal {
-    display: none; /* Domyślnie ukryty */
-    position: fixed; /* Pozycja stała na ekranie */
-    z-index: 1000; /* Wysoko na górze */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Włącz scrollowanie, jeśli zawartość jest za długa */
-    background-color: rgba(0, 0, 0, 0.6); /* Ciemne, półprzezroczyste tło */
-    justify-content: center; /* Wyśrodkuj zawartość w poziomie */
-    align-items: center; /* Wyśrodkuj zawartość w pionie */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #34495e; /* Ciemne tło modala */
+    color: #ecf0f1; /* Jasny tekst w modalu */
     margin: auto;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    max-width: 600px; /* Maksymalna szerokość zawartości modala */
-    width: 90%; /* Domyślna szerokość dla responsywności */
-    box-sizing: border-box; /* Ważne dla paddingu */
-    animation: fadeIn 0.3s ease-out; /* Animacja pojawiania się */
+    max-width: 600px;
+    width: 90%;
+    box-sizing: border-box;
+    animation: fadeIn 0.3s ease-out;
 }
 
 @keyframes fadeIn {
@@ -222,7 +211,7 @@ h3 {
 
 .close-button:hover,
 .close-button:focus {
-    color: #333;
+    color: #ecf0f1; /* Jasny kolor X na hover */
     text-decoration: none;
     cursor: pointer;
 }
@@ -230,22 +219,22 @@ h3 {
 /* Style dla modala "O mnie" */
 .about-content-wrapper {
     display: flex;
-    flex-direction: column; /* Obrazek nad tekstem na małych ekranach */
-    align-items: center; /* Wyśrodkuj elementy */
-    gap: 20px; /* Odstęp między obrazkiem a tekstem */
-    text-align: center; /* Wyśrodkuj tekst */
+    flex-direction: column; /* Obrazek nad tekstem */
+    align-items: center;
+    gap: 20px;
+    text-align: center;
 }
 
 .profile-image {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Okrągły obrazek */
+    border-radius: 50%;
     object-fit: cover;
     border: 3px solid #1abc9c;
 }
 
 .about-text p {
-    text-align: justify; /* Justowanie tekstu w opisie "O mnie" */
+    text-align: justify;
 }
 
 /* Style dla modala "Mapa" */
@@ -253,7 +242,7 @@ h3 {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 15px auto; /* Wyśrodkuj obrazek mapy i dodaj margines dolny */
+    margin: 0 auto 15px auto;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -261,13 +250,13 @@ h3 {
 .modal-description {
     text-align: center;
     font-style: italic;
-    color: #555;
+    color: #bdc3c7; /* Jasny kolor dla opisu mapy */
 }
 
 
 /* --- Stopka (footer) --- */
 .contact-footer {
-    background-color: #2c3e50;
+    background-color: #34495e;
     color: #ecf0f1;
     text-align: center;
     padding: 30px 20px;
@@ -294,42 +283,25 @@ h3 {
 /* Dla tabletów i większych smartfonów (od 768px) */
 @media (min-width: 768px) {
     .main-nav li {
-        margin: 0 25px; /* Większy odstęp między linkami */
+        margin: 0 25px;
     }
 
     .about-content-wrapper {
         flex-direction: row; /* Obrazek obok tekstu w modalach "O mnie" */
-        text-align: left; /* Wyrównanie tekstu do lewej */
+        text-align: left;
     }
 
     .profile-image {
-        margin-right: 20px; /* Odstęp między obrazkiem a tekstem */
-        flex-shrink: 0; /* Zapobiega zmniejszaniu się obrazka */
+        margin-right: 20px;
+        flex-shrink: 0;
     }
 
     .about-text {
-        flex: 1; /* Pozwól tekstowi zająć resztę miejsca */
+        flex: 1;
     }
 
-    /* Na większych ekranach obrazek w ofercie obok tekstu */
-    .offer-description-media {
-        flex-direction: row; /* Obrazek i tekst obok siebie */
-        align-items: flex-start; /* Wyrównaj do góry */
-    }
-    .offer-description-media p {
-        padding-right: 20px; /* Odstęp między tekstem a obrazkiem */
-    }
-    .offer-image {
-        max-width: 40%; /* Obrazek zajmuje 40% szerokości */
-    }
-}
-
-/* Dla większych desktopów (od 900px) */
-@media (min-width: 900px) {
-    .oferta-wycieczki {
-        width: calc(50% - 15px); /* Ustawienie szerokości na około połowę, uwzględniając gap */
-        margin-bottom: 0; /* Usuń margines dolny, gdy są obok siebie */
-    }
+    /* Na większych ekranach obrazek w ofercie nadal pod tekstem, jeśli tak było pierwotnie */
+    /* Jeśli chcesz obrazek obok tekstu na większych ekranach, daj znać */
 }
 
 /* Dla mniejszych ekranów (smartfony) */
@@ -361,9 +333,9 @@ h3 {
     }
 
     .button-link {
-        width: 80%; /* Przyciski zajmują więcej szerokości */
+        width: 80%;
         text-align: center;
-        margin-bottom: 10px; /* Odstęp między przyciskami */
+        margin-bottom: 10px;
     }
 
     .modal-content {
