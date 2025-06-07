@@ -13,8 +13,7 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Strona Główna</a></li>
-                <li><a href="rapa-nui-atakama.html">Rapa Nui i Atakama</a></li>
-                <li><a href="patagonia.html">Patagonia</a></li>
+                <li><a href="rapa-nui-atakama.html">Galeria</a></li>
                 <li><a href="#" id="openAboutModal" class="active">O mnie</a></li>
                 <li><a href="#" id="openMapModal">Mapa</a></li>
                 <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
@@ -32,9 +31,9 @@
     <div id="aboutModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2>O mnie i moich podróżach po Chile</h2>
+            <h2>O mnie</h2>
             <div class="about-content-wrapper">
-                <img src="profile.jpg" alt="Zdjęcie Patryka" class="profile-image">
+                <img src="profile.jpg" alt="profile.jpg" class="profile-image">2
                 <div class="about-text">
                     <p>
                         Cześć, mam na imię Patryk i jestem Polakiem mieszkającym 3 lata w Chile.
@@ -53,8 +52,8 @@
     <div id="mapModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2>Moja Podróż po Chile</h2>
-            <img src="Calama.jpg" alt="Moja mapa podróży po Chile" class="responsive-map-image">
+            <h2>Twoja podróż po Chile</h2>
+            <img src="Calama.jpg" alt="Twoja mapa podróży po Chile" class="responsive-map-image">
             <p class="modal-description">Wizualizacja moich przelotów i kluczowych miejsc w Chile.</p>
         </div>
     </div>
