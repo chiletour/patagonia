@@ -525,6 +525,8 @@ h1 {
     .about-text p {
         font-size: 0.95em;
     }
+}
+
 /* Kontener dla wszystkich ofert wycieczek - aby były obok siebie */
 .oferty-container {
     display: flex; /* Użyj Flexbox do ułożenia elementów obok siebie */
