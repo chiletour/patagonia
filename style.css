@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #2c3e50; /* CIEMNE TŁO PRZYWRÓCONE */
+    background-color: #2c3e50; /* CIEMNE TŁO */
     color: #ecf0f1; /* Jasny tekst na ciemnym tle */
 }
 
@@ -75,26 +75,37 @@ h3 {
     display: block;
 }
 
-/* Kontener dla wszystkich ofert wycieczek - przywrócony układ blokowy */
+/* --- Sekcja z ofertami wycieczek --- */
+
+/* Kontener dla wszystkich ofert wycieczek - Użycie Flexbox do ułożenia obok siebie */
 .oferty-container {
+    display: flex; /* KLUCZOWA ZMIANA */
+    flex-wrap: wrap; /* Pozwoli ofertom zawijać się na mniejszych ekranach */
+    justify-content: center; /* Wyśrodkuje oferty */
+    gap: 30px; /* Odstęp między rubrykami */
     padding: 20px;
-    max-width: 900px; /* Może być dostosowane */
-    margin: 40px auto;
+    max-width: 1200px; /* Maksymalna szerokość kontenera na środku strony */
+    margin: 40px auto; /* Wyśrodkowanie kontenera */
 }
 
-/* Pojedyncza oferta wycieczki - przywrócony układ blokowy */
+/* Pojedyncza oferta wycieczki */
 .oferta-wycieczki {
     background-color: #34495e; /* Ciemne tło rubryk */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 30px;
-    margin-bottom: 40px; /* Odstęp między rubrykami */
+    margin-bottom: 20px; /* Mniejszy margines na dole, gdy są obok siebie */
     color: #ecf0f1; /* Jasny tekst w rubrykach */
+    width: 100%; /* Domyślna szerokość na małych ekranach */
+    max-width: 550px; /* Maksymalna szerokość dla pojedynczej rubryki */
+    box-sizing: border-box; /* Ważne dla paddingu i szerokości */
+    display: flex; /* Użycie flexbox wewnątrz oferty, aby pchnąć przyciski na dół */
+    flex-direction: column; /* Elementy w ofercie ułożone kolumnowo */
 }
 
-/* Sekcja z opisem i obrazkiem w ofercie - PRZYWRÓCONO UKŁAD ZDJĘCIA POD TEKSTEM */
+/* Sekcja z opisem i obrazkiem w ofercie - ZDJĘCIA NADAL POD TEKSTEM */
 .offer-description-media {
-    display: block; /* Upewnij się, że są one blokowo, a nie flexbox */
+    display: block; /* Upewnia się, że są one blokowo */
     margin-bottom: 20px;
     text-align: center; /* Wyśrodkowanie obrazka */
 }
@@ -144,7 +155,8 @@ h3 {
 /* Przyciski ofert */
 .offer-buttons {
     text-align: center;
-    margin-top: 20px;
+    margin-top: auto; /* Pchnie przyciski na dół karty, jeśli karta jest flex containerem */
+    padding-top: 20px; /* Odstęp od poprzedniej treści */
 }
 
 .button-link {
@@ -299,9 +311,14 @@ h3 {
     .about-text {
         flex: 1;
     }
+}
 
-    /* Na większych ekranach obrazek w ofercie nadal pod tekstem, jeśli tak było pierwotnie */
-    /* Jeśli chcesz obrazek obok tekstu na większych ekranach, daj znać */
+/* Dla większych desktopów (od 900px) */
+@media (min-width: 900px) {
+    .oferta-wycieczki {
+        width: calc(50% - 15px); /* Ustawienie szerokości na około połowę, uwzględniając gap */
+        margin-bottom: 0; /* Usuń margines dolny, gdy są obok siebie */
+    }
 }
 
 /* Dla mniejszych ekranów (smartfony) */
