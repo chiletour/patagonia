@@ -79,9 +79,9 @@ h3 {
 
 /* Kontener dla wszystkich ofert wycieczek - Użycie Flexbox do ułożenia obok siebie */
 .oferty-container {
-    display: flex; /* KLUCZOWA ZMIANA */
-    flex-wrap: wrap; /* Pozwoli ofertom zawijać się na mniejszych ekranach */
-    justify-content: center; /* Wyśrodkuje oferty */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px; /* Odstęp między rubrykami */
     padding: 20px;
     max-width: 1200px; /* Maksymalna szerokość kontenera na środku strony */
@@ -116,8 +116,9 @@ h3 {
 }
 
 .offer-image {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Obrazek zajmuje całą dostępną szerokość rodzica */
+    height: 200px; /* STAŁA WYSOKOŚĆ ZDJĘCIA */
+    object-fit: cover; /* KLUCZOWA ZMIANA: dopasowanie obrazka do wymiarów bez zniekształceń */
     border-radius: 8px;
     display: block; /* Obrazek jako blok */
     margin: 0 auto; /* Wyśrodkowanie obrazka */
@@ -231,137 +232,4 @@ h3 {
 /* Style dla modala "O mnie" */
 .about-content-wrapper {
     display: flex;
-    flex-direction: column; /* Obrazek nad tekstem */
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-}
-
-.profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #1abc9c;
-}
-
-.about-text p {
-    text-align: justify;
-}
-
-/* Style dla modala "Mapa" */
-.responsive-map-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.modal-description {
-    text-align: center;
-    font-style: italic;
-    color: #bdc3c7; /* Jasny kolor dla opisu mapy */
-}
-
-
-/* --- Stopka (footer) --- */
-.contact-footer {
-    background-color: #34495e;
-    color: #ecf0f1;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-    font-size: 0.9em;
-}
-
-.contact-footer p {
-    margin: 8px 0;
-}
-
-.contact-footer a {
-    color: #1abc9c;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-footer a:hover {
-    color: #ecf0f1;
-}
-
-/* --- Responsywność --- */
-
-/* Dla tabletów i większych smartfonów (od 768px) */
-@media (min-width: 768px) {
-    .main-nav li {
-        margin: 0 25px;
-    }
-
-    .about-content-wrapper {
-        flex-direction: row; /* Obrazek obok tekstu w modalach "O mnie" */
-        text-align: left;
-    }
-
-    .profile-image {
-        margin-right: 20px;
-        flex-shrink: 0;
-    }
-
-    .about-text {
-        flex: 1;
-    }
-}
-
-/* Dla większych desktopów (od 900px) */
-@media (min-width: 900px) {
-    .oferta-wycieczki {
-        width: calc(50% - 15px); /* Ustawienie szerokości na około połowę, uwzględniając gap */
-        margin-bottom: 0; /* Usuń margines dolny, gdy są obok siebie */
-    }
-}
-
-/* Dla mniejszych ekranów (smartfony) */
-@media (max-width: 767px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    h3 {
-        font-size: 1.3em;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main-nav li {
-        margin: 10px 0;
-    }
-
-    .offer-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .button-link {
-        width: 80%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .modal-content {
-        padding: 20px;
-    }
-
-    .close-button {
-        font-size: 28px;
-        top: 5px;
-        right: 15px;
-    }
-}
+    flex-direction:
