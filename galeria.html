@@ -18,18 +18,18 @@
             margin: 0 auto;
         }
 
-        /* Style dla pojedynczego "folderu" w galerii */
-        .gallery-folder {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Ważne, aby ukryć to, co wychodzi poza ramkę */
-            width: 300px; /* Szerokość pojedynczego folderu */
-            text-align: center;
-            transition: transform 0.3s ease;
-            display: flex; /* Użyj flexbox, aby zdjęcie i treść były ułożone kolumnowo */
-            flex-direction: column;
-        }
+.gallery-folder {
+    background-color: #F8F8F8; /* Delikatny, jasny odcień szarości */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 0; 
+}
 
         .gallery-folder:hover {
             transform: translateY(-5px);
@@ -63,16 +63,23 @@
         }
 
         /* Style dla przycisku "Zobacz galerię" */
-        .gallery-folder a.button-link {
-            display: block;
-            background-color: #ADD8E6; /* Bledszy błękitny kolor */
-            color: #333; /* Zmieniam kolor tekstu na ciemniejszy dla lepszego kontrastu */
-            padding: 10px 0;
-            text-decoration: none;
-            border-radius: 0 0 8px 8px;
-            transition: background-color 0.3s ease;
-            margin-top: auto; /* Przycisk zawsze na dole ramki */
-        }
+    .gallery-folder .button-link {
+    display: block;
+    background-color: #ADD8E6; /* Ten kolor zmieniamy */
+    color: #333;
+    padding: 10px 0; /* Padding poziomy jest 0 */
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+    transition: background-color 0.3s ease;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.gallery-folder .button-link:hover {
+    background-color: #87CEFA; /* Ten kolor również zmieniamy */
+    color: white;
+}
 
         .gallery-folder a.button-link:hover {
             background-color: #87CEFA; /* Nieco ciemniejszy odcień dla efektu hover */
