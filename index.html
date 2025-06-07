@@ -15,7 +15,7 @@
                 <li><a href="index.html" class="active">Strona Główna</a></li>
                 <li><a href="rapa-nui-atakama.html">Rapa Nui i Atakama</a></li>
                 <li><a href="patagonia.html">Patagonia</a></li>
-                <li><a href="o-mnie.html">O mnie</a></li>
+                <li><a href="#" id="openAboutModal">O mnie</a></li>
                 <li><a href="#" id="openMapModal">Mapa</a></li>
                 <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
             </ul>
@@ -152,6 +152,27 @@
     </div>
 
 
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>O mnie i moich podróżach po Chile</h2>
+            <div class="about-content-wrapper">
+                <img src="profile.jpg" alt="Zdjęcie Patryka" class="profile-image">
+                <div class="about-text">
+                    <p>
+                        Cześć, mam na imię Patryk i jestem Polakiem mieszkającym 3 lata w Chile.
+                        Dzięki mojej narzeczonej z Chile nauczyłem się sprawnie mówić po
+                        hiszpańsku oraz poznać bogatą kulturę podróżując po krajach Ameryki
+                        Południowej. Jeśli chcesz poznać kulturę latynoską, zapraszam Cię na
+                        podróż do mojego drugiego domu - Chile. Uwielbiam odkrywać ten kontynent
+                        i dzielić się jego tradycjami. Wycieczka w małej kameralnej grupie.
+                        Jeśli chcesz dołączyć, napisz do mnie, aby przeżyć niezapomnianą przygodę z lokalnym przewodnikiem!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="mapModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
@@ -169,37 +190,63 @@
     </footer>
 
     <script>
-        // JavaScript do obsługi modala
+        // JavaScript do obsługi modala "O mnie"
+        const aboutModal = document.getElementById('aboutModal');
+        const openAboutBtn = document.getElementById('openAboutModal');
+        // Użyj querySelector w kontekście konkretnego modala, aby znaleźć jego przycisk zamknięcia
+        const closeAboutButton = aboutModal.querySelector('.close-button'); 
+
+        openAboutBtn.onclick = function(event) {
+            event.preventDefault();
+            aboutModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        closeAboutButton.onclick = function() {
+            aboutModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // JavaScript do obsługi modala "Mapa"
         const mapModal = document.getElementById('mapModal');
         const openMapBtn = document.getElementById('openMapModal');
-        const closeButton = document.querySelector('.close-button');
+        // Użyj querySelector w kontekście konkretnego modala, aby znaleźć jego przycisk zamknięcia
+        const closeMapButton = mapModal.querySelector('.close-button'); 
 
-        // Otwiera modal
         openMapBtn.onclick = function(event) {
-            event.preventDefault(); // Zapobiega przeładowaniu strony
-            mapModal.style.display = 'flex'; // Zmieniamy na flex, żeby flexbox centrował
-            document.body.style.overflow = 'hidden'; // Wyłącza scrollowanie strony pod modalem
+            event.preventDefault();
+            mapModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
 
-        // Zamyka modal po kliknięciu 'X'
-        closeButton.onclick = function() {
+        closeMapButton.onclick = function() {
             mapModal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Przywraca scrollowanie strony
+            document.body.style.overflow = 'auto';
         }
 
-        // Zamyka modal po kliknięciu poza jego zawartością
+        // Zamykanie modali po kliknięciu poza ich zawartością
         window.onclick = function(event) {
+            if (event.target == aboutModal) {
+                aboutModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
             if (event.target == mapModal) {
                 mapModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         }
 
-        // Dodatkowa funkcja do zamykania modala klawiszem Esc
+        // Zamykanie modali klawiszem Esc
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && mapModal.style.display === 'flex') {
-                mapModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
+            if (event.key === 'Escape') {
+                if (aboutModal.style.display === 'flex') {
+                    aboutModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (mapModal.style.display === 'flex') {
+                    mapModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
             }
         });
     </script>
