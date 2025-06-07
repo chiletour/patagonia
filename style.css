@@ -525,4 +525,67 @@ h1 {
     .about-text p {
         font-size: 0.95em;
     }
+/* Kontener dla wszystkich ofert wycieczek - aby były obok siebie */
+.oferty-container {
+    display: flex; /* Użyj Flexbox do ułożenia elementów obok siebie */
+    flex-wrap: wrap; /* Pozwól elementom zawijać się na mniejszych ekranach */
+    justify-content: center; /* Wyśrodkuj oferty, jeśli jest ich mniej niż dostępna szerokość */
+    gap: 30px; /* Dodaj odstęp między ofertami */
+    padding: 20px; /* Dodaj padding wokół kontenera ofert */
+    max-width: 1200px; /* Ogranicz maksymalną szerokość kontenera */
+    margin: 40px auto; /* Wyśrodkuj kontener na stronie i dodaj odstęp od góry/dołu */
+}
+
+/* Pojedyncza oferta wycieczki */
+.oferta-wycieczki {
+    background-color: #fff; /* Białe tło */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+    padding: 30px; /* Wewnętrzny odstęp */
+    margin-bottom: 20px; /* Odstęp na dole (w przypadku, gdy się zawiną) */
+    width: 100%; /* Domyślna szerokość na małych ekranach */
+    max-width: 550px; /* Maksymalna szerokość każdej oferty */
+    box-sizing: border-box; /* Ważne dla paddingu i szerokości */
+    display: flex; /* Użyj flexbox wewnątrz oferty, aby ułatwić układ */
+    flex-direction: column; /* Elementy w ofercie ułożone kolumnowo */
+}
+
+/* Responsywność dla ofert */
+@media (min-width: 900px) { /* Przy ekranach szerszych niż 900px */
+    .oferta-wycieczki {
+        width: calc(50% - 15px); /* Ustawienie szerokości na około połowę, uwzględniając gap */
+        margin-bottom: 0; /* Usuń margines dolny, gdy są obok siebie */
+    }
+}
+
+/* Możesz także chcieć dostosować styl dla offer-description-media, jeśli obrazek jest za duży */
+.offer-description-media {
+    display: flex;
+    flex-direction: column; /* Domyślnie obrazek pod opisem */
+    align-items: center; /* Wyśrodkuj zawartość */
+    gap: 15px; /* Odstęp między opisem a obrazkiem */
+    margin-bottom: 20px;
+}
+
+.offer-description-media p {
+    flex: 1; /* Pozwól tekstowi zająć dostępną przestrzeń */
+}
+
+.offer-image {
+    max-width: 100%; /* Obrazki nie wyjdą poza swój kontener */
+    height: auto;
+    border-radius: 8px; /* Zaokrąglone rogi obrazków */
+}
+
+@media (min-width: 768px) { /* Na większych ekranach obrazek obok tekstu */
+    .offer-description-media {
+        flex-direction: row; /* Obrazek i tekst obok siebie */
+        align-items: flex-start; /* Wyrównaj do góry */
+    }
+    .offer-description-media p {
+        padding-right: 20px; /* Odstęp między tekstem a obrazkiem */
+    }
+    .offer-image {
+        max-width: 40%; /* Obrazek zajmuje 40% szerokości */
+    }
 }
