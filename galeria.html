@@ -62,18 +62,21 @@
             flex-grow: 1; /* Pozwala opisowi zająć dostępną przestrzeń */
         }
 
-        /* Style dla przycisku "Zobacz galerię" */
-    .gallery-folder .button-link {
+.gallery-folder .button-link {
     display: block;
-    background-color: #ADD8E6; /* Ten kolor zmieniamy */
-    color: #333;
-    padding: 10px 0; /* Padding poziomy jest 0 */
+    background-color: #4682B4; /* Nowy, bardziej wyrazisty kolor niebieski */
+    color: white; /* Tekst na biało */
+    padding: 10px 0; /* Brak paddingu po bokach, aby wypełnić całą szerokość */
     text-decoration: none;
     border-radius: 0 0 8px 8px;
     transition: background-color 0.3s ease;
-    margin-top: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-top: 0; 
+    /* Dodatkowe paddingi w pionie (góra/dół) są już ok z padding: 10px 0; */
+}
+
+.gallery-folder .button-link:hover {
+    background-color: #5F9EA0; /* Nieco jaśniejszy odcień na hover, aby był efekt */
+    color: white;
 }
 
 .gallery-folder .button-link:hover {
