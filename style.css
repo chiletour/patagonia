@@ -1,3 +1,8 @@
+Jasne, rozumiem! Chcesz, żeby wszystkie nowe style, które podaliśmy dla modala "O mnie" i zdjęcia profilowego, zostały włączone do Twojego głównego pliku CSS.
+
+Oto cały, kompletny kod dla Twojego pliku style.css, zawierający wszystkie wcześniejsze style oraz te najnowsze dla modala "O mnie" ze zdjęciem profilowym.
+CSS
+
 /* Globalne style */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -250,7 +255,8 @@ h1 {
     color: white;
 }
 
-/* Style dla sekcji "O mnie" */
+/* Styl dla sekcji "O mnie" (teraz tylko jako legacy jeśli jakaś treść byłaby poza modalem) */
+/* Jeśli "O mnie" jest TYLKO modalem, te style nie będą miały zastosowania w HTML, ale mogą pozostać */
 .about-me-content {
     max-width: 800px;
     margin: 50px auto;
@@ -286,7 +292,7 @@ h1 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Style dla Modala Mapy */
+/* Style dla Modala Mapy i Modala "O mnie" (dzielone style) */
 .modal {
     display: none; /* Ukryte domyślnie. Zmieniane na 'flex' przez JavaScript, gdy modal jest aktywny. */
     position: fixed; /* Zostaje na miejscu nawet przy scrollowaniu */
@@ -317,7 +323,7 @@ h1 {
     animation: fadeInScale 0.3s ease-out forwards; /* Animacja pojawiania się */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Domyślne centrowanie elementów w modalu (np. h2, opis, obrazki) */
     text-align: center;
 }
 
@@ -368,14 +374,52 @@ h1 {
     text-decoration: none;
 }
 
-/* Styl dla responsywnego obrazka w modalu */
+/* Styl dla responsywnego obrazka w modalu Mapy */
 .responsive-map-image {
-    max-width: 50%;
+    max-width: 80%; /* Zmniejszona szerokość mapy - zmieniono zgodnie z Twoim życzeniem */
     height: auto;
     display: block;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+
+/* --- NOWE STYLE DLA MODALA "O MNIE" Z OBRAZKIEM --- */
+
+/* Wrapper dla zdjęcia i tekstu w modalu "O mnie" */
+.about-content-wrapper {
+    display: flex;
+    flex-direction: row; /* Domyślne ułożenie: rząd (zdjęcie i tekst obok siebie) */
+    align-items: flex-start; /* Wyrównanie elementów do góry */
+    gap: 30px; /* Odstęp między zdjęciem a tekstem */
+    margin-top: 20px;
+    width: 100%; /* Zajmuje całą szerokość modala */
+    text-align: left; /* Przywróć tekst do lewej strony */
+}
+
+/* Styl dla zdjęcia profilowego */
+.profile-image {
+    width: 200px; /* Stała szerokość zdjęcia */
+    height: 200px; /* Stała wysokość, aby było kwadratowe */
+    object-fit: cover; /* Upewnij się, że zdjęcie wypełnia obszar, przycinając jeśli trzeba */
+    border-radius: 50%; /* Okrągłe zdjęcie */
+    border: 5px solid #7bdcb5; /* Delikatna ramka */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    flex-shrink: 0; /* Zapobiega zmniejszaniu się zdjęcia na mniejszych ekranach */
+}
+
+/* Styl dla tekstu obok zdjęcia */
+.about-text {
+    flex-grow: 1; /* Pozwala tekstowi zająć dostępną przestrzeń */
+}
+
+.about-text p {
+    margin-top: 0; /* Usuń domyślny górny margines paragrafu */
+    margin-bottom: 15px; /* Dodaj margines pod paragrafami */
+    font-size: 1.05em;
+    color: #ecf0f1;
+}
+
 
 /* Responsywność dla małych ekranów */
 @media (max-width: 992px) {
@@ -417,6 +461,19 @@ h1 {
         font-size: 30px;
         top: 10px;
         right: 15px;
+    }
+
+    /* Responsywność dla modala "O mnie" */
+    .about-content-wrapper {
+        flex-direction: column; /* Na małych ekranach ułóż zdjęcie i tekst jeden pod drugim */
+        align-items: center; /* Wyśrodkuj elementy w kolumnie */
+        text-align: center; /* Wyśrodkuj tekst */
+    }
+    .profile-image {
+        margin-bottom: 25px; /* Dodaj odstęp pod zdjęciem, gdy jest na górze */
+    }
+    .about-text p {
+        text-align: center; /* Upewnij się, że tekst jest wyśrodkowany */
     }
 }
 @media (max-width: 576px) {
@@ -464,4 +521,13 @@ h1 {
     .modal-description {
         font-size: 0.95em;
     }
-}
+
+    /* Responsywność dla modala "O mnie" na bardzo małych ekranach */
+    .profile-image {
+        width: 150px; /* Zmniejsz rozmiar zdjęcia na bardzo małych ekranach */
+        height: 150px;
+    }
+    .about-text p {
+        font-size: 0.95em;
+    }
+    }
