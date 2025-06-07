@@ -66,26 +66,29 @@ h3 {
     color: #1abc9c;
 }
 
-/* Obrazek tytułowy pod nagłówkiem */
+/* Obrazek tytułowy pod nagłówkiem - ZMNIEJSZONY I WYŚRODKOWANY */
 .title-image {
-    width: 100%;
-    max-height: 400px;
+    width: 90%; /* Zmniejszona szerokość */
+    max-width: 800px; /* Maksymalna szerokość */
+    height: 250px; /* Stała wysokość */
     object-fit: cover;
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto; /* Wyśrodkowanie i margines dolny */
     display: block;
+    border-radius: 10px; /* Delikatne zaokrąglenie */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Sekcja z ofertami wycieczek --- */
 
-/* Kontener dla wszystkich ofert wycieczek - Użycie Flexbox do ułożenia obok siebie */
+/* Kontener dla wszystkich ofert wycieczek */
 .oferty-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px; /* Odstęp między rubrykami */
     padding: 20px;
-    max-width: 1200px; /* Maksymalna szerokość kontenera na środku strony */
-    margin: 40px auto; /* Wyśrodkowanie kontenera */
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
 /* Pojedyncza oferta wycieczki */
@@ -94,53 +97,70 @@ h3 {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 30px;
-    margin-bottom: 20px; /* Mniejszy margines na dole, gdy są obok siebie */
-    color: #ecf0f1; /* Jasny tekst w rubrykach */
-    width: 100%; /* Domyślna szerokość na małych ekranach */
-    max-width: 550px; /* Maksymalna szerokość dla pojedynczej rubryki */
-    box-sizing: border-box; /* Ważne dla paddingu i szerokości */
-    display: flex; /* Użycie flexbox wewnątrz oferty, aby pchnąć przyciski na dół */
-    flex-direction: column; /* Elementy w ofercie ułożone kolumnowo */
+    margin-bottom: 20px;
+    color: #ecf0f1;
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Sekcja z opisem i obrazkiem w ofercie - ZDJĘCIA NADAL POD TEKSTEM */
+/* Sekcja z opisem i obrazkiem w ofercie - ZDJĘCIA WYRÓWNANE Z TEKSTEM */
 .offer-description-media {
-    display: block; /* Upewnia się, że są one blokowo */
+    display: flex; /* Użyj Flexbox, aby tekst był obok obrazka */
+    flex-direction: column; /* Domyślnie kolumnowo na małych ekranach */
+    align-items: center; /* Wyśrodkuj elementy na małych ekranach */
+    gap: 15px; /* Odstęp między elementami */
     margin-bottom: 20px;
-    text-align: center; /* Wyśrodkowanie obrazka */
 }
 
 .offer-description-media p {
-    margin-bottom: 20px; /* Odstęp między tekstem a obrazkiem */
-    text-align: justify; /* Tekst justowany */
+    flex-grow: 1; /* Pozwoli tekstowi rosnąć i zajmować miejsce */
+    text-align: justify;
+    margin-bottom: 0; /* Usuń domyślny margines */
 }
 
 .offer-image {
-    width: 100%; /* Obrazek zajmuje całą dostępną szerokość rodzica */
-    height: 200px; /* STAŁA WYSOKOŚĆ ZDJĘCIA */
+    width: 100%;
+    height: 200px; /* STAŁA WYSOKOŚĆ ZDJĘCIA DLA WSZYSTKICH OFERT */
     object-fit: cover; /* KLUCZOWA ZMIANA: dopasowanie obrazka do wymiarów bez zniekształceń */
     border-radius: 8px;
-    display: block; /* Obrazek jako blok */
-    margin: 0 auto; /* Wyśrodkowanie obrazka */
+    display: block;
+    margin: 0; /* Usuń automatyczny margines, będzie kontrolowany przez gap */
+    flex-shrink: 0; /* Zapobiega zmniejszaniu się obrazka */
+}
+
+/* Rubryka planu podróży */
+.plan-rubric {
+    background-color: #2c3e50; /* Ciemniejsze tło dla rubryki planu */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* Wewnętrzny cień */
 }
 
 /* Styl dla listy planu podróży */
-.oferta-wycieczki ul {
+.plan-rubric ul { /* Celowanie w ul wewnątrz plan-rubric */
     list-style: disc;
     margin-left: 20px;
     padding-left: 0;
-    margin-top: 20px;
+    margin-top: 0; /* Usuń górny margines, jeśli już jest padding na rodzicu */
+    margin-bottom: 0; /* Usuń dolny margines */
 }
 
-.oferta-wycieczki ul li {
+.plan-rubric ul li {
     margin-bottom: 10px;
     line-height: 1.5;
+    color: #bdc3c7; /* Delikatnie jaśniejszy kolor tekstu w planie */
 }
 
-.oferta-wycieczki ul ul {
+.plan-rubric ul ul {
     list-style: circle;
     margin-top: 5px;
     margin-bottom: 5px;
+    color: #dbe0e3; /* Jeszcze jaśniejszy dla podpunktów */
 }
 
 /* Styl dla kosztu wycieczki */
@@ -156,8 +176,8 @@ h3 {
 /* Przyciski ofert */
 .offer-buttons {
     text-align: center;
-    margin-top: auto; /* Pchnie przyciski na dół karty, jeśli karta jest flex containerem */
-    padding-top: 20px; /* Odstęp od poprzedniej treści */
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 .button-link {
@@ -199,7 +219,7 @@ h3 {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    max-width: 600px;
+    max-width: 500px; /* ZMNIEJSZONA MAKSYMALNA SZEROKOŚĆ MODALI */
     width: 90%;
     box-sizing: border-box;
     animation: fadeIn 0.3s ease-out;
@@ -224,7 +244,7 @@ h3 {
 
 .close-button:hover,
 .close-button:focus {
-    color: #ecf0f1; /* Jasny kolor X na hover */
+    color: #ecf0f1;
     text-decoration: none;
     cursor: pointer;
 }
@@ -232,4 +252,152 @@ h3 {
 /* Style dla modala "O mnie" */
 .about-content-wrapper {
     display: flex;
-    flex-direction:
+    flex-direction: column; /* Obrazek nad tekstem */
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.profile-image {
+    width: 120px; /* ZMNIEJSZONY OBRAZEK PROFILOWY */
+    height: 120px; /* ZMNIEJSZONY OBRAZEK PROFILOWY */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1abc9c;
+}
+
+.about-text p {
+    text-align: justify;
+    font-size: 0.95em; /* Nieznaczne zmniejszenie tekstu w modalu */
+}
+
+/* Style dla modala "Mapa" - ZMNIEJSZONA MAPA */
+.responsive-map-image {
+    max-width: 80%; /* ZMNIEJSZONA MAKSYMALNA SZEROKOŚĆ MAPY */
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-description {
+    text-align: center;
+    font-style: italic;
+    color: #bdc3c7;
+    font-size: 0.9em; /* Nieznaczne zmniejszenie tekstu opisu mapy */
+}
+
+
+/* --- Stopka (footer) --- */
+.contact-footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+.contact-footer p {
+    margin: 8px 0;
+}
+
+.contact-footer a {
+    color: #1abc9c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-footer a:hover {
+    color: #ecf0f1;
+}
+
+/* --- Responsywność --- */
+
+/* Dla tabletów i większych smartfonów (od 768px) */
+@media (min-width: 768px) {
+    .main-nav li {
+        margin: 0 25px;
+    }
+
+    .about-content-wrapper {
+        flex-direction: row; /* Obrazek obok tekstu w modalach "O mnie" */
+        text-align: left;
+    }
+
+    .profile-image {
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .about-text {
+        flex: 1;
+    }
+
+    /* Na większych ekranach obrazek w ofercie obok tekstu */
+    .offer-description-media {
+        flex-direction: row; /* ZMIANA: obrazek obok tekstu na większych ekranach */
+        align-items: flex-start; /* KLUCZOWA ZMIANA: wyrównanie tekstu do góry */
+    }
+    .offer-description-media p {
+        padding-right: 20px; /* Odstęp między tekstem a obrazkiem */
+    }
+    .offer-image {
+        max-width: 250px; /* Konkretna szerokość obrazka w ofercie */
+        height: 200px; /* Zapewnia stałą wysokość */
+    }
+}
+
+/* Dla większych desktopów (od 900px) */
+@media (min-width: 900px) {
+    .oferta-wycieczki {
+        width: calc(50% - 15px); /* Ustawienie szerokości na około połowę, uwzględniając gap */
+        margin-bottom: 0; /* Usuń margines dolny, gdy są obok siebie */
+    }
+}
+
+/* Dla mniejszych ekranów (smartfony) */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav li {
+        margin: 10px 0;
+    }
+
+    .offer-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-link {
+        width: 80%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .close-button {
+        font-size: 28px;
+        top: 5px;
+        right: 15px;
+    }
+}
