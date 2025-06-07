@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Dodaj podstawowe style dla galerii */
+        /* Style dla głównego kontenera galerii */
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
@@ -18,48 +18,72 @@
             margin: 0 auto;
         }
 
+        /* Style dla pojedynczego "folderu" w galerii */
         .gallery-folder {
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            overflow: hidden; /* Ważne, aby ukryć to, co wychodzi poza ramkę */
             width: 300px; /* Szerokość pojedynczego folderu */
             text-align: center;
             transition: transform 0.3s ease;
+            display: flex; /* Użyj flexbox, aby zdjęcie i treść były ułożone kolumnowo */
+            flex-direction: column;
         }
 
         .gallery-folder:hover {
             transform: translateY(-5px);
         }
 
-       .gallery-folder img {
-    width: 100% !important;
-    height: 200px !important; 
-    object-fit: cover !important;
-    display: block;
-    padding: 0 !important; /* Upewnij się, że nie ma wewnętrznych marginesów */
-    margin: 0 !important; /* Upewnij się, że nie ma zewnętrznych marginesów */
-}
+        /* Style dla zdjęć wewnątrz "folderów" */
+        .gallery-folder img {
+            width: 100%; /* Obrazek wypełnia całą szerokość rodzica */
+            height: 200px; /* Stała wysokość obrazka, możesz dostosować */
+            object-fit: cover; /* KLUCZOWA WŁAŚCIWOŚĆ: Obrazek pokrywa całą ramkę, przycinając jeśli trzeba */
+            display: block; /* Usuwa ewentualne marginesy pod obrazkiem */
+            padding: 0; /* Upewnij się, że nie ma wewnętrznych marginesów */
+            margin: 0; /* Upewnij się, że nie ma zewnętrznych marginesów */
+            flex-shrink: 0; /* Zapobiega zmniejszaniu się obrazka */
         }
 
+        /* Style dla nagłówków w folderach */
         .gallery-folder h3 {
-            margin: 15px 0;
+            margin: 15px 0 5px; /* Delikatny odstęp od góry i dołu */
             color: #333;
             font-size: 1.5em;
+            padding: 0 15px; /* Wyrównanie tekstu do obrazka */
         }
 
+        /* Style dla opisów w folderach */
+        .gallery-folder p {
+            padding: 0 15px 15px;
+            color: #666;
+            font-size: 0.9em;
+            flex-grow: 1; /* Pozwala opisowi zająć dostępną przestrzeń */
+        }
+
+        /* Style dla przycisku "Zobacz galerię" */
         .gallery-folder a.button-link {
             display: block;
-            background-color: #ADD8E6;
-            color: white;
+            background-color: #ADD8E6; /* Bledszy błękitny kolor */
+            color: #333; /* Zmieniam kolor tekstu na ciemniejszy dla lepszego kontrastu */
             padding: 10px 0;
             text-decoration: none;
             border-radius: 0 0 8px 8px;
             transition: background-color 0.3s ease;
+            margin-top: auto; /* Przycisk zawsze na dole ramki */
         }
 
         .gallery-folder a.button-link:hover {
-            background-color: #0056b3;
+            background-color: #87CEFA; /* Nieco ciemniejszy odcień dla efektu hover */
+            color: white; /* Zmieniam tekst na biały dla hovera */
+        }
+
+        /* Dodatkowe style dla responsywności */
+        @media (max-width: 768px) {
+            .gallery-folder {
+                width: 90%; /* Zwiększenie szerokości folderów na mniejszych ekranach */
+            }
         }
     </style>
 </head>
@@ -70,7 +94,8 @@
             <ul>
                 <li><a href="index.html">Strona Główna</a></li>
                 <li><a href="#" id="openAboutModal">O mnie</a></li>
-                <li><a href="galeria.html" class="active">Galeria</a></li> <li><a href="#" id="openMapModal">Mapa</a></li>
+                <li><a href="galeria.html" class="active">Galeria</a></li>
+                <li><a href="#" id="openMapModal">Mapa</a></li>
                 <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
                 <li><a href="https://www.instagram.com/chiletournee/" target="_blank">Instagram</a></li>
             </ul>
@@ -78,22 +103,26 @@
     </header>
 
     <main>
-        <h1>Galerie Zdjęć</h1>
+        <h1>Nasze Galerie Zdjęć</h1>
         <div class="gallery-container">
             <div class="gallery-folder">
-                <img src="atakama_thumb.jpg" alt="Pustynia Atakama"> 
+                <img src="atakama_thumb.jpg" alt="Pustynia Atakama">
+                <h3>Pustynia Atakama</h3>
+                <p>Niesamowite krajobrazy najsuchszego miejsca na świecie, pełne gejzerów i solnych pustyni.</p>
                 <a href="galeria-atakama.html" class="button-link">Zobacz galerię</a>
             </div>
 
             <div class="gallery-folder">
-                <img src="patagonia_thumb.jpg" alt="Patagonia"> <h3>Dzika Patagonia</h3>
-                <p>Majestatyczne góry, lodowce i niezapomniane widoki.</p>
+                <img src="patagonia_thumb.jpg" alt="Patagonia">
+                <h3>Dzika Patagonia</h3>
+                <p>Majestatyczne góry, lodowce, turkusowe jeziora i niezapomniane widoki końca świata.</p>
                 <a href="galeria-patagonia.html" class="button-link">Zobacz galerię</a>
             </div>
 
             <div class="gallery-folder">
-                <img src="rapanui_thumb.jpg" alt="Rapa Nui"> <h3>Tajemnicza Rapa Nui</h3>
-                <p>Odkryj sekrety Wyspy Wielkanocnej i jej moai.</p>
+                <img src="rapanui_thumb.jpg" alt="Rapa Nui">
+                <h3>Tajemnicza Rapa Nui</h3>
+                <p>Odkryj sekrety Wyspy Wielkanocnej, jej monumentalne moai i unikalną kulturę.</p>
                 <a href="galeria-rapanui.html" class="button-link">Zobacz galerię</a>
             </div>
         </div>
