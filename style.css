@@ -66,17 +66,19 @@ h3 {
     color: #1abc9c;
 }
 
-/* Obrazek tytułowy pod nagłówkiem - ZMNIEJSZONY I WYŚRODKOWANY */
+```css
+/* Obrazek tytułowy pod nagłówkiem - ZMNIEJSZONY I WYŚRODKOWANY /
 .title-image {
-    width: 90%; /* Zmniejszona szerokość */
-    max-width: 800px; /* Maksymalna szerokość */
-    height: 250px; /* Stała wysokość */
-    object-fit: cover;
-    margin: 0 auto 30px auto; /* Wyśrodkowanie i margines dolny */
-    display: block;
-    border-radius: 10px; /* Delikatne zaokrąglenie */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+width: 90%; / Zmniejszona szerokość /
+max-width: 800px; / Maksymalna szerokość /
+height: 300px; / ZWIĘKSZONA WYSOKOŚĆ ZDJĘCIA TYTUŁOWEGO /
+object-fit: cover;
+margin: 0 auto 30px auto; / Wyśrodkowanie i margines dolny /
+display: block;
+border-radius: 10px; / Delikatne zaokrąglenie */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+```
 
 /* --- Sekcja z ofertami wycieczek --- */
 
