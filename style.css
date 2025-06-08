@@ -1,1251 +1,318 @@
-/* Globalne style */
-
-
+/* General Body and Typography */
 body {
-
     font-family: 'Open Sans', sans-serif;
-
     margin: 0;
-
     padding: 0;
-
-    background-color: #2c3e50;
-
-    color: #ecf0f1;
-
-    line-height: 1.7;
-
-    overflow-x: hidden;
-
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 20px;
+}
 
 h1 {
-
-    font-family: 'Montserrat', sans-serif;
-
-    text-align: center;
-
-    color: #a8dadc;
-
-    margin: 60px 0 20px 0;
-
-    font-size: 3em;
-
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-
-    letter-spacing: 1px;
-
-}
-
-
-
-/* Styl dla obrazka w tytule strony (głównego) */
-
-.title-image {
-
-    display: block;
-
-    max-width: 800px;
-
-    width: 90%;
-
-    height: auto;
-
-    margin: 0 auto 50px auto;
-
-    border-radius: 10px;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-
-}
-
-
-
-/* Kontener dla ofert - Flexbox */
-
-.oferty-container {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: flex-start;
-
-    gap: 30px;
-
-    flex-wrap: wrap;
-
-    max-width: 1300px;
-
-    margin: 0 auto 80px auto;
-
-    padding: 0 20px;
-
-}
-
-
-
-/* Styl dla pojedynczej oferty */
-
-.oferta-wycieczki {
-
-    flex: 1;
-
-    min-width: 380px;
-
-    max-width: 48%;
-
-    border: 2px solid #4a90e2;
-
-    border-radius: 15px;
-
-    padding: 35px;
-
-    background-color: #34495e;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.3s ease;
-
-}
-
-
-
-.oferta-wycieczki:hover {
-
-    transform: translateY(-12px);
-
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-
-    border-color: #7bdcb5;
-
-}
-
-
-
-/* Styl dla tytułów ofert */
-
-.oferta-wycieczki h2 {
-
-    font-family: 'Montserrat', sans-serif;
-
-    color: #a8dadc;
-
-    margin-top: 0;
-
+    font-size: 2.5em;
     margin-bottom: 20px;
-
-    font-size: 2.2em;
-
-    text-align: center;
-
-    line-height: 1.3;
-
-    border-bottom: 2px solid #4a90e2;
-
-    padding-bottom: 10px;
-
 }
 
-
-
-/* Kontener dla opisu i obrazka */
-
-.offer-description-media {
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    flex-grow: 1;
-
-    min-height: 350px;
-
-    margin-bottom: 20px;
-
-}
-
-
-
-/* Styl dla paragrafu z opisem oferty (tło Pustyni Atakama) */
-
-.offer-description-media p {
-
-    background-image: url('https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-
-    background-size: cover;
-
-    background-position: center;
-
-    color: white;
-
-    padding: 20px;
-
-    border-radius: 10px;
-
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-
-    position: relative;
-
-    margin-bottom: 20px;
-
-    flex-grow: 1;
-
-}
-
-
-
-/* Styl dla obrazów pod opisami ofert */
-
-.offer-description-media .offer-image {
-
-    display: block;
-
-    max-width: 100%;
-
-    height: 200px;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    margin-top: auto;
-
-    margin-bottom: 0;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-
-}
-
-
-
-.oferta-wycieczki h3 {
-
-    font-family: 'Montserrat', sans-serif;
-
-    color: #a8dadc;
-
-    margin-top: 30px;
-
+h2 {
+    font-size: 1.8em;
     margin-bottom: 15px;
+}
 
+h3 {
     font-size: 1.4em;
-
-    border-bottom: 2px solid #4a90e2;
-
-    padding-bottom: 8px;
-
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
 
-
-
-.oferta-wycieczki p, .oferta-wycieczki ul {
-
-    font-size: 1.05em;
-
-    margin-bottom: 15px;
-
-    color: #ecf0f1;
-
+p {
+    margin-bottom: 10px;
 }
 
-
-
-.oferta-wycieczki ul {
-
-    list-style: none;
-
-    padding: 0;
-
-    margin-top: 10px;
-
-}
-
-
-
-.oferta-wycieczki ul li {
-
-    background-color: #3f5b75;
-
-    margin-bottom: 8px;
-
-    padding: 12px 18px;
-
-    border-radius: 8px;
-
-    font-size: 0.98em;
-
-    color: #ecf0f1;
-
-    border-left: 5px solid #7bdcb5;
-
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-}
-
-
-
-.oferta-wycieczki .koszt {
-
-    font-size: 1.4em;
-
-    font-weight: 700;
-
-    color: #ffda79;
-
-    margin-top: 30px;
-
-    text-align: center;
-
-    padding: 15px 0;
-
-    background-color: #4a6a8c;
-
-    border-radius: 8px;
-
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-
-}
-
-
-
-/* Styl dla linku udającego przycisk */
-
-.button-link {
-
-    background-color: #7bdcb5;
-
-    color: #2c3e50;
-
-    padding: 16px 35px;
-
-    border: none;
-
-    border-radius: 50px;
-
-    font-size: 1.3em;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-
-    margin-top: 40px;
-
-    text-decoration: none;
-
-    display: block;
-
-    margin-left: auto;
-
-    margin-right: auto;
-
-    box-shadow: 0 5px 15px rgba(123,220,181,0.4);
-
-}
-
-
-
-.button-link:hover {
-
-    background-color: #4a90e2;
-
-    color: white;
-
-    transform: translateY(-3px) scale(1.02);
-
-    box-shadow: 0 8px 20px rgba(74,144,226,0.5);
-
-}
-
-
-
-/* Sekcja kontaktowa (stopka) */
-
-.contact-footer {
-
-    background-color: #1a252f;
-
-    color: #ecf0f1;
-
-    text-align: center;
-
-    padding: 40px 20px;
-
-    font-size: 1.1em;
-
-    border-top: 5px solid #7bdcb5;
-
-    margin-top: 80px;
-
-}
-
-
-
-.contact-footer p {
-
-    margin: 10px 0;
-
-}
-
-
-
-.contact-footer a {
-
-    color: #4a90e2;
-
-    text-decoration: none;
-
+strong {
     font-weight: 600;
-
-    transition: color 0.3s ease;
-
 }
 
-
-
-.contact-footer a:hover {
-
-    color: #a8dadc;
-
-    text-decoration: underline;
-
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
 }
 
+li {
+    margin-bottom: 10px;
+    padding-left: 20px; /* Indent list items */
+    position: relative;
+}
 
+li::before {
+    content: '•'; /* Custom bullet point */
+    color: #2c3e50;
+    position: absolute;
+    left: 0;
+}
 
-/* Style dla nagłówka i nawigacji */
-
+/* Header and Navigation */
 .main-header {
-
-    background-color: #1a252f;
-
-    padding: 20px 0;
-
-    border-bottom: 5px solid #7bdcb5;
-
-    text-align: center;
-
+    background-color: #2c3e50;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-
 
 .main-nav ul {
-
-    list-style: none;
-
+    text-align: center;
     padding: 0;
-
     margin: 0;
-
     display: flex;
-
     justify-content: center;
-
-    gap: 30px;
-
     flex-wrap: wrap;
-
 }
-
-
 
 .main-nav li {
-
-    margin: 0;
-
+    display: inline-block;
+    margin: 0 15px;
+    padding: 0; /* Override list item padding */
 }
 
-
+.main-nav li::before {
+    content: none; /* Remove custom bullet for nav links */
+}
 
 .main-nav a {
-
-    color: #a8dadc;
-
+    color: #ecf0f1;
     text-decoration: none;
-
-    font-family: 'Montserrat', sans-serif;
-
     font-weight: 600;
-
-    font-size: 1.3em;
-
-    padding: 10px 20px;
-
-    border-radius: 5px;
-
-    transition: background-color 0.3s ease, color 0.3s ease;
-
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
-
-
 
 .main-nav a:hover,
-
 .main-nav a.active {
-
-    background-color: #4a90e2;
-
-    color: white;
-
+    color: #3498db;
 }
 
-
-
-/* Styl dla sekcji "O mnie" (teraz tylko jako legacy jeśli jakaś treść byłaby poza modalem) */
-
-/* Jeśli "O mnie" jest TYLKO modalem, te style nie będą miały zastosowania w HTML, ale mogą pozostać */
-
-.about-me-content {
-
-    max-width: 800px;
-
-    margin: 50px auto;
-
-    padding: 40px;
-
-    background-color: #34495e;
-
-    border-radius: 15px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-
-    text-align: left;
-
-}
-
-
-
-.about-me-content h2 {
-
-    font-family: 'Montserrat', sans-serif;
-
-    color: #a8dadc;
-
-    font-size: 2.5em;
-
-    margin-bottom: 25px;
-
-    text-align: center;
-
-    border-bottom: 2px solid #4a90e2;
-
-    padding-bottom: 10px;
-
-}
-
-
-
-.about-me-content p {
-
-    font-size: 1.1em;
-
-    margin-bottom: 20px;
-
-    color: #ecf0f1;
-
-}
-
-
-
-.about-me-content img {
-
-    display: block;
-
-    max-width: 100%;
-
-    height: auto;
-
-    border-radius: 10px;
-
-    margin: 30px auto;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-
-}
-
-
-
-/* Style dla Modala Mapy i Modala "O mnie" (dzielone style) */
-
-.modal {
-
-    display: none; /* Ukryte domyślnie. Zmieniane na 'flex' przez JavaScript, gdy modal jest aktywny. */
-
-    position: fixed; /* Zostaje na miejscu nawet przy scrollowaniu */
-
-    z-index: 1000; /* Wysoko, żeby był na wierzchu */
-
-    left: 0;
-
-    top: 0;
-
+/* Main Content and Image */
+.title-image {
     width: 100%;
-
-    height: 100%;
-
-    overflow: auto; /* Włącz scrollowanie, jeśli zawartość jest większa niż okno */
-
-    background-color: rgba(0,0,0,0.8); /* Półprzezroczyste czarne tło */
-
-    backdrop-filter: blur(5px); /* Efekt rozmycia tła (modern browsers) */
-
-    -webkit-backdrop-filter: blur(5px); /* Wsparcie dla Safari */
-
-    justify-content: center; /* Centrowanie poziome zawartości modala (gdy display to flex) */
-
-    align-items: center; /* Centrowanie pionowe zawartości modala (gdy display to flex) */
-
-}
-
-
-
-.modal-content {
-
-    background-color: #34495e; /* Tło modala */
-
-    margin: auto; /* Centrowanie w pionie i poziomie */
-
-    padding: 30px;
-
-    border: 1px solid #7bdcb5;
-
-    border-radius: 15px;
-
-    width: 90%; /* Szerokość modala */
-
-    max-width: 900px; /* Maksymalna szerokość */
-
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-
-    position: relative;
-
-    color: #ecf0f1;
-
-    animation: fadeInScale 0.3s ease-out forwards; /* Animacja pojawiania się */
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center; /* Domyślne centrowanie elementów w modalu (np. h2, opis, obrazki) */
-
-    text-align: center;
-
-}
-
-
-
-/* Animacja pojawiania się modala */
-
-@keyframes fadeInScale {
-
-    from {
-
-        opacity: 0;
-
-        transform: scale(0.9);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: scale(1);
-
-    }
-
-}
-
-
-
-
-
-.modal-content h2 {
-
-    font-family: 'Montserrat', sans-serif;
-
-    color: #a8dadc;
-
-    margin-bottom: 25px;
-
-    font-size: 2.5em;
-
-    border-bottom: 2px solid #4a90e2;
-
-    padding-bottom: 10px;
-
-    width: 100%; /* Rozciągnij h2 na całą szerokość */
-
-}
-
-
-
-.modal-description {
-
-    font-size: 1.1em;
-
-    margin-top: 20px;
-
-    color: #a8dadc;
-
-}
-
-
-
-.close-button {
-
-    color: #ecf0f1;
-
-    position: absolute;
-
-    top: 15px;
-
-    right: 25px;
-
-    font-size: 40px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: color 0.3s ease, transform 0.3s ease;
-
-}
-
-
-
-.close-button:hover,
-
-.close-button:focus {
-
-    color: #e74c3c;
-
-    transform: rotate(90deg);
-
-    text-decoration: none;
-
-}
-
-
-
-/* Styl dla responsywnego obrazka w modalu Mapy */
-
-.responsive-map-image {
-
-    max-width: 40%; /* Zmniejszona szerokość mapy - zmieniono zgodnie z Twoim życzeniem */
-
-    height: auto;
-
+    max-height: 400px;
+    object-fit: cover;
     display: block;
-
-    border-radius: 8px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-
+    margin-bottom: 30px;
 }
 
-
-
-
-
-/* --- NOWE STYLE DLA MODALA "O MNIE" Z OBRAZKIEM --- */
-
-
-
-/* Wrapper dla zdjęcia i tekstu w modalu "O mnie" */
-
-.about-content-wrapper {
-
-    display: flex;
-
-    flex-direction: row; /* Domyślne ułożenie: rząd (zdjęcie i tekst obok siebie) */
-
-    align-items: flex-start; /* Wyrównanie elementów do góry */
-
-    gap: 30px; /* Odstęp między zdjęciem a tekstem */
-
-    margin-top: 20px;
-
-    width: 100%; /* Zajmuje całą szerokość modala */
-
-    text-align: left; /* Przywróć tekst do lewej strony */
-
-}
-
-
-
-/* Styl dla zdjęcia profilowego */
-
-.profile-image {
-
-    width: 200px; /* Stała szerokość zdjęcia */
-
-    height: 200px; /* Stała wysokość, aby było kwadratowe */
-
-    object-fit: cover; /* Upewnij się, że zdjęcie wypełnia obszar, przycinając jeśli trzeba */
-
-    border-radius: 50%; /* Okrągłe zdjęcie */
-
-    border: 5px solid #7bdcb5; /* Delikatna ramka */
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-
-    flex-shrink: 0; /* Zapobiega zmniejszaniu się zdjęcia na mniejszych ekranach */
-
-}
-
-
-
-/* Styl dla tekstu obok zdjęcia */
-
-.about-text {
-
-    flex-grow: 1; /* Pozwala tekstowi zająć dostępną przestrzeń */
-
-}
-
-
-
-.about-text p {
-
-    margin-top: 0; /* Usuń domyślny górny margines paragrafu */
-
-    margin-bottom: 15px; /* Dodaj margines pod paragrafami */
-
-    font-size: 1.05em;
-
-    color: #ecf0f1;
-
-}
-
-
-
-
-
-/* Responsywność dla małych ekranów */
-
-@media (max-width: 992px) {
-
-    .title-image {
-
-        max-width: 95%;
-
-    }
-
-    .oferty-container {
-
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 40px;
-
-    }
-
-    .oferta-wycieczki {
-
-        max-width: 90%;
-
-        min-width: unset;
-
-    }
-
-    h1 {
-
-        font-size: 2.5em;
-
-        margin-bottom: 40px;
-
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    .main-nav ul {
-
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 15px;
-
-    }
-
-    .main-nav a {
-
-        font-size: 1.1em;
-
-        padding: 8px 15px;
-
-    }
-
-    .modal-content {
-
-        padding: 20px;
-
-        width: 95%;
-
-    }
-
-    .modal-content h2 {
-
-        font-size: 2em;
-
-    }
-
-    .close-button {
-
-        font-size: 30px;
-
-        top: 10px;
-
-        right: 15px;
-
-    }
-
-
-
-    /* Responsywność dla modala "O mnie" */
-
-    .about-content-wrapper {
-
-        flex-direction: column; /* Na małych ekranach ułóż zdjęcie i tekst jeden pod drugim */
-
-        align-items: center; /* Wyśrodkuj elementy w kolumnie */
-
-        text-align: center; /* Wyśrodkuj tekst */
-
-    }
-
-    .profile-image {
-
-        margin-bottom: 25px; /* Dodaj odstęp pod zdjęciem, gdy jest na górze */
-
-    }
-
-    .about-text p {
-
-        text-align: center; /* Upewnij się, że tekst jest wyśrodkowany */
-
-    }
-
-}
-
-@media (max-width: 576px) {
-
-    h1 {
-
-        font-size: 2em;
-
-        margin: 40px 0 30px 0;
-
-    }
-
-    .title-image {
-
-        margin-bottom: 30px;
-
-    }
-
-    .oferta-wycieczki {
-
-        padding: 25px;
-
-    }
-
-    .oferta-wycieczki h2 {
-
-        font-size: 1.8em;
-
-        padding: 0;
-
-        margin-bottom: 15px;
-
-    }
-
-    .offer-description-media p {
-
-        padding: 15px;
-
-    }
-
-    .oferta-wycieczki p, .oferta-wycieczki ul li {
-
-        font-size: 0.95em;
-
-    }
-
-    .button-link {
-
-        padding: 12px 25px;
-
-        font-size: 1.1em;
-
-    }
-
-    .contact-footer {
-
-        padding: 30px 15px;
-
-        font-size: 1em;
-
-    }
-
-    .offer-description-media .offer-image {
-
-        height: 150px;
-
-    }
-
-    .offer-description-media {
-
-        min-height: 280px;
-
-    }
-
-    .modal-content {
-
-        padding: 15px;
-
-    }
-
-    .modal-content h2 {
-
-        font-size: 1.8em;
-
-    }
-
-    .modal-description {
-
-        font-size: 0.95em;
-
-    }
-
-
-
-    /* Responsywność dla modala "O mnie" na bardzo małych ekranach */
-
-    .profile-image {
-
-        width: 150px; /* Zmniejsz rozmiar zdjęcia na bardzo małych ekranach */
-
-        height: 150px;
-
-    }
-
-    .about-text p {
-
-        font-size: 0.95em;
-
-    }
-
-}
-
-
-
-
-
-/* Kontener dla wszystkich ofert wycieczek - aby były obok siebie */
-
-
+/* Offers Container */
 .oferty-container {
-
-
-    display: flex; /* Użyj Flexbox do ułożenia elementów obok siebie */
-
-
-    flex-wrap: wrap; /* Pozwól elementom zawijać się na mniejszych ekranach */
-
-
-    justify-content: center; /* Wyśrodkuj oferty, jeśli jest ich mniej niż dostępna szerokość */
-
-
-    gap: 30px; /* Dodaj odstęp między ofertami */
-
-
-    padding: 20px; /* Dodaj padding wokół kontenera ofert */
-
-
-    max-width: 1200px; /* Ogranicz maksymalną szerokość kontenera */
-
-
-    margin: 40px auto; /* Wyśrodkuj kontener na stronie i dodaj odstęp od góry/dołu */
-
-
+    display: flex;
+    flex-direction: column; /* Default to column for small screens */
+    align-items: center;
+    gap: 30px; /* Space between offers */
+    padding: 20px;
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
 }
-
-
-
-
-
-/* Pojedyncza oferta wycieczki */
-
 
 .oferta-wycieczki {
-
-
-    background-color: #fff; /* Białe tło */
-
-
-    border-radius: 10px; /* Zaokrąglone rogi */
-
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Delikatny cień */
-
-
-    padding: 30px; /* Wewnętrzny odstęp */
-
-
-    margin-bottom: 20px; /* Odstęp na dole (w przypadku, gdy się zawiną) */
-
-
-    width: 100%; /* Domyślna szerokość na małych ekranach */
-
-
-    max-width: 550px; /* Maksymalna szerokość każdej oferty */
-
-
-    box-sizing: border-box; /* Ważne dla paddingu i szerokości */
-
-
-    display: flex; /* Użyj flexbox wewnątrz oferty, aby ułatwić układ */
-
-
-    flex-direction: column; /* Elementy w ofercie ułożone kolumnowo */
-
-
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    width: 100%; /* Full width on small screens */
+    box-sizing: border-box; /* Include padding in width */
+    max-width: 600px; /* Max width for single offer on small screens */
 }
-
-
-
-
-
-/* Responsywność dla ofert */
-
-
-@media (min-width: 900px) { /* Przy ekranach szerszych niż 900px */
-
-
-    .oferta-wycieczki {
-
-
-        width: calc(50% - 15px); /* Ustawienie szerokości na około połowę, uwzględniając gap */
-
-
-        margin-bottom: 0; /* Usuń margines dolny, gdy są obok siebie */
-
-
-    }
-
-
-}
-
-
-
-
-
-/* Możesz także chcieć dostosować styl dla offer-description-media, jeśli obrazek jest za duży */
-
 
 .offer-description-media {
-
-
     display: flex;
-
-
-    flex-direction: column; /* Domyślnie obrazek pod opisem */
-
-
-    align-items: center; /* Wyśrodkuj zawartość */
-
-
-    gap: 15px; /* Odstęp między opisem a obrazkiem */
-
-
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     margin-bottom: 20px;
-
-
 }
-
-
-
-
 
 .offer-description-media p {
-
-
-    flex: 1; /* Pozwól tekstowi zająć dostępną przestrzeń */
-
-
+    text-align: left;
+    margin: 0;
 }
-
-
-
-
 
 .offer-image {
-
-
-    max-width: 100%; /* Obrazki nie wyjdą poza swój kontener */
-
-
+    width: 100%;
+    max-width: 300px;
     height: auto;
-
-
-    border-radius: 8px; /* Zaokrąglone rogi obrazków */
-
-
+    border-radius: 8px;
+    object-fit: cover;
 }
 
+.koszt {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #e67e22;
+    margin: 20px 0;
+}
 
+.button-link {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
 
+.button-link:hover {
+    background-color: #2980b9;
+}
 
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
 
-@media (min-width: 768px) { /* Na większych ekranach obrazek obok tekstu */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+    text-align: center;
+}
 
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #3498db;
+}
+
+.about-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.responsive-map-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.modal-description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Footer */
+.contact-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.contact-footer p {
+    margin: 5px 0;
+}
+
+.contact-footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-footer a:hover {
+    color: #2980b9;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .oferty-container {
+        flex-direction: row; /* Side-by-side on larger screens */
+        justify-content: center;
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .oferta-wycieczki {
+        width: calc(50% - 15px); /* Two columns with gap */
+        max-width: none; /* Remove max-width constraint for columns */
+        text-align: left; /* Align text to left in columns */
+    }
 
     .offer-description-media {
-
-
-        flex-direction: row; /* Obrazek i tekst obok siebie */
-
-
-        align-items: flex-start; /* Wyrównaj do góry */Dodaj komentarzWięcej działań
-
-
+        flex-direction: row; /* Image and text side-by-side */
+        text-align: left;
+        align-items: flex-start;
     }
-
 
     .offer-description-media p {
-
-
-        padding-right: 20px; /* Odstęp między tekstem a obrazkiem */
-
-
+        flex: 1; /* Allow text to take available space */
+        padding-right: 20px; /* Space between text and image */
     }
-
 
     .offer-image {
-
-
-        max-width: 40%; /* Obrazek zajmuje 40% szerokości */
-
-
+        width: 150px; /* Smaller fixed width for image in row layout */
+        flex-shrink: 0; /* Prevent image from shrinking */
     }
 
+    .about-content-wrapper {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
 
+    .profile-image {
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+
+    .about-text {
+        flex: 1;
+    }
 }
