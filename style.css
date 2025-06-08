@@ -66,15 +66,15 @@ h3 {
     color: #1abc9c;
 }
 
-/* Obrazek tytułowy pod nagłówkiem - ZMNIEJSZONY I WYŚRODKOWANY */
+/* Obrazek tytułowy pod nagłówkiem */
 .title-image {
-    width: 90%; /* Zmniejszona szerokość */
-    max-width: 800px; /* Maksymalna szerokość */
-    height: 350px; /* ZWIĘKSZONA WYSOKOŚĆ ZDJĘCIA TYTUŁOWEGO, aby nie było ucięte */
+    width: 90%;
+    max-width: 800px;
+    height: 350px; /* Zwiększona wysokość */
     object-fit: cover;
-    margin: 0 auto 30px auto; /* Wyśrodkowanie i margines dolny */
+    margin: 0 auto 30px auto;
     display: block;
-    border-radius: 10px; /* Delikatne zaokrąglenie */
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -85,15 +85,15 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Odstęp między rubrykami */
+    gap: 30px;
     padding: 20px;
     max-width: 1200px;
     margin: 40px auto;
 }
 
-/* Pojedyncza oferta wycieczki */
+/* Pojedyncza oferta wycieczki - KLUCZOWA ZMIANA: Dodajemy flex dla całych ofert */
 .oferta-wycieczki {
-    background-color: #34495e; /* Ciemne tło rubryk */
+    background-color: #34495e;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 30px;
@@ -104,70 +104,79 @@ h3 {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    /* DLA WYRÓWNANIA OPISÓW I ZDJĘĆ */
+    justify-content: space-between; /* Rozkłada elementy równomiernie */
+    align-items: stretch; /* Rozciąga elementy, aby miały tę samą wysokość */
 }
 
 /* Sekcja z opisem i obrazkiem w ofercie */
 .offer-description-media {
-    display: flex; /* Użyj Flexbox */
-    flex-direction: column; /* Domyślnie kolumnowo na małych ekranach */
-    gap: 15px; /* Odstęp między elementami */
+    display: flex;
+    flex-direction: column; /* Tekst nad zdjęciem */
+    gap: 15px;
     margin-bottom: 20px;
-    align-items: center; /* Wyśrodkowanie elementów na małych ekranach */
+    align-items: center; /* Wyśrodkowanie elementów wewnątrz */
+    flex-grow: 1; /* Pozwala tej sekcji rosnąć, aby dopasować wysokość */
+    justify-content: flex-start; /* Upewnia się, że tekst zaczyna się na górze */
 }
 
-/* Ramka dla opisu oferty */
+/* Ramka dla opisu oferty - KLUCZOWA ZMIANA: Dodajemy flex-grow dla tekstu */
 .offer-description-media p {
-    background-color: #2c3e50; /* Ciemniejsze tło ramki */
+    background-color: #2c3e50;
     border-radius: 8px;
     padding: 15px;
     text-align: justify;
-    margin-bottom: 0; /* Usuń domyślny margines */
-    width: 100%; /* Rozciągnij na całą dostępną szerokość */
-    box-sizing: border-box; /* Ważne dla paddingu i szerokości */
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* Wewnętrzny cień */
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+    flex-grow: 1; /* Pozwala ramce z opisem rosnąć, aby dopasować wysokość */
+    display: flex; /* Dodatkowo, aby tekst wewnątrz ramki mógł się wyrównać */
+    flex-direction: column;
+    justify-content: center; /* Wyśrodkowanie tekstu w ramce, jeśli ramka jest wysoka */
 }
 
 /* ZDJĘCIA POD OPISEM I NA TYM SAMYM POZIOMIE */
 .offer-image {
-    width: 100%; /* Obrazek zajmuje całą dostępną szerokość rodzica */
+    width: 100%;
     height: 200px; /* STAŁA WYSOKOŚĆ ZDJĘCIA DLA WSZYSTKICH OFERT */
-    object-fit: cover; /* KLUCZOWA ZMIANA: dopasowanie obrazka do wymiarów bez zniekształceń */
+    object-fit: cover;
     border-radius: 8px;
     display: block;
-    margin: 0; /* Usuń automatyczny margines, będzie kontrolowany przez gap */
-    flex-shrink: 0; /* Zapobiega zmniejszaniu się obrazka */
+    margin: 0;
+    flex-shrink: 0;
 }
 
 /* Rubryka planu podróży */
 .plan-rubric {
-    background-color: #2c3e50; /* Ciemniejsze tło dla rubryki planu */
+    background-color: #2c3e50;
     border-radius: 8px;
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* Wewnętrzny cień */
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Styl dla listy planu podróży */
-.plan-rubric ul { /* Celowanie w ul wewnątrz plan-rubric */
+.plan-rubric ul {
     list-style: disc;
     margin-left: 20px;
     padding-left: 0;
-    margin-top: 0; /* Usuń górny margines, jeśli już jest padding na rodzicu */
-    margin-bottom: 0; /* Usuń dolny margines */
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .plan-rubric ul li {
     margin-bottom: 10px;
     line-height: 1.5;
-    color: #bdc3c7; /* Delikatnie jaśniejszy kolor tekstu w planie */
+    color: #bdc3c7;
 }
 
 .plan-rubric ul ul {
     list-style: circle;
     margin-top: 5px;
     margin-bottom: 5px;
-    color: #dbe0e3; /* Jeszcze jaśniejszy dla podpunktów */
+    color: #dbe0e3;
 }
 
 /* Styl dla kosztu wycieczki */
@@ -183,7 +192,7 @@ h3 {
 /* Przyciski ofert */
 .offer-buttons {
     text-align: center;
-    margin-top: auto;
+    margin-top: auto; /* Pchnie przyciski na dół karty */
     padding-top: 20px;
 }
 
@@ -219,14 +228,14 @@ h3 {
 }
 
 .modal-content {
-    background-color: #34495e; /* Ciemne tło modala */
-    color: #ecf0f1; /* Jasny tekst w modalu */
+    background-color: #34495e;
+    color: #ecf0f1;
     margin: auto;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    max-width: 500px; /* ZMNIEJSZONA MAKSYMALNA SZEROKOŚĆ MODALI */
+    max-width: 500px;
     width: 90%;
     box-sizing: border-box;
     animation: fadeIn 0.3s ease-out;
@@ -259,15 +268,15 @@ h3 {
 /* Style dla modala "O mnie" */
 .about-content-wrapper {
     display: flex;
-    flex-direction: column; /* Obrazek nad tekstem */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
     text-align: center;
 }
 
 .profile-image {
-    width: 120px; /* ZMNIEJSZONY OBRAZEK PROFILOWY */
-    height: 120px; /* ZMNIEJSZONY OBRAZEK PROFILOWY */
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #1abc9c;
@@ -275,12 +284,12 @@ h3 {
 
 .about-text p {
     text-align: justify;
-    font-size: 0.95em; /* Nieznaczne zmniejszenie tekstu w modalu */
+    font-size: 0.95em;
 }
 
-/* Style dla modala "Mapa" - ZMNIEJSZONA MAPA */
+/* Style dla modala "Mapa" */
 .responsive-map-image {
-    max-width: 80%; /* ZMNIEJSZONA MAKSYMALNA SZEROKOŚĆ MAPY */
+    max-width: 80%;
     height: auto;
     display: block;
     margin: 0 auto 15px auto;
@@ -292,7 +301,7 @@ h3 {
     text-align: center;
     font-style: italic;
     color: #bdc3c7;
-    font-size: 0.9em; /* Nieznaczne zmniejszenie tekstu opisu mapy */
+    font-size: 0.9em;
 }
 
 
@@ -329,7 +338,7 @@ h3 {
     }
 
     .about-content-wrapper {
-        flex-direction: row; /* Obrazek obok tekstu w modalach "O mnie" */
+        flex-direction: row;
         text-align: left;
     }
 
@@ -342,25 +351,29 @@ h3 {
         flex: 1;
     }
 
-    /* Na większych ekranach obrazek w ofercie pod tekstem */
+    /* Utrzymaj układ kolumnowy dla opisu i zdjęcia na tabletach */
     .offer-description-media {
-        flex-direction: column; /* Utrzymaj obrazek pod tekstem na większych ekranach */
-        align-items: center; /* Wyśrodkuj tekst i obrazek */
+        flex-direction: column;
+        align-items: center;
     }
     .offer-description-media p {
         padding-right: 15px; /* Odstęp w ramce */
     }
     .offer-image {
-        max-width: 100%; /* Obrazek zajmuje całą dostępną szerokość */
-        height: 200px; /* Zapewnia stałą wysokość */
+        max-width: 100%;
+        height: 200px;
     }
 }
 
 /* Dla większych desktopów (od 900px) */
 @media (min-width: 900px) {
+    .oferty-container {
+        align-items: stretch; /* KLUCZOWA ZMIANA: rozciąga oferty, by miały tę samą wysokość */
+    }
+
     .oferta-wycieczki {
-        width: calc(50% - 15px); /* Ustawienie szerokości na około połowę, uwzględniając gap */
-        margin-bottom: 0; /* Usuń margines dolny, gdy są obok siebie */
+        width: calc(50% - 15px);
+        margin-bottom: 0;
     }
 }
 
