@@ -69,7 +69,7 @@ h3 {
 ```css
 /* Obrazek tytułowy pod nagłówkiem - ZMNIEJSZONY I WYŚRODKOWANY /
 .title-image {
-width: 90%; / Zmniejszona szerokość /
+width: 50%; / Zmniejszona szerokość /
 max-width: 800px; / Maksymalna szerokość /
 height: 300px; / ZWIĘKSZONA WYSOKOŚĆ ZDJĘCIA TYTUŁOWEGO /
 object-fit: cover;
