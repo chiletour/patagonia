@@ -70,7 +70,7 @@ h3 {
 .title-image {
     width: 90%; /* Zmniejszona szerokość */
     max-width: 800px; /* Maksymalna szerokość */
-    height: 270px; /* Stała wysokość */
+    height: 350px; /* ZWIĘKSZONA WYSOKOŚĆ ZDJĘCIA TYTUŁOWEGO, aby nie było ucięte */
     object-fit: cover;
     margin: 0 auto 30px auto; /* Wyśrodkowanie i margines dolny */
     display: block;
