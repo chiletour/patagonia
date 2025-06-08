@@ -1,13 +1,3 @@
-Przepraszam Cię bardzo za to! Moja pomyłka. Skupiłem się na formatowaniu dni w planie podróży i niestety zapomniałem, że zmiany w CSS mogły naruszyć układ ofert. Masz rację, oferty znów znalazły się jedna pod drugą, zamiast obok siebie, i to jest coś, co natychmiast musimy naprawić. To absolutnie kluczowe, aby układ strony był responsywny i czytelny na większych ekranach.
-
-Musiałem przypadkowo usunąć lub zmienić media queries odpowiedzialne za układ Flexbox na większych ekranach. Naprawmy to od razu.
-Zaktualizowany style.css (Przywrócenie ofert obok siebie i dni w rubrykach)
-
-Poniżej znajdziesz poprawiony kod CSS. Przywróciłem media queries, które sprawiają, że oferty wyświetlają się obok siebie na szerszych ekranach, jednocześnie zachowując nowe rubryki dla poszczególnych dni.
-
-Proszę, skopiuj całą poniższą zawartość i wklej ją do swojego pliku style.css, całkowicie zastępując jego obecną zawartość. Plik index.html powinien pozostać taki, jak po ostatniej zmianie (z dniami w div class="day-rubric").
-CSS
-
 /* Ogólne style dla całej strony */
 body {
     font-family: 'Open Sans', sans-serif;
