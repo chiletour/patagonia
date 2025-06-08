@@ -1,318 +1,207 @@
-/* General Body and Typography */
-body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chile - Wyprawa marzeń na koniec świata | Twoje Biuro Podróży</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: #2c3e50;
-    text-align: center;
-    margin-top: 20px;
-}
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Strona Główna</a></li>
+                <li><a href="rapa-nui-atakama.html">Rapa Nui i Atakama</a></li>
+                <li><a href="patagonia.html">Patagonia</a></li>
+                <li><a href="o-mnie.html">O mnie</a></li>
+                <li><a href="#" id="openMapModal">Mapa</a></li>
+                <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
+    <h1>Chile - Wyprawa marzeń na koniec świata </h1>
+    <img src="https://github.com/user-attachments/assets/ab576a4f-0adb-4ed9-9c31-ef9e8de7b94f" alt="Patagonia" class="title-image">
+    <div class="oferty-container">
+        <div class="oferta-wycieczki">
+            <h2>Rapa Nui i Pustynia Atakama</h2>
 
-h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
+            <div class="offer-description-media">
+                <p>
+                    Niezwykła podróż przez serce Chile, od tętniącej życiem stolicy,
+                    przez magiczne wybrzeże, majestatyczną Pustynię Atakama,
+                    aż po tajemniczą Wyspę Wielkanocną i podniebne Andy.
+                </p>
+                <img src="autobus.jpg" alt="Autobus w Chile" class="offer-image">
+            </div>
 
-h3 {
-    font-size: 1.4em;
-    margin-top: 25px;
-    margin-bottom: 10px;
-}
+            <h3 id="plan-rapanui">Plan Podróży:</h3>
+            <ul>
+                <li>
+                    <strong>Dzień 1: Przylot do Santiago de Chile i zwiedzanie</strong>
+                    <br>Transfer z lotniska, zakwaterowanie. Zwiedzanie centrum miasta:
+                    <strong>Plaza de Armas</strong> z Katedrą Metropolitalną,
+                    <strong>Pałac La Moneda</strong> (siedziba prezydenta),
+                    <strong>Cerro Santa Lucía</strong> z panoramicznym widokiem na miasto,
+                    <strong>Barrio Lastarria</strong> (dzielnica artystyczna).
+                </li>
+                <li>
+                    <strong>Dzień 2: Valparaíso, Cartagena i Pomaire</strong>
+                    <br>Całodniowa wycieczka do malowniczego, kolorowego <strong>Valparaíso</strong> (UNESCO),
+                    spacer po krętych uliczkach, przejażdżka historycznymi ascensorami.
+                    Następnie relaks w nadmorskiej <strong>Cartagenie</strong> i wizyta w <strong>Pomaire</strong> – wiosce rzemieślników, słynącej z wyrobów ceramicznych.
+                </li>
+                <li>
+                    <strong>Dni 3-6: Niezwykła Pustynia Atakama</strong>
+                    <br>Lot do Calamy i transfer do San Pedro de Atacama. Cztery dni eksploracji:
+                    <ul>
+                        <li><strong>Valle de la Luna (Dolina Księżycowa)</strong> i <strong>Valle de la Muerte (Dolina Śmierci)</strong> – formacje skalne i pustynne krajobrazy o zachodzie słońca.</li>
+                        <li><strong>Gejzery El Tatio</strong> – poranna wizyta na polu gejzerów na wysokości 4320 m n.p.m., kąpiele w gorących źródłach.</li>
+                        <li><strong>Lagunas Altiplánicas (Miscanti i Miñiques)</strong> – jeziora położone wysoko w Andach, otoczone wulkanami, dom dla flamingów.</li>
+                        <li><strong>Salar de Atacama i Laguna Chaxa</strong> – największa solna pustynia w Chile, obserwacja flamingów.</li>
+                        <li><strong>Termas de Puritama</strong> – relaks w naturalnych termalnych basenach.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Dzień 7: Powrót do Santiago i Winiarnia</strong>
+                    <br>Lot powrotny z Calamy do Santiago. Po południu zwiedzanie jednej z renomowanych winiarni w Dolinie Maipo (np. Concha y Toro) z degustacją najlepszych chilijskich win.
+                </li>
+                <li>
+                    <strong>Dni 8-10: Tajemnicza Rapa Nui (Wyspa Wielkanocna)</strong>
+                    <br>Lot na Rapa Nui. Trzy dni odkrywania wyspy:
+                    <ul>
+                        <li><strong>Ahu Tongariki</strong> – największa platforma z 15 moai.</li>
+                        <li><strong>Rano Raraku</strong> – kamieniołom, gdzie powstawały moai.</li>
+                        <li><strong>Orongo</strong> – wioska kultu Człowieka-Ptaka, z widokiem na trzy wysepki.</li>
+                        <li><strong>Plaża Anakena</strong> – relaks i podziwianie moai w otoczeniu palm.</li>
+                        <li>Zwiedzanie <strong>Hanga Roa</strong> – głównego miasteczka.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Dzień 11: Cajón del Maipo i wylot</strong>
+                    <br>Poranna wycieczka do malowniczego <strong>Cajón del Maipo</strong> – doliny w Andach, idealnej na lekki trekking, podziwianie górskich krajobrazów. Popołudniu transfer na lotnisko i wylot do Polski.
+                </li>
+            </ul>
+            <div class="koszt">Koszt wycieczki: 8700 PLN + 5000 PLN (lot z Polski)</div>
+            <a href="mailto:chileforvisit@gmail.com" class="button-link">Zapytaj o tę ofertę</a>
+        </div>
 
-p {
-    margin-bottom: 10px;
-}
+        <div class="oferta-wycieczki">
+            <h2>Patagonia: Lodowce Balmaceda i Serrano</h2>
+            <div class="offer-description-media">
+                <p>
+                    Wyprawa w głąb chilijskiej Patagonii,
+                    skupiona na odkrywaniu majestatycznych lodowców, dziewiczej przyrody
+                    i Parku Narodowego Torres del Paine.
+                </p>
+                <img src="kajak.png" alt="Kajak w Patagonii" class="offer-image">
+            </div>
 
-strong {
-    font-weight: 600;
-}
+            <h3>Plan Podróży:</h3>
+            <ul>
+                <li>
+                    <strong>Dzień 1: Przylot do Santiago de Chile</strong>
+                    <br>Przylot na lotnisko Santiago de Chile, transfer do hotelu. Odpoczynek po podróży. Wspólna kolacja zapoznawcza wraz z całą grupą.
+                </li>
+                <li>
+                    <strong>Dzień 2: Lot do Punta Arenas</strong>
+                    <br>Przylot na lotnisko w Punta Arenas, transfer do hotelu. Czas wolny na odpoczynek i zwiedzanie miasta, spacer po nabrzeżu, wizyta na cmentarzu miejskim (uznawanym za jeden z piękniejszych).
+                </li>
+                <li>
+                    <strong>Dzień 3: Pingwiny na Isla Magdalena i podróż do Puerto Natales</strong>
+                    <br>Poranny rejs na <strong>Isla Magdalena</strong> (rezerwat pingwinów magellańskich). Po południu przejazd autobusem do Puerto Natales (ok. 3 godziny), bramy do Parku Narodowego Torres del Paine. Zakwaterowanie.
+                </li>
+                <li>
+                    <strong>Dzień 4: Rejs do lodowców Balmaceda i Serrano</strong>
+                    <br>Całodniowy rejs z Puerto Natales. Podziwianie fiordów, wizyta przy <strong>Lodowcu Balmaceda</strong> (widok z pokładu statku) oraz spacer do stóp <strong>Lodowca Serrano</strong>. Lunch w formie pikniku lub w chacie ranchera. Powrót do Puerto Natales.
+                </li>
+                <li>
+                    <strong>Dzień 5: Park Narodowy Torres del Paine - Laguna Amarga i Cascada Paine</strong>
+                    <br>Całodniowa wycieczka autokarowa po Parku Narodowym Torres del Paine. Odwiedzimy <strong>Laguna Amarga</strong> z widokiem na wieże Torres, <strong>Cascada Paine</strong> (wodospad), <strong>Lago Nordenskjöld</strong> i <strong>Lago Pehoé</strong>. Szlaki spacerowe dostosowane do możliwości grupy. Nocleg w hotelu w pobliżu parku.
+                </li>
+                <li>
+                    <strong>Dzień 6: Torres del Paine - Szlak do Mirador Base Las Torres (opcjonalnie) / Jezioro Grey</strong>
+                    <br>Dla chętnych i zaawansowanych: wymagający trekking do punktu widokowego <strong>Mirador Base Las Torres</strong> (ok. 8-9 godzin, nagroda: widok na granitowe wieże). Dla pozostałych: relaksujący dzień z dojazdem do <strong>Jeziora Grey</strong> i podziwianiem lodowca Grey z daleka. Nocleg w okolicy parku.
+                </li>
+                <li>
+                    <strong>Dzień 7: Torres del Paine - Dolina Francuska (opcjonalnie) / Wędrówki przy jeziorach</strong>
+                    <br>Kolejny dzień w parku. Opcja trekkingu do <strong>Dolina Francuska</strong> (wymaga promowania przez Jezioro Pehoé). Alternatywnie, lżejsze szlaki wokół jezior, podziwianie fauny (guanaco, nandu). Powrót do Puerto Natales.
+                </li>
+                <li>
+                    <strong>Dzień 8: Jaskinia Milodon i powrót do Punta Arenas</strong>
+                    <br>Przed powrotem do Punta Arenas, wizyta w <strong>Cueva del Milodón</strong> – jaskini, gdzie znaleziono szczątki prehistorycznego leniwca olbrzymiego. Po południu powrót do Punta Arenas, czas wolny na kolację.
+                </li>
+                <li>
+                    <strong>Dzień 9: Park Narodowy Pali Aike i wulkaniczne krajobrazy</strong>
+                    <br>Całodniowa wycieczka do <strong>Parku Narodowego Pali Aike</strong>, położonego na granicy z Argentyną. Region wulkanicznych stożków, kraterów i jaskiń. Możliwość spotkania guanaco. Unikalne pustynne krajobrazy Patagonii.
+                </li>
+                <li>
+                    <strong>Dzień 10: Fort Bulnes i koniec świata</strong>
+                    <br>Wycieczka na południe od Punta Arenas do zrekonstruowanego <strong>Fortu Bulnes</strong>, pierwszej chilijskiej osady na Cieśninie Magellana. Odwiedzimy również <strong>Puerto del Hambre (Port Głodu)</strong> oraz pomnik symbolizujący geograficzny środek Chile.
+                </li>
+                <li>
+                    <strong>Dzień 11: Termy i wizyta w winiarni</strong>
+                    <br>Wyjazd do Cajon del Maipu i naturalnych term o poranku. Naoczna wizyta z Andami. W drugiej części dnia wizyta w najpopularniejszej winiarni Chile Concha y Toro i degustacja wina słynnego na cały świat.
+                </li>
+            </ul>
+            <div class="koszt">Koszt wyprawy: 8500 PLN + 5000 PLN (lot z Polski)</div>
+            <a href="mailto:chileforvisit@gmail.com" class="button-link">Zapytaj o tę ofertę</a>
+        </div>
+    </div>
 
-ul {
-    list-style-type: none; /* Remove default bullet points */
-    padding: 0;
-    margin: 0;
-}
 
-li {
-    margin-bottom: 10px;
-    padding-left: 20px; /* Indent list items */
-    position: relative;
-}
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Moja Podróż po Chile</h2>
+            <img src="Calama.jpg" alt="Moja mapa podróży po Chile" class="responsive-map-image">
+            <p class="modal-description">Wizualizacja moich przelotów i kluczowych miejsc w Chile.</p>
+        </div>
+    </div>
 
-li::before {
-    content: '•'; /* Custom bullet point */
-    color: #2c3e50;
-    position: absolute;
-    left: 0;
-}
+    <footer class="contact-footer">
+        <p>Masz pytania? Skontaktuj się z nami!</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank">+48 519 442 579</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
+        <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
+    </footer>
 
-/* Header and Navigation */
-.main-header {
-    background-color: #2c3e50;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+    <script>
+        // JavaScript do obsługi modala
+        const mapModal = document.getElementById('mapModal');
+        const openMapBtn = document.getElementById('openMapModal');
+        const closeButton = document.querySelector('.close-button');
 
-.main-nav ul {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        // Otwiera modal
+        openMapBtn.onclick = function(event) {
+            event.preventDefault(); // Zapobiega przeładowaniu strony
+            mapModal.style.display = 'flex'; // Zmieniamy na flex, żeby flexbox centrował
+            document.body.style.overflow = 'hidden'; // Wyłącza scrollowanie strony pod modalem
+        }
 
-.main-nav li {
-    display: inline-block;
-    margin: 0 15px;
-    padding: 0; /* Override list item padding */
-}
+        // Zamyka modal po kliknięciu 'X'
+        closeButton.onclick = function() {
+            mapModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Przywraca scrollowanie strony
+        }
 
-.main-nav li::before {
-    content: none; /* Remove custom bullet for nav links */
-}
+        // Zamyka modal po kliknięciu poza jego zawartością
+        window.onclick = function(event) {
+            if (event.target == mapModal) {
+                mapModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-.main-nav a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-}
+        // Dodatkowa funkcja do zamykania modala klawiszem Esc
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mapModal.style.display === 'flex') {
+                mapModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 
-.main-nav a:hover,
-.main-nav a.active {
-    color: #3498db;
-}
-
-/* Main Content and Image */
-.title-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 30px;
-}
-
-/* Offers Container */
-.oferty-container {
-    display: flex;
-    flex-direction: column; /* Default to column for small screens */
-    align-items: center;
-    gap: 30px; /* Space between offers */
-    padding: 20px;
-    max-width: 1200px; /* Max width for the container */
-    margin: 0 auto; /* Center the container */
-}
-
-.oferta-wycieczki {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
-    width: 100%; /* Full width on small screens */
-    box-sizing: border-box; /* Include padding in width */
-    max-width: 600px; /* Max width for single offer on small screens */
-}
-
-.offer-description-media {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.offer-description-media p {
-    text-align: left;
-    margin: 0;
-}
-
-.offer-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.koszt {
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #e67e22;
-    margin: 20px 0;
-}
-
-.button-link {
-    display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.button-link:hover {
-    background-color: #2980b9;
-}
-
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    position: relative;
-    width: 90%;
-    max-width: 600px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.close-button {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #333;
-    text-decoration: none;
-}
-
-.profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid #3498db;
-}
-
-.about-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.about-text {
-    text-align: left;
-}
-
-.responsive-map-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-    border-radius: 8px;
-}
-
-.modal-description {
-    font-size: 0.9em;
-    color: #666;
-}
-
-/* Footer */
-.contact-footer {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-.contact-footer p {
-    margin: 5px 0;
-}
-
-.contact-footer a {
-    color: #3498db;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-footer a:hover {
-    color: #2980b9;
-}
-
-/* Responsive Design */
-@media (min-width: 768px) {
-    .oferty-container {
-        flex-direction: row; /* Side-by-side on larger screens */
-        justify-content: center;
-        align-items: flex-start; /* Align items to the top */
-    }
-
-    .oferta-wycieczki {
-        width: calc(50% - 15px); /* Two columns with gap */
-        max-width: none; /* Remove max-width constraint for columns */
-        text-align: left; /* Align text to left in columns */
-    }
-
-    .offer-description-media {
-        flex-direction: row; /* Image and text side-by-side */
-        text-align: left;
-        align-items: flex-start;
-    }
-
-    .offer-description-media p {
-        flex: 1; /* Allow text to take available space */
-        padding-right: 20px; /* Space between text and image */
-    }
-
-    .offer-image {
-        width: 150px; /* Smaller fixed width for image in row layout */
-        flex-shrink: 0; /* Prevent image from shrinking */
-    }
-
-    .about-content-wrapper {
-        flex-direction: row;
-        text-align: left;
-        align-items: flex-start;
-    }
-
-    .profile-image {
-        margin-right: 30px;
-        margin-bottom: 0;
-    }
-
-    .about-text {
-        flex: 1;
-    }
-}
+</body>
