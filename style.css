@@ -526,3 +526,83 @@ h1 {
         font-size: 0.95em;
     }
 }
+/* --- Style dla sekcji "Terminy" --- */
+.terminy-sekcja {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.terminy-toggle {
+    background-color: #4a90e2; /* Jasny niebieski dla przycisku */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Aby padding i border-radius działały jak na przycisku */
+    width: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: none; /* Usuń domyślne obramowanie, jeśli to h3 */
+}
+
+.terminy-toggle:hover {
+    background-color: #347dc4; /* Ciemniejszy niebieski po najechaniu */
+    transform: translateY(-2px);
+}
+
+.terminy-toggle.active .arrow-icon {
+    transform: rotate(180deg); /* Obróć strzałkę, gdy lista jest otwarta */
+}
+
+.arrow-icon {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.terminy-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 0; /* Początkowo ukryte */
+    overflow: hidden; /* Ukryj zawartość, która wykracza poza max-height */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Płynne przejście */
+    opacity: 0; /* Początkowo niewidoczne */
+    background-color: #3f5b75; /* Tło dla listy terminów */
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+    border: 1px solid #4a90e2;
+}
+
+.terminy-lista.show {
+    max-height: 300px; /* Zwiększ na tyle, by zmieściło wszystkie terminy */
+    opacity: 1; /* Pokaż zawartość */
+}
+
+.terminy-lista li {
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Delikatna linia między terminami */
+    color: #ecf0f1;
+    font-size: 1.1em;
+    text-align: left;
+    position: relative; /* Dla kropek, jeśli chcesz */
+    border-left: none; /* Usuń lewe obramowanie z poprzednich li */
+    background-color: transparent; /* Upewnij się, że nie ma domyślnego tła dla li */
+    box-shadow: none; /* Usuń cień dla li */
+}
+
+.terminy-lista li:last-child {
+    border-bottom: none; /* Ostatni element bez dolnej linii */
+}
+
+/* Usuwamy kropki dla terminów, jeśli nie chcemy ich widzieć */
+.terminy-lista li::before {
+    content: '📅 '; /* Ikona kalendarza zamiast kropki */
+    color: #7bdcb5;
+    position: absolute;
+    left: 15px;
+    font-size: 0.9em;
+}
