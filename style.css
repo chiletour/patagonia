@@ -597,12 +597,4 @@ h1 {
 .terminy-lista li:last-child {
     border-bottom: none; /* Ostatni element bez dolnej linii */
 }
-
-/* Usuwamy kropki dla terminów, jeśli nie chcemy ich widzieć */
-.terminy-lista li::before {
-    content: '📅 '; /* Ikona kalendarza zamiast kropki */
-    color: #7bdcb5;
-    position: absolute;
-    left: 15px;
-    font-size: 0.9em;
-}
+,
