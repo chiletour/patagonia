@@ -70,7 +70,7 @@ h3 {
 /* Obrazek tytułowy pod nagłówkiem - ZMNIEJSZONY I WYŚRODKOWANY /
 .title-image {
 width: 50%; / Zmniejszona szerokość /
-max-width: 800px; / Maksymalna szerokość /
+max-width: 400px; / Maksymalna szerokość /
 height: 300px; / ZWIĘKSZONA WYSOKOŚĆ ZDJĘCIA TYTUŁOWEGO /
 object-fit: cover;
 margin: 0 auto 30px auto; / Wyśrodkowanie i margines dolny /
