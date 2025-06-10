@@ -217,7 +217,7 @@
 
     <footer class="contact-footer">
         <p>Masz pytania? Skontaktuj się z nami!</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank" rel="noopener noreferrer">**+48 519 442 579**</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank" rel="noopener noreferrer">+48 519 442 579</a></p>
         <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
         <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
     </footer>
@@ -252,6 +252,111 @@
                     //    terminyLista.style.maxHeight = "0";
                     // }
                 });
+            });
+        });
+    </script>
+</body>
+</html>
+   <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skrypt do rozwijania/zwijania terminów
+            const terminToggles = document.querySelectorAll('.terminy-toggle');
+
+            terminToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const terminySekcja = this.closest('.terminy-sekcja');
+                    if (!terminySekcja) return;
+
+                    const terminyLista = terminySekcja.querySelector('.terminy-lista');
+                    if (!terminyLista) return;
+
+                    terminyLista.classList.toggle('show');
+                    this.classList.toggle('active');
+                });
+            });
+
+            // --- NOWY KOD DO OBSŁUGI MODALI ---
+
+            // Pobieranie referencji do elementów
+            const openAboutModalBtn = document.getElementById('openAboutModal');
+            const aboutModal = document.getElementById('aboutModal');
+            const closeAboutModalBtn = aboutModal.querySelector('.close-button');
+
+            const openMapModalBtn = document.getElementById('openMapModal');
+            const mapModal = document.getElementById('mapModal');
+            const closeMapModalBtn = mapModal.querySelector('.close-button');
+
+            // Funkcja otwierająca modal
+            function openModal(modalElement) {
+                if (modalElement) {
+                    modalElement.style.display = 'flex'; // Użyj 'flex' zgodnie z CSS, aby centrować
+                }
+            }
+
+            // Funkcja zamykająca modal
+            function closeModal(modalElement) {
+                if (modalElement) {
+                    modalElement.style.display = 'none';
+                }
+            }
+
+            // Obsługa kliknięcia na przycisk "O mnie"
+            if (openAboutModalBtn) {
+                openAboutModalBtn.addEventListener('click', function(event) {
+                    event.preventDefault(); // Zapobiega domyślnej akcji linku (np. skrolowaniu do góry)
+                    openModal(aboutModal);
+                });
+            }
+
+            // Obsługa kliknięcia na przycisk "Mapa"
+            if (openMapModalBtn) {
+                openMapModalBtn.addEventListener('click', function(event) {
+                    event.preventDefault(); // Zapobiega domyślnej akcji linku
+                    openModal(mapModal);
+                });
+            }
+
+            // Obsługa kliknięcia na przycisk zamknięcia w modalu "O mnie"
+            if (closeAboutModalBtn) {
+                closeAboutModalBtn.addEventListener('click', function() {
+                    closeModal(aboutModal);
+                });
+            }
+
+            // Obsługa kliknięcia na przycisk zamknięcia w modalu "Mapa"
+            if (closeMapModalBtn) {
+                closeMapModalBtn.addEventListener('click', function() {
+                    closeModal(mapModal);
+                });
+            }
+
+            // Obsługa kliknięcia poza modalem, aby go zamknąć
+            if (aboutModal) {
+                aboutModal.addEventListener('click', function(event) {
+                    // Sprawdź, czy kliknięto bezpośrednio na tło modala, a nie na jego zawartość
+                    if (event.target === aboutModal) {
+                        closeModal(aboutModal);
+                    }
+                });
+            }
+            if (mapModal) {
+                mapModal.addEventListener('click', function(event) {
+                    if (event.target === mapModal) {
+                        closeModal(mapModal);
+                    }
+                });
+            }
+
+            // Obsługa klawisza Esc do zamykania modali
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    if (aboutModal && aboutModal.style.display === 'flex') {
+                        closeModal(aboutModal);
+                    }
+                    if (mapModal && mapModal.style.display === 'flex') {
+                        closeModal(mapModal);
+                    }
+                }
             });
         });
     </script>
