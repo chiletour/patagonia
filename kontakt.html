@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Twoje Biuro Podróży</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LJQNW4S88"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6LJQNW4S88');
+    </script>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="#" id="openAboutModal">O mnie</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="#" id="openMapModal">Mapa</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li> <li><a href="instagram.html">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-page-content">
+        <h1>Skontaktuj się z nami!</h1>
+
+        <div class="contact-options-container">
+            <div class="contact-option">
+                <img src="email_icon.png" alt="Ikona Email" class="contact-icon"> <h2>Email</h2>
+                <p>Napisz do nas maila, a odpowiemy najszybciej, jak to możliwe.</p>
+                <a href="mailto:chileforvisit@gmail.com" class="button-link contact-button">Wyślij Email</a>
+            </div>
+
+            <div class="contact-option">
+                <img src="whatsapp_icon.png" alt="Ikona WhatsApp" class="contact-icon"> <h2>WhatsApp</h2>
+                <p>Preferujesz szybki kontakt? Napisz do nas na WhatsApp!</p>
+                <a href="https://wa.me/48519442579" target="_blank" rel="noopener noreferrer" class="button-link whatsapp-button">Napisz na WhatsApp</a>
+            </div>
+
+            <div class="contact-option">
+                <img src="phone_icon.png" alt="Ikona Telefon" class="contact-icon"> <h2>Telefon</h2>
+                <p>Zadzwoń do nas, aby porozmawiać o szczegółach Twojej wymarzonej podróży.</p>
+                <a href="tel:+48519442579" class="button-link contact-button">Zadzwoń: +48 519 442 579</a>
+            </div>
+        </div>
+        <p class="contact-note">Jesteśmy dostępni w godzinach 9:00 - 17:00 (czasu chilijskiego).</p>
+    </main>
+
+    <footer class="contact-footer">
+        <p>Masz pytania? Skontaktuj się z nami!</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank" rel="noopener noreferrer">+48 519 442 579</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
+        <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skrypt do rozwijania/zwijania terminów (prawdopodobnie niepotrzebny na stronie kontakt, ale nie zaszkodzi)
+            const terminToggles = document.querySelectorAll('.terminy-toggle');
+            terminToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const terminySekcja = this.closest('.terminy-sekcja');
+                    if (!terminySekcja) return;
+                    const terminyLista = terminySekcja.querySelector('.terminy-lista');
+                    if (!terminyLista) return;
+                    terminyLista.classList.toggle('show');
+                    this.classList.toggle('active');
+                });
+            });
+
+            // NOWY KOD DO OBSŁUGI MODALI (skopiowany z index.html)
+            const openAboutModalBtn = document.getElementById('openAboutModal');
+            const aboutModal = document.getElementById('aboutModal');
+            const closeAboutModalBtn = aboutModal.querySelector('.close-button');
+
+            const openMapModalBtn = document.getElementById('openMapModal');
+            const mapModal = document.getElementById('mapModal');
+            const closeMapModalBtn = mapModal.querySelector('.close-button');
+
+            function openModal(modalElement) {
+                if (modalElement) {
+                    modalElement.style.display = 'flex';
+                }
+            }
+
+            function closeModal(modalElement) {
+                if (modalElement) {
+                    modalElement.style.display = 'none';
+                }
+            }
+
+            if (openAboutModalBtn) {
+                openAboutModalBtn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    openModal(aboutModal);
+                });
+            }
+
+            if (openMapModalBtn) {
+                openMapModalBtn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    openModal(mapModal);
+                });
+            }
+
+            if (closeAboutModalBtn) {
+                closeAboutModalBtn.addEventListener('click', function() {
+                    closeModal(aboutModal);
+                });
+            }
+
+            if (closeMapModalBtn) {
+                closeMapModalBtn.addEventListener('click', function() {
+                    closeModal(mapModal);
+                });
+            }
+
+            if (aboutModal) {
+                aboutModal.addEventListener('click', function(event) {
+                    if (event.target === aboutModal) {
+                        closeModal(aboutModal);
+                    }
+                });
+            }
+            if (mapModal) {
+                mapModal.addEventListener('click', function(event) {
+                    if (event.target === mapModal) {
+                        closeModal(mapModal);
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    if (aboutModal && aboutModal.style.display === 'flex') {
+                        closeModal(aboutModal);
+                    }
+                    if (mapModal && mapModal.style.display === 'flex') {
+                        closeModal(mapModal);
+                    }
+                }
+            });
+        });
+    </script>
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Roszak Patryk</h2>
+            <div class="about-content-wrapper">
+                <img src="profile.jpg" alt="Zdjęcie Patryka" class="profile-image">
+                <div class="about-text">
+                    <p>
+                        Cześć, mam na imię Patryk i jestem Polakiem mieszkającym 3 lata w Chile.
+                        Dzięki mojej narzeczonej z Chile nauczyłem się sprawnie mówić po
+                        hiszpańsku oraz poznać bogatą kulturę podróżując po krajach Ameryki
+                        Południowej. Jeśli chcesz poznać kulturę latynoską, zapraszam Cię na
+                        podróż do mojego drugiego domu - Chile. Uwielbiam odkrywać ten kontynent
+                        i dzielić się jego tradycjami. Wycieczka w małej kameralnej grupie.
+                        Jeśli chcesz dołączyć, napisz do mnie, aby przeżyć niezapomnianą przygodę z lokalnym przewodnikiem!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Twoja podróż po Chile</h2>
+            <img src="Calama.jpg" alt="Moja mapa podróży po Chile" class="responsive-map-image">
+            <p class="modal-description">Wizualizacja moich przelotów i kluczowych miejsc w Chile.</p>
+        </div>
+    </div>
+
+</body>
+</html>
