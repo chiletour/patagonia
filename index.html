@@ -222,7 +222,7 @@
         <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
-    <script>
+ <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Skrypt do rozwijania/zwijania terminów
             const terminToggles = document.querySelectorAll('.terminy-toggle');
@@ -318,4 +318,12 @@
                     if (aboutModal && aboutModal.style.display === 'flex') {
                         closeModal(aboutModal);
                     }
-                    if (mapModal && mapModal.style.display === 'flex
+                    if (mapModal && mapModal.style.display === 'flex') {
+                        closeModal(mapModal); // <-- Tutaj był ucięty kod
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
