@@ -26,8 +26,8 @@
             <li><a href="#" id="openAboutModal">O mnie</a></li>
             <li><a href="galeria.html">Galeria</a></li>
             <li><a href="#" id="openMapModal">Mapa</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li> 
-            <li><a href="https://www.instagram.com/chiletournee/" target="_blank" rel="noopener noreferrer">Instagram</a></li> </ul>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="https://www.instagram.com/chiletournee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
     </nav>
 </header>
@@ -224,41 +224,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const terminToggles = document.querySelectorAll('.terminy-toggle');
-
-            terminToggles.forEach(toggle => {
-                toggle.addEventListener('click', function() {
-                    // Znajdź najbliższego rodzica .terminy-sekcja
-                    const terminySekcja = this.closest('.terminy-sekcja');
-                    if (!terminySekcja) return; // Upewnij się, że element został znaleziony
-
-                    // Znajdź listę terminów w tej sekcji
-                    const terminyLista = terminySekcja.querySelector('.terminy-lista');
-                    if (!terminyLista) return; // Upewnij się, że element został znaleziony
-
-                    // Przełącz klasę 'show' na liście terminów
-                    terminyLista.classList.toggle('show');
-
-                    // Przełącz klasę 'active' na elemencie toggle (dla obracania strzałki)
-                    this.classList.toggle('active');
-
-                    // Dodatkowo, aby mieć pewność, że to działa responsywnie z max-height
-                    // można zmierzyć wysokość i ustawić ją dynamicznie, jeśli zawartość jest bardzo zmienna.
-                    // Na razie `max-height: 300px` w CSS powinno wystarczyć.
-                    // Jeśli lista ma być idealnie dopasowana, można użyć:
-                    // if (terminyLista.classList.contains('show')) {
-                    //    terminyLista.style.maxHeight = terminyLista.scrollHeight + "px";
-                    // } else {
-                    //    terminyLista.style.maxHeight = "0";
-                    // }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
-   <script>
-        document.addEventListener('DOMContentLoaded', function() {
             // Skrypt do rozwijania/zwijania terminów
             const terminToggles = document.querySelectorAll('.terminy-toggle');
 
@@ -275,7 +240,7 @@
                 });
             });
 
-            // --- NOWY KOD DO OBSŁUGI MODALI ---
+            // --- KOD DO OBSŁUGI MODALI ---
 
             // Pobieranie referencji do elementów
             const openAboutModalBtn = document.getElementById('openAboutModal');
