@@ -598,3 +598,145 @@ h1 {
     border-bottom: none; /* Ostatni element bez dolnej linii */
 }
 ,
+/* Style dla strony Kontakt */
+.contact-page-content {
+    max-width: 1000px;
+    margin: 60px auto 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.contact-page-content h1 {
+    margin-bottom: 50px;
+}
+
+.contact-options-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.contact-option {
+    background-color: #34495e;
+    border: 2px solid #4a90e2;
+    border-radius: 15px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px; /* Zwiększona maks. szerokość dla lepszego wyglądu */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-option:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.contact-icon {
+    width: 80px; /* Rozmiar ikon */
+    height: 80px;
+    margin-bottom: 20px;
+    filter: invert(70%) sepia(20%) saturate(1000%) hue-rotate(150deg) brightness(120%) contrast(90%); /* Kolor ikony - dopasuj do #a8dadc */
+    transition: transform 0.3s ease;
+}
+
+.contact-option:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+.contact-option h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #a8dadc;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #7bdcb5;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.contact-option p {
+    font-size: 1.05em;
+    color: #ecf0f1;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Pozwala tekstowi zająć dostępną przestrzeń */
+}
+
+.contact-button, .whatsapp-button {
+    /* Używamy już istniejących stylów .button-link */
+    display: inline-block; /* Aby przycisk nie zajmował całej szerokości */
+    width: auto;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    margin-top: auto; /* Wyrównuje przyciski do dołu, jeśli opisy mają różną wysokość */
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* Zielony kolor WhatsApp */
+    color: white;
+    box-shadow: 0 5px 15px rgba(37,211,102,0.4);
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(29,168,81,0.5);
+}
+
+.contact-note {
+    font-size: 1.1em;
+    color: #a8dadc;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+
+/* Responsywność dla strony Kontakt */
+@media (max-width: 768px) {
+    .contact-page-content h1 {
+        font-size: 2.2em;
+    }
+    .contact-options-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .contact-option {
+        max-width: 90%;
+        min-width: unset;
+        padding: 25px;
+    }
+    .contact-option h2 {
+        font-size: 1.6em;
+    }
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .contact-button, .whatsapp-button {
+        width: 100%; /* Przyciski na całą szerokość na mniejszych ekranach */
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-page-content {
+        margin: 40px auto 60px auto;
+        padding: 0 15px;
+    }
+    .contact-page-content h1 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .contact-option p {
+        font-size: 1em;
+    }
+    .contact-note {
+        font-size: 1em;
+    }
+}
