@@ -425,6 +425,11 @@ h1 {
         align-items: center;
         gap: 30px;
     }
+    .contact-option {
+        max-width: 90%;
+        min-width: unset;
+        padding: 25px;
+    }
     .oferta-wycieczki {
         max-width: 90%;
         min-width: unset;
