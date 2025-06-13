@@ -417,14 +417,13 @@ h1 {
 
 
 /* Responsywność dla małych ekranów */
-@media (max-width: 992px) {
-    .title-image {
-        max-width: 95%;
+@media (max-width: 768px) {
+   .contact-page-content h1 {
+        font-size: 2.2em;
     }
     .oferty-container {
-        flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 30px;
     }
     .oferta-wycieczki {
         max-width: 90%;
