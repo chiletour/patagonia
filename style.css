@@ -1,208 +1,741 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chile - Wyprawa marzeń na koniec świata | Twoje Biuro Podróży</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Globalne style */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
 
-    <header class="main-header">
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" class="active">Strona Główna</a></li>
-                <li><a href="rapa-nui-atakama.html">Rapa Nui i Atakama</a></li>
-                <li><a href="patagonia.html">Patagonia</a></li>
-                <li><a href="o-mnie.html">O mnie</a></li>
-                <li><a href="#" id="openMapModal">Mapa</a></li>
-                <li><a href="mailto:chileforvisit@gmail.com">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #a8dadc;
+    margin: 60px 0 20px 0;
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+}
 
-    <h1>Chile - Wyprawa marzeń na koniec świata </h1>
-    <img src="https://github.com/user-attachments/assets/ab576a4f-0adb-4ed9-9c31-ef9e8de7b94f" alt="Patagonia" class="title-image">
-    <div class="oferty-container">
-        <div class="oferta-wycieczki">
-            <h2>Rapa Nui i Pustynia Atakama</h2>
+/* Styl dla obrazka w tytule strony (głównego) */
+.title-image {
+    display: block;
+    max-width: 800px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
 
-            <div class="offer-description-media">
-                <p>
-                    Niezwykła podróż przez serce Chile, od tętniącej życiem stolicy,
-                    przez magiczne wybrzeże, majestatyczną Pustynię Atakama,
-                    aż po tajemniczą Wyspę Wielkanocną i podniebne Andy.
-                </p>
-                <img src="autobus.jpg" alt="Autobus w Chile" class="offer-image">
-            </div>
+/* Kontener dla ofert - Flexbox */
+.oferty-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
 
-            <h3 id="plan-rapanui">Plan Podróży:</h3>
-            <ul>
-                <li>
-                    <strong>Dzień 1: Przylot do Santiago de Chile i zwiedzanie</strong>
-                    <br>Transfer z lotniska, zakwaterowanie. Zwiedzanie centrum miasta:
-                    <strong>Plaza de Armas</strong> z Katedrą Metropolitalną,
-                    <strong>Pałac La Moneda</strong> (siedziba prezydenta),
-                    <strong>Cerro Santa Lucía</strong> z panoramicznym widokiem na miasto,
-                    <strong>Barrio Lastarria</strong> (dzielnica artystyczna).
-                </li>
-                <li>
-                    <strong>Dzień 2: Valparaíso, Cartagena i Pomaire</strong>
-                    <br>Całodniowa wycieczka do malowniczego, kolorowego <strong>Valparaíso</strong> (UNESCO),
-                    spacer po krętych uliczkach, przejażdżka historycznymi ascensorami.
-                    Następnie relaks w nadmorskiej <strong>Cartagenie</strong> i wizyta w <strong>Pomaire</strong> – wiosce rzemieślników, słynącej z wyrobów ceramicznych.
-                </li>
-                <li>
-                    <strong>Dni 3-6: Niezwykła Pustynia Atakama</strong>
-                    <br>Lot do Calamy i transfer do San Pedro de Atacama. Cztery dni eksploracji:
-                    <ul>
-                        <li><strong>Valle de la Luna (Dolina Księżycowa)</strong> i <strong>Valle de la Muerte (Dolina Śmierci)</strong> – formacje skalne i pustynne krajobrazy o zachodzie słońca.</li>
-                        <li><strong>Gejzery El Tatio</strong> – poranna wizyta na polu gejzerów na wysokości 4320 m n.p.m., kąpiele w gorących źródłach.</li>
-                        <li><strong>Lagunas Altiplánicas (Miscanti i Miñiques)</strong> – jeziora położone wysoko w Andach, otoczone wulkanami, dom dla flamingów.</li>
-                        <li><strong>Salar de Atacama i Laguna Chaxa</strong> – największa solna pustynia w Chile, obserwacja flamingów.</li>
-                        <li><strong>Termas de Puritama</strong> – relaks w naturalnych termalnych basenach.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Dzień 7: Powrót do Santiago i Winiarnia</strong>
-                    <br>Lot powrotny z Calamy do Santiago. Po południu zwiedzanie jednej z renomowanych winiarni w Dolinie Maipo (np. Concha y Toro) z degustacją najlepszych chilijskich win.
-                </li>
-                <li>
-                    <strong>Dni 8-10: Tajemnicza Rapa Nui (Wyspa Wielkanocna)</strong>
-                    <br>Lot na Rapa Nui. Trzy dni odkrywania wyspy:
-                    <ul>
-                        <li><strong>Ahu Tongariki</strong> – największa platforma z 15 moai.</li>
-                        <li><strong>Rano Raraku</strong> – kamieniołom, gdzie powstawały moai.</li>
-                        <li><strong>Orongo</strong> – wioska kultu Człowieka-Ptaka, z widokiem na trzy wysepki.</li>
-                        <li><strong>Plaża Anakena</strong> – relaks i podziwianie moai w otoczeniu palm.</li>
-                        <li>Zwiedzanie <strong>Hanga Roa</strong> – głównego miasteczka.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Dzień 11: Cajón del Maipo i wylot</strong>
-                    <br>Poranna wycieczka do malowniczego <strong>Cajón del Maipo</strong> – doliny w Andach, idealnej na lekki trekking, podziwianie górskich krajobrazów. Popołudniu transfer na lotnisko i wylot do Polski.
-                </li>
-            </ul>
-            <div class="koszt">Koszt wycieczki: 8700 PLN + 5000 PLN (lot z Polski)</div>
-            <a href="mailto:chileforvisit@gmail.com" class="button-link">Zapytaj o tę ofertę</a>
-        </div>
+/* Styl dla pojedynczej oferty */
+.oferta-wycieczki {
+    flex: 1;
+    min-width: 380px;
+    max-width: 48%;
+    border: 2px solid #4a90e2;
+    border-radius: 15px;
+    padding: 35px;
+    background-color: #34495e;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.3s ease;
+}
 
-        <div class="oferta-wycieczki">
-            <h2>Patagonia: Lodowce Balmaceda i Serrano</h2>
-            <div class="offer-description-media">
-                <p>
-                    Wyprawa w głąb chilijskiej Patagonii,
-                    skupiona na odkrywaniu majestatycznych lodowców, dziewiczej przyrody
-                    i Parku Narodowego Torres del Paine.
-                </p>
-                <img src="kajak.png" alt="Kajak w Patagonii" class="offer-image">
-            </div>
+.oferta-wycieczki:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    border-color: #7bdcb5;
+}
 
-            <h3>Plan Podróży:</h3>
-            <ul>
-                <li>
-                    <strong>Dzień 1: Przylot do Santiago de Chile</strong>
-                    <br>Przylot na lotnisko Santiago de Chile, transfer do hotelu. Odpoczynek po podróży. Wspólna kolacja zapoznawcza wraz z całą grupą.
-                </li>
-                <li>
-                    <strong>Dzień 2: Lot do Punta Arenas</strong>
-                    <br>Przylot na lotnisko w Punta Arenas, transfer do hotelu. Czas wolny na odpoczynek i zwiedzanie miasta, spacer po nabrzeżu, wizyta na cmentarzu miejskim (uznawanym za jeden z piękniejszych).
-                </li>
-                <li>
-                    <strong>Dzień 3: Pingwiny na Isla Magdalena i podróż do Puerto Natales</strong>
-                    <br>Poranny rejs na <strong>Isla Magdalena</strong> (rezerwat pingwinów magellańskich). Po południu przejazd autobusem do Puerto Natales (ok. 3 godziny), bramy do Parku Narodowego Torres del Paine. Zakwaterowanie.
-                </li>
-                <li>
-                    <strong>Dzień 4: Rejs do lodowców Balmaceda i Serrano</strong>
-                    <br>Całodniowy rejs z Puerto Natales. Podziwianie fiordów, wizyta przy <strong>Lodowcu Balmaceda</strong> (widok z pokładu statku) oraz spacer do stóp <strong>Lodowca Serrano</strong>. Lunch w formie pikniku lub w chacie ranchera. Powrót do Puerto Natales.
-                </li>
-                <li>
-                    <strong>Dzień 5: Park Narodowy Torres del Paine - Laguna Amarga i Cascada Paine</strong>
-                    <br>Całodniowa wycieczka autokarowa po Parku Narodowym Torres del Paine. Odwiedzimy <strong>Laguna Amarga</strong> z widokiem na wieże Torres, <strong>Cascada Paine</strong> (wodospad), <strong>Lago Nordenskjöld</strong> i <strong>Lago Pehoé</strong>. Szlaki spacerowe dostosowane do możliwości grupy. Nocleg w hotelu w pobliżu parku.
-                </li>
-                <li>
-                    <strong>Dzień 6: Torres del Paine - Szlak do Mirador Base Las Torres (opcjonalnie) / Jezioro Grey</strong>
-                    <br>Dla chętnych i zaawansowanych: wymagający trekking do punktu widokowego <strong>Mirador Base Las Torres</strong> (ok. 8-9 godzin, nagroda: widok na granitowe wieże). Dla pozostałych: relaksujący dzień z dojazdem do <strong>Jeziora Grey</strong> i podziwianiem lodowca Grey z daleka. Nocleg w okolicy parku.
-                </li>
-                <li>
-                    <strong>Dzień 7: Torres del Paine - Dolina Francuska (opcjonalnie) / Wędrówki przy jeziorach</strong>
-                    <br>Kolejny dzień w parku. Opcja trekkingu do <strong>Dolina Francuska</strong> (wymaga promowania przez Jezioro Pehoé). Alternatywnie, lżejsze szlaki wokół jezior, podziwianie fauny (guanaco, nandu). Powrót do Puerto Natales.
-                </li>
-                <li>
-                    <strong>Dzień 8: Jaskinia Milodon i powrót do Punta Arenas</strong>
-                    <br>Przed powrotem do Punta Arenas, wizyta w <strong>Cueva del Milodón</strong> – jaskini, gdzie znaleziono szczątki prehistorycznego leniwca olbrzymiego. Po południu powrót do Punta Arenas, czas wolny na kolację.
-                </li>
-                <li>
-                    <strong>Dzień 9: Park Narodowy Pali Aike i wulkaniczne krajobrazy</strong>
-                    <br>Całodniowa wycieczka do <strong>Parku Narodowego Pali Aike</strong>, położonego na granicy z Argentyną. Region wulkanicznych stożków, kraterów i jaskiń. Możliwość spotkania guanaco. Unikalne pustynne krajobrazy Patagonii.
-                </li>
-                <li>
-                    <strong>Dzień 10: Fort Bulnes i koniec świata</strong>
-                    <br>Wycieczka na południe od Punta Arenas do zrekonstruowanego <strong>Fortu Bulnes</strong>, pierwszej chilijskiej osady na Cieśninie Magellana. Odwiedzimy również <strong>Puerto del Hambre (Port Głodu)</strong> oraz pomnik symbolizujący geograficzny środek Chile.
-                </li>
-                <li>
-                    <strong>Dzień 11: Termy i wizyta w winiarni</strong>
-                    <br>Wyjazd do Cajon del Maipu i naturalnych term o poranku. Naoczna wizyta z Andami. W drugiej części dnia wizyta w najpopularniejszej winiarni Chile Concha y Toro i degustacja wina słynnego na cały świat.
-                </li>
-            </ul>
-            <div class="koszt">Koszt wyprawy: 8500 PLN + 5000 PLN (lot z Polski)</div>
-            <a href="mailto:chileforvisit@gmail.com" class="button-link">Zapytaj o tę ofertę</a>
-        </div>
-    </div>
+/* Styl dla tytułów ofert */
+.oferta-wycieczki h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #a8dadc;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    text-align: center;
+    line-height: 1.3;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 10px;
+}
+
+/* Kontener dla opisu i obrazka */
+.offer-description-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    min-height: 350px;
+    margin-bottom: 20px;
+}
+
+/* Styl dla paragrafu z opisem oferty (tło Pustyni Atakama) */
+.offer-description-media p {
+    background-image: url('https://images.unsplash.com/photo-1594892487691-8935d259c916?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Styl dla obrazów pod opisami ofert */
+.offer-description-media .offer-image {
+    display: block;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: auto;
+    margin-bottom: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.oferta-wycieczki h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #a8dadc;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 8px;
+}
+
+.oferta-wycieczki p, .oferta-wycieczki ul {
+    font-size: 1.05em;
+    margin-bottom: 15px;
+    color: #ecf0f1;
+}
+
+.oferta-wycieczki ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.oferta-wycieczki ul li {
+    background-color: #3f5b75;
+    margin-bottom: 8px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.98em;
+    color: #ecf0f1;
+    border-left: 5px solid #7bdcb5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.oferta-wycieczki .koszt {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #ffda79;
+    margin-top: 30px;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #4a6a8c;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Styl dla linku udającego przycisk */
+.button-link {
+    background-color: #7bdcb5;
+    color: #2c3e50;
+    padding: 16px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    margin-top: 40px;
+    text-decoration: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 15px rgba(123,220,181,0.4);
+}
+
+.button-link:hover {
+    background-color: #4a90e2;
+    color: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(74,144,226,0.5);
+}
+
+/* Sekcja kontaktowa (stopka) */
+.contact-footer {
+    background-color: #1a252f;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.1em;
+    border-top: 5px solid #7bdcb5;
+    margin-top: 80px;
+}
+
+.contact-footer p {
+    margin: 10px 0;
+}
+
+.contact-footer a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-footer a:hover {
+    color: #a8dadc;
+    text-decoration: underline;
+}
+
+/* Style dla nagłówka i nawigacji */
+.main-header {
+    background-color: #1a252f;
+    padding: 20px 0;
+    border-bottom: 5px solid #7bdcb5;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.main-nav li {
+    margin: 0;
+}
+
+.main-nav a {
+    color: #a8dadc;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.3em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background-color: #4a90e2;
+    color: white;
+}
+
+/* Styl dla sekcji "O mnie" (teraz tylko jako legacy jeśli jakaś treść byłaby poza modalem) */
+/* Jeśli "O mnie" jest TYLKO modalem, te style nie będą miały zastosowania w HTML, ale mogą pozostać */
+.about-me-content {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #34495e;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.about-me-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #a8dadc;
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 10px;
+}
+
+.about-me-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+.about-me-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Style dla Modala Mapy i Modala "O mnie" (dzielone style) */
+.modal {
+    display: none; /* Ukryte domyślnie. Zmieniane na 'flex' przez JavaScript, gdy modal jest aktywny. */
+    position: fixed; /* Zostaje na miejscu nawet przy scrollowaniu */
+    z-index: 1000; /* Wysoko, żeby był na wierzchu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Włącz scrollowanie, jeśli zawartość jest większa niż okno */
+    background-color: rgba(0,0,0,0.8); /* Półprzezroczyste czarne tło */
+    backdrop-filter: blur(5px); /* Efekt rozmycia tła (modern browsers) */
+    -webkit-backdrop-filter: blur(5px); /* Wsparcie dla Safari */
+    justify-content: center; /* Centrowanie poziome zawartości modala (gdy display to flex) */
+    align-items: center; /* Centrowanie pionowe zawartości modala (gdy display to flex) */
+}
+
+.modal-content {
+    background-color: #34495e; /* Tło modala */
+    margin: auto; /* Centrowanie w pionie i poziomie */
+    padding: 30px;
+    border: 1px solid #7bdcb5;
+    border-radius: 15px;
+    width: 90%; /* Szerokość modala */
+    max-width: 900px; /* Maksymalna szerokość */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    position: relative;
+    color: #ecf0f1;
+    animation: fadeInScale 0.3s ease-out forwards; /* Animacja pojawiania się */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Domyślne centrowanie elementów w modalu (np. h2, opis, obrazki) */
+    text-align: center;
+}
+
+/* Animacja pojawiania się modala */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 
-    <div id="mapModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Moja Podróż po Chile</h2>
-            <img src="Calama.jpg" alt="Moja mapa podróży po Chile" class="responsive-map-image">
-            <p class="modal-description">Wizualizacja moich przelotów i kluczowych miejsc w Chile.</p>
-        </div>
-    </div>
+.modal-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #a8dadc;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 10px;
+    width: 100%; /* Rozciągnij h2 na całą szerokość */
+}
 
-    <footer class="contact-footer">
-        <p>Masz pytania? Skontaktuj się z nami!</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/48519442579" target="_blank">+48 519 442 579</a></p>
-        <p><strong>E-mail:</strong> <a href="mailto:chileforvisit@gmail.com">chileforvisit@gmail.com</a></p>
-        <p>&copy; 2025 Chile - Wyprawa marzeń. Wszelkie prawa zastrzeżone.</p>
-    </footer>
+.modal-description {
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #a8dadc;
+}
 
-    <script>
-        // JavaScript do obsługi modala
-        const mapModal = document.getElementById('mapModal');
-        const openMapBtn = document.getElementById('openMapModal');
-        const closeButton = document.querySelector('.close-button');
+.close-button {
+    color: #ecf0f1;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
 
-        // Otwiera modal
-        openMapBtn.onclick = function(event) {
-            event.preventDefault(); // Zapobiega przeładowaniu strony
-            mapModal.style.display = 'flex'; // Zmieniamy na flex, żeby flexbox centrował
-            document.body.style.overflow = 'hidden'; // Wyłącza scrollowanie strony pod modalem
-        }
+.close-button:hover,
+.close-button:focus {
+    color: #e74c3c;
+    transform: rotate(90deg);
+    text-decoration: none;
+}
 
-        // Zamyka modal po kliknięciu 'X'
-        closeButton.onclick = function() {
-            mapModal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Przywraca scrollowanie strony
-        }
+/* Styl dla responsywnego obrazka w modalu Mapy */
+.responsive-map-image {
+    max-width: 40%; /* Zmniejszona szerokość mapy - zmieniono zgodnie z Twoim życzeniem */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
-        // Zamyka modal po kliknięciu poza jego zawartością
-        window.onclick = function(event) {
-            if (event.target == mapModal) {
-                mapModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
 
-        // Dodatkowa funkcja do zamykania modala klawiszem Esc
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && mapModal.style.display === 'flex') {
-                mapModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
+/* --- NOWE STYLE DLA MODALA "O MNIE" Z OBRAZKIEM --- */
 
-</body>
-</html>
+/* Wrapper dla zdjęcia i tekstu w modalu "O mnie" */
+.about-content-wrapper {
+    display: flex;
+    flex-direction: row; /* Domyślne ułożenie: rząd (zdjęcie i tekst obok siebie) */
+    align-items: flex-start; /* Wyrównanie elementów do góry */
+    gap: 30px; /* Odstęp między zdjęciem a tekstem */
+    margin-top: 20px;
+    width: 100%; /* Zajmuje całą szerokość modala */
+    text-align: left; /* Przywróć tekst do lewej strony */
+}
+
+/* Styl dla zdjęcia profilowego */
+.profile-image {
+    width: 200px; /* Stała szerokość zdjęcia */
+    height: 200px; /* Stała wysokość, aby było kwadratowe */
+    object-fit: cover; /* Upewnij się, że zdjęcie wypełnia obszar, przycinając jeśli trzeba */
+    border-radius: 50%; /* Okrągłe zdjęcie */
+    border: 5px solid #7bdcb5; /* Delikatna ramka */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    flex-shrink: 0; /* Zapobiega zmniejszaniu się zdjęcia na mniejszych ekranach */
+}
+
+/* Styl dla tekstu obok zdjęcia */
+.about-text {
+    flex-grow: 1; /* Pozwala tekstowi zająć dostępną przestrzeń */
+}
+
+.about-text p {
+    margin-top: 0; /* Usuń domyślny górny margines paragrafu */
+    margin-bottom: 15px; /* Dodaj margines pod paragrafami */
+    font-size: 1.05em;
+    color: #ecf0f1;
+}
+
+
+/* Responsywność dla małych ekranów */
+@media (max-width: 992px) {
+    .title-image {
+        max-width: 95%;
+    }
+    .oferty-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .oferta-wycieczki {
+        max-width: 90%;
+        min-width: unset;
+    }
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .main-nav a {
+        font-size: 1.1em;
+        padding: 8px 15px;
+    }
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+    .modal-content h2 {
+        font-size: 2em;
+    }
+    .close-button {
+        font-size: 30px;
+        top: 10px;
+        right: 15px;
+    }
+
+    /* Responsywność dla modala "O mnie" */
+    .about-content-wrapper {
+        flex-direction: column; /* Na małych ekranach ułóż zdjęcie i tekst jeden pod drugim */
+        align-items: center; /* Wyśrodkuj elementy w kolumnie */
+        text-align: center; /* Wyśrodkuj tekst */
+    }
+    .profile-image {
+        margin-bottom: 25px; /* Dodaj odstęp pod zdjęciem, gdy jest na górze */
+    }
+    .about-text p {
+        text-align: center; /* Upewnij się, że tekst jest wyśrodkowany */
+    }
+}
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2em;
+        margin: 40px 0 30px 0;
+    }
+    .title-image {
+        margin-bottom: 30px;
+    }
+    .oferta-wycieczki {
+        padding: 25px;
+    }
+    .oferta-wycieczki h2 {
+        font-size: 1.8em;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    .offer-description-media p {
+        padding: 15px;
+    }
+    .oferta-wycieczki p, .oferta-wycieczki ul li {
+        font-size: 0.95em;
+    }
+    .button-link {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+    .contact-footer {
+        padding: 30px 15px;
+        font-size: 1em;
+    }
+    .offer-description-media .offer-image {
+        height: 150px;
+    }
+    .offer-description-media {
+        min-height: 280px;
+    }
+    .modal-content {
+        padding: 15px;
+    }
+    .modal-content h2 {
+        font-size: 1.8em;
+    }
+    .modal-description {
+        font-size: 0.95em;
+    }
+
+    /* Responsywność dla modala "O mnie" na bardzo małych ekranach */
+    .profile-image {
+        width: 150px; /* Zmniejsz rozmiar zdjęcia na bardzo małych ekranach */
+        height: 150px;
+    }
+    .about-text p {
+        font-size: 0.95em;
+    }
+}
+/* --- Style dla sekcji "Terminy" --- */
+.terminy-sekcja {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.terminy-toggle {
+    background-color: #4a90e2; /* Jasny niebieski dla przycisku */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Aby padding i border-radius działały jak na przycisku */
+    width: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: none; /* Usuń domyślne obramowanie, jeśli to h3 */
+}
+
+.terminy-toggle:hover {
+    background-color: #347dc4; /* Ciemniejszy niebieski po najechaniu */
+    transform: translateY(-2px);
+}
+
+.terminy-toggle.active .arrow-icon {
+    transform: rotate(180deg); /* Obróć strzałkę, gdy lista jest otwarta */
+}
+
+.arrow-icon {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.terminy-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 0; /* Początkowo ukryte */
+    overflow: hidden; /* Ukryj zawartość, która wykracza poza max-height */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Płynne przejście */
+    opacity: 0; /* Początkowo niewidoczne */
+    background-color: #3f5b75; /* Tło dla listy terminów */
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+    border: 1px solid #4a90e2;
+}
+
+.terminy-lista.show {
+    max-height: 300px; /* Zwiększ na tyle, by zmieściło wszystkie terminy */
+    opacity: 1; /* Pokaż zawartość */
+}
+
+.terminy-lista li {
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Delikatna linia między terminami */
+    color: #ecf0f1;
+    font-size: 1.1em;
+    text-align: left;
+    position: relative; /* Dla kropek, jeśli chcesz */
+    border-left: none; /* Usuń lewe obramowanie z poprzednich li */
+    background-color: transparent; /* Upewnij się, że nie ma domyślnego tła dla li */
+    box-shadow: none; /* Usuń cień dla li */
+}
+
+.terminy-lista li:last-child {
+    border-bottom: none; /* Ostatni element bez dolnej linii */
+}
+/* Style dla strony Kontakt */
+.contact-page-content {
+    max-width: 1000px;
+    margin: 60px auto 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.contact-page-content h1 {
+    margin-bottom: 50px;
+}
+
+.contact-options-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.contact-option {
+    background-color: #34495e;
+    border: 2px solid #4a90e2;
+    border-radius: 15px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px; /* Zwiększona maks. szerokość dla lepszego wyglądu */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-option:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.contact-icon {
+    width: 80px; /* Rozmiar ikon */
+    height: 80px;
+    margin-bottom: 20px;
+    filter: invert(70%) sepia(20%) saturate(1000%) hue-rotate(150deg) brightness(120%) contrast(90%); /* Kolor ikony - dopasuj do #a8dadc */
+    transition: transform 0.3s ease;
+}
+
+.contact-option:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+.contact-option h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #a8dadc;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #7bdcb5;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.contact-option p {
+    font-size: 1.05em;
+    color: #ecf0f1;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Pozwala tekstowi zająć dostępną przestrzeń */
+}
+
+.contact-button, .whatsapp-button {
+    /* Używamy już istniejących stylów .button-link */
+    display: inline-block; /* Aby przycisk nie zajmował całej szerokości */
+    width: auto;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    margin-top: auto; /* Wyrównuje przyciski do dołu, jeśli opisy mają różną wysokość */
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* Zielony kolor WhatsApp */
+    color: white;
+    box-shadow: 0 5px 15px rgba(37,211,102,0.4);
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(29,168,81,0.5);
+}
+
+.contact-note {
+    font-size: 1.1em;
+    color: #a8dadc;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+
+/* Responsywność dla strony Kontakt */
+@media (max-width: 768px) {
+    .contact-page-content h1 {
+        font-size: 2.2em;
+    }
+    .contact-options-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .contact-option {
+        max-width: 90%;
+        min-width: unset;
+        padding: 25px;
+    }
+    .contact-option h2 {
+        font-size: 1.6em;
+    }
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .contact-button, .whatsapp-button {
+        width: 100%; /* Przyciski na całą szerokość na mniejszych ekranach */
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-page-content {
+        margin: 40px auto 60px auto;
+        padding: 0 15px;
+    }
+    .contact-page-content h1 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .contact-option p {
+        font-size: 1em;
+    }
+    .contact-note {
+        font-size: 1em;
+    }
+}
