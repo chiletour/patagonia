@@ -427,7 +427,7 @@ h1 {
 }
 
 .terminy-lista.show {
-    max-height: 300px; /* Zwiększ na tyle, by zmieściło wszystkie terminy */
+    max-height: 1000px; /* Zwiększ na tyle, by zmieściło wszystkie terminy */
     opacity: 1; /* Pokaż zawartość */
 }
 
