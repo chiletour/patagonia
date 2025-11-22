@@ -30,32 +30,25 @@ h1 {
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-/* Kontener dla ofert - Flexbox */
-.oferty-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Upewnij się, że elementy zaczynają się od góry */
-    gap: 30px;
-    flex-wrap: wrap; /* Pozwala elementom zawijać się na mniejszych ekranach */
-    max-width: 1300px;
-    margin: 0 auto 80px auto;
-    padding: 0 20px; /* Dodaje padding po bokach na desktopie */
+/* ZMIEŃ: .oferta-wycieczki */
+.oferta-wycieczki {
+    /* ... reszta twoich stylów ... */
+    
+    /* ZMIEŃ: Usuń min-width i max-width, które ograniczają na mobile */
+    min-width: unset; /* Domyślnie na mobile nie chcemy minimalnej szerokości */
+    width: 100%; /* Ustaw 100% szerokości, aby zajmowało całą przestrzeń */
+    max-width: 48%; /* To usuniemy lub przeniesiemy do media query */
+    
+    /* DODAJ: Aby na małych ekranach oferty zajmowały pełną szerokość */
+    box-sizing: border-box; 
 }
 
-/* Styl dla pojedynczej oferty */
-.oferta-wycieczki {
-    flex: 1; /* Pozwala im rosnąć i kurczyć się */
-    min-width: 380px; /* Minimalna szerokość przed zawinięciem */
-    max-width: 48%; /* Max. szerokość na desktopie, aby zmieściły się dwie obok siebie */
-    border: 2px solid #4a90e2;
-    border-radius: 15px;
-    padding: 35px;
-    background-color: #34495e;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Rozkłada zawartość pionowo */
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.3s ease;
+/* ZMIEŃ: .oferty-container */
+.oferty-container {
+    /* ... reszta twoich stylów ... */
+    
+    /* DODAJ: Upewnij się, że kontenery nie mają za dużego paddingu, który zjada miejsce na mobile */
+    padding: 0 10px; 
 }
 
 .oferta-wycieczki:hover {
