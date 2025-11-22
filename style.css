@@ -333,22 +333,22 @@ h1 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* --- Style dla modala "O mnie" z obrazkiem --- */
-/* Wrapper dla zdjęcia i tekstu w modalu "O mnie" */
+/* ZMIEŃ: .about-content-wrapper (Domyślny układ dla mobile - w kolumnie) */
 .about-content-wrapper {
     display: flex;
-    flex-direction: row; /* Domyślne ułożenie: rząd (zdjęcie i tekst obok siebie) */
-    align-items: flex-start; /* Wyrównanie elementów do góry */
-    gap: 30px; /* Odstęp między zdjęciem a tekstem */
+    flex-direction: column; /* Ustawienie domyślne na kolumnę (zdjęcie pod tekstem) */
+    align-items: center; /* Wyśrodkowanie elementów (zdjęcia i tekstu) */
+    gap: 20px; 
     margin-top: 20px;
-    width: 100%; /* Zajmuje całą szerokość modala */
-    text-align: left; /* Przywróć tekst do lewej strony */
+    width: 100%;
+    text-align: center; /* Domyślne centrowanie tekstu w modalu */
 }
 
-/* Styl dla zdjęcia profilowego */
+/* ZMIEŃ: .profile-image */
 .profile-image {
-    width: 200px; /* Stała szerokość zdjęcia */
-    height: 200px; /* Stała wysokość, aby było kwadratowe */
+    width: 150px; /* Zmniejsz rozmiar na mobile */
+    height: 150px; 
+    /* ... reszta twoich stylów ... */
     object-fit: cover; /* Upewnij się, że zdjęcie wypełnia obszar, przycinając jeśli trzeba */
     border-radius: 50%; /* Okrągłe zdjęcie */
     border: 5px solid #7bdcb5; /* Delikatna ramka */
