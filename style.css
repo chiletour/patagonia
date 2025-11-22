@@ -709,4 +709,111 @@ Zamiast wielu bloków `@media`, skonsolidowałem je w jeden dla każdej szeroko�
     .contact-note {
         font-size: 1em;
     }
+/* ================================================= */
+/* === RESPONSIVE DESIGN - MEDIA QUERIES (MOBILE) ===*/
+/* ================================================= */
+
+/* --- Ogólne dostosowanie dla mniejszych ekranów --- */
+@media (max-width: 768px) {
+    /* 1. Nagłówek i Obrazek główny */
+    h1 {
+        font-size: 2.2em; /* Zmniejszenie nagłówka */
+        margin: 40px 10px 20px 10px;
+    }
+
+    /* 2. Układ ofert (Zmiana na jedną kolumnę) */
+    .oferty-container {
+        flex-direction: column; /* Ustawienie ofert pionowo */
+        gap: 25px; /* Mniejszy odstęp */
+    }
+
+    .oferta-wycieczki {
+        width: 100%; /* Oferta zajmuje całą szerokość */
+        max-width: 95%; /* Drobny margines po bokach */
+        padding: 20px;
+        min-width: unset;
+    }
+
+    /* 3. Opis i Obrazek w Ofercie */
+    .offer-description-media {
+        min-height: unset; /* Usuń stałą wysokość, żeby nie ucinało na mobile */
+    }
+
+    /* 4. Nawigacja (Menu na całą szerokość) */
+    .main-nav ul {
+        flex-direction: column; /* Ustawienie linków w kolumnie */
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .main-nav a {
+        font-size: 1.1em;
+        padding: 12px 15px;
+        display: block; /* Ułatwienie kliknięcia */
+        text-align: center;
+    }
+    
+    /* 5. Przycisk */
+    .button-link {
+        width: 90%; /* Zapewnia, że przycisk jest duży i łatwy do kliknięcia */
+    }
+    
+    /* 6. Modale (Mapa i O mnie) */
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    .responsive-map-image {
+        max-width: 90%; /* Zwiększenie szerokości mapy */
+    }
+    
+    /* 7. Strona Kontaktu (Pionowy układ) */
+    .contact-options-container {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+    
+    .contact-option {
+        max-width: 90%;
+        min-width: unset;
+        padding: 20px;
+    }
+    
+    .contact-button, .whatsapp-button {
+        width: 100%;
+    }
+}
+
+
+/* --- Powrót do układu desktopowego (powyżej 768px) --- */
+@media (min-width: 769px) {
+    /* Przywraca układ dwukolumnowy dla ofert */
+    .oferta-wycieczki {
+        max-width: 48%; /* Wraca do limitu dla dwóch kolumn */
+    }
+    
+    /* Przywraca układ boczny dla modala "O mnie" */
+    .about-content-wrapper {
+        flex-direction: row; /* Zmiana z powrotem na układ wierszowy */
+        align-items: flex-start;
+        text-align: left;
+    }
+    .profile-image {
+        width: 200px; /* Przywrócenie większego rozmiaru */
+        height: 200px;
+    }
+    .about-text {
+        text-align: left; /* Przywrócenie tekstu do lewej */
+    }
+    
+    /* Przywraca układ kontaktowy na desktopie */
+    .contact-options-container {
+        flex-direction: row;
+    }
+    
+    /* Przywraca nawigację poziomą */
+    .main-nav ul {
+        flex-direction: row;
+    }
 }
