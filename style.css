@@ -30,25 +30,32 @@ h1 {
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-/* ZMIEŃ: .oferta-wycieczki */
-.oferta-wycieczki {
-    /* ... reszta twoich stylów ... */
-    
-    /* ZMIEŃ: Usuń min-width i max-width, które ograniczają na mobile */
-    min-width: unset; /* Domyślnie na mobile nie chcemy minimalnej szerokości */
-    width: 100%; /* Ustaw 100% szerokości, aby zajmowało całą przestrzeń */
-    max-width: 48%; /* To usuniemy lub przeniesiemy do media query */
-    
-    /* DODAJ: Aby na małych ekranach oferty zajmowały pełną szerokość */
-    box-sizing: border-box; 
+/* Kontener dla ofert - Flexbox */
+.oferty-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Upewnij się, że elementy zaczynają się od góry */
+    gap: 30px;
+    flex-wrap: wrap; /* Pozwala elementom zawijać się na mniejszych ekranach */
+    max-width: 1300px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px; /* Dodaje padding po bokach na desktopie */
 }
 
-/* ZMIEŃ: .oferty-container */
-.oferty-container {
-    /* ... reszta twoich stylów ... */
-    
-    /* DODAJ: Upewnij się, że kontenery nie mają za dużego paddingu, który zjada miejsce na mobile */
-    padding: 0 10px; 
+/* Styl dla pojedynczej oferty */
+.oferta-wycieczki {
+    flex: 1; /* Pozwala im rosnąć i kurczyć się */
+    min-width: 380px; /* Minimalna szerokość przed zawinięciem */
+    max-width: 48%; /* Max. szerokość na desktopie, aby zmieściły się dwie obok siebie */
+    border: 2px solid #4a90e2;
+    border-radius: 15px;
+    padding: 35px;
+    background-color: #34495e;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Rozkłada zawartość pionowo */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.3s ease;
 }
 
 .oferta-wycieczki:hover {
@@ -333,22 +340,22 @@ h1 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* ZMIEŃ: .about-content-wrapper (Domyślny układ dla mobile - w kolumnie) */
+/* --- Style dla modala "O mnie" z obrazkiem --- */
+/* Wrapper dla zdjęcia i tekstu w modalu "O mnie" */
 .about-content-wrapper {
     display: flex;
-    flex-direction: column; /* Ustawienie domyślne na kolumnę (zdjęcie pod tekstem) */
-    align-items: center; /* Wyśrodkowanie elementów (zdjęcia i tekstu) */
-    gap: 20px; 
+    flex-direction: row; /* Domyślne ułożenie: rząd (zdjęcie i tekst obok siebie) */
+    align-items: flex-start; /* Wyrównanie elementów do góry */
+    gap: 30px; /* Odstęp między zdjęciem a tekstem */
     margin-top: 20px;
-    width: 100%;
-    text-align: center; /* Domyślne centrowanie tekstu w modalu */
+    width: 100%; /* Zajmuje całą szerokość modala */
+    text-align: left; /* Przywróć tekst do lewej strony */
 }
 
-/* ZMIEŃ: .profile-image */
+/* Styl dla zdjęcia profilowego */
 .profile-image {
-    width: 150px; /* Zmniejsz rozmiar na mobile */
-    height: 150px; 
-    /* ... reszta twoich stylów ... */
+    width: 200px; /* Stała szerokość zdjęcia */
+    height: 200px; /* Stała wysokość, aby było kwadratowe */
     object-fit: cover; /* Upewnij się, że zdjęcie wypełnia obszar, przycinając jeśli trzeba */
     border-radius: 50%; /* Okrągłe zdjęcie */
     border: 5px solid #7bdcb5; /* Delikatna ramka */
@@ -708,112 +715,5 @@ Zamiast wielu bloków `@media`, skonsolidowałem je w jeden dla każdej szeroko�
     }
     .contact-note {
         font-size: 1em;
-    }
-/* ================================================= */
-/* === RESPONSIVE DESIGN - MEDIA QUERIES (MOBILE) ===*/
-/* ================================================= */
-
-/* --- Ogólne dostosowanie dla mniejszych ekranów --- */
-@media (max-width: 768px) {
-    /* 1. Nagłówek i Obrazek główny */
-    h1 {
-        font-size: 2.2em; /* Zmniejszenie nagłówka */
-        margin: 40px 10px 20px 10px;
-    }
-
-    /* 2. Układ ofert (Zmiana na jedną kolumnę) */
-    .oferty-container {
-        flex-direction: column; /* Ustawienie ofert pionowo */
-        gap: 25px; /* Mniejszy odstęp */
-    }
-
-    .oferta-wycieczki {
-        width: 100%; /* Oferta zajmuje całą szerokość */
-        max-width: 95%; /* Drobny margines po bokach */
-        padding: 20px;
-        min-width: unset;
-    }
-
-    /* 3. Opis i Obrazek w Ofercie */
-    .offer-description-media {
-        min-height: unset; /* Usuń stałą wysokość, żeby nie ucinało na mobile */
-    }
-
-    /* 4. Nawigacja (Menu na całą szerokość) */
-    .main-nav ul {
-        flex-direction: column; /* Ustawienie linków w kolumnie */
-        gap: 10px;
-        padding: 0 10px;
-    }
-
-    .main-nav a {
-        font-size: 1.1em;
-        padding: 12px 15px;
-        display: block; /* Ułatwienie kliknięcia */
-        text-align: center;
-    }
-    
-    /* 5. Przycisk */
-    .button-link {
-        width: 90%; /* Zapewnia, że przycisk jest duży i łatwy do kliknięcia */
-    }
-    
-    /* 6. Modale (Mapa i O mnie) */
-    .modal-content {
-        width: 95%;
-        padding: 20px;
-    }
-    .responsive-map-image {
-        max-width: 90%; /* Zwiększenie szerokości mapy */
-    }
-    
-    /* 7. Strona Kontaktu (Pionowy układ) */
-    .contact-options-container {
-        flex-direction: column;
-        gap: 25px;
-        align-items: center;
-    }
-    
-    .contact-option {
-        max-width: 90%;
-        min-width: unset;
-        padding: 20px;
-    }
-    
-    .contact-button, .whatsapp-button {
-        width: 100%;
-    }
-}
-
-
-/* --- Powrót do układu desktopowego (powyżej 768px) --- */
-@media (min-width: 769px) {
-    /* Przywraca układ dwukolumnowy dla ofert */
-    .oferta-wycieczki {
-        max-width: 48%; /* Wraca do limitu dla dwóch kolumn */
-    }
-    
-    /* Przywraca układ boczny dla modala "O mnie" */
-    .about-content-wrapper {
-        flex-direction: row; /* Zmiana z powrotem na układ wierszowy */
-        align-items: flex-start;
-        text-align: left;
-    }
-    .profile-image {
-        width: 200px; /* Przywrócenie większego rozmiaru */
-        height: 200px;
-    }
-    .about-text {
-        text-align: left; /* Przywrócenie tekstu do lewej */
-    }
-    
-    /* Przywraca układ kontaktowy na desktopie */
-    .contact-options-container {
-        flex-direction: row;
-    }
-    
-    /* Przywraca nawigację poziomą */
-    .main-nav ul {
-        flex-direction: row;
     }
 }
